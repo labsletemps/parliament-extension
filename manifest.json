@@ -3,6 +3,7 @@
   "name": "Convertisseur texte/HTML",
   "description": "Cette extension ajoute le gras aux intertitres et questions d’interviews.",
   "version": "0.1",
+  "icons": { "128": "icon_128.png" },
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html",
