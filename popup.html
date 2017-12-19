@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <title>Conversion de texte en HTML</title>
+  <style type="text/css">
+  body {
+    margin: 10px;
+    white-space: nowrap;
+  }
+
+  h1 {
+    font-size: 15px;
+  }
+
+  #container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn{
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 3px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  .btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+  }
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+  }
+  </style>
+  <script src="popup.js"></script>
+</head>
+
+<body>
+  <h1>Ajout automatique du gras</h1>
+  <div id="container">
+    <div class="form-group">
+      <p><input id="questions" class="btn btn-primary" type="button" value="Questions en gras"></p>
+      <p><input id="intertitres" class="btn btn-primary" type="button" value="Intertitres en gras"></p>
+    </div>
+  </div>
+</body>
+</html>

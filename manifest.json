@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Convertisseur texte/HTML",
+  "description": "Cette extension ajoute le gras aux intertitres et questions d’interviews.",
+  "version": "0.1",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Mettre les intertitres ou questions en gras"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "addBold.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}
