@@ -1,11 +1,15 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="utf-8" />
   <title>Conversion de texte en HTML</title>
   <style type="text/css">
   body {
     margin: 10px;
     white-space: nowrap;
+  }
+  span{
+    /*white-space: normal;*/
   }
 
   h1 {
@@ -29,6 +33,7 @@
   }
   .btn-primary {
     color: #fff;
+    min-width: 100px;
     background-color: #337ab7;
     border-color: #2e6da4;
   }
@@ -37,16 +42,21 @@
     background-color: #286090;
     border-color: #204d74;
   }
+  #container span{
+    margin-left: 4px;
+  }
   </style>
   <script src="popup.js"></script>
 </head>
 
 <body>
   <h1>Ajout automatique du gras</h1>
+  <p>Mettre le curseur dans le texte à traiter puis choisir l’une des méthodes :</p>
   <div id="container">
     <div class="form-group">
-      <p><input id="questions" class="btn btn-primary" type="button" value="Questions en gras"></p>
-      <p><input id="intertitres" class="btn btn-primary" type="button" value="Intertitres en gras"></p>
+      <p><input id="intertitres" class="btn btn-primary" type="button" value="Intertitres"> <span>Critère: chaque ligne sans point est passée en gras.</span></p>
+      <p><input id="questions" class="btn btn-primary" type="button" value="Questions"> <span>Un paragraphe sur deux est mis en gras, dès le premier contenant un «?».</span></p>
+      <p><input id="encadre" class="btn btn-primary" type="button" value="Encadré"> <span>Passe en gras chaque début de paragraphe jusqu’au «:»</span></p>
     </div>
   </div>
 </body>
