@@ -1,5 +1,7 @@
 # Text-to-HTML Chrome Addon
 
-Work in progress. This addon adds bold to interviews, articles and fact sheets.
+This extension adds bold to interviews, articles and fact sheets.
 
-I’ll update the code I wrote for http://br.tcch.ch — «Convertisseur texte ⇢ HTML pour journalistes et blogueurs».
+Version 0.2 was published on the [Chrome Web Store](https://chrome.google.com/webstore/detail/convertisseur-textehtml/pggkolecpaldniejpimefojpacbhjbmb).
+
+I’m updating the code I wrote for http://br.tcch.ch — «Convertisseur texte ⇢ HTML pour journalistes et blogueurs».
