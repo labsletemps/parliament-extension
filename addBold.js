@@ -76,7 +76,7 @@ function interview(textArea){ // Mise en gras avec espacement
   textArea.value = txtNew;
 }
 
-function encadre(){
+function encadre(textArea){
   var txtNew = "";
   var arr = textArea.value.split("\n");
 
