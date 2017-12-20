@@ -81,8 +81,9 @@ function encadre(textArea){
   var arr = textArea.value.split("\n");
 
   for (i=0;i<arr.length;i++){
-    if(arr[i] == ""){
-      txtNew += arr[i] + '\n'; 			// Paragraphe vide: on passe
+    // Paragraphe sans “:” ou contenant déjà un <b>: on passe
+    if( (arr[i].indexOf(':') < 0) && (arr[i].indexOf('<b>') < 0) ){
+      txtNew += arr[i] + '\n';
     }else{
       var chain = arr[i].split(':'); // ^\d{4}$
       if(chain[0] == ''){
