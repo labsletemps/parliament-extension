@@ -1,6 +1,8 @@
-# Text-to-HTML Chrome Addon
+# Text-to-HTML Browser Addon
 
 This extension adds bold to interviews, articles and fact sheets.
+
+NB: use `git archive -o my-archive.zip HEAD` to create the extension zip file without the “.git” folder.
 
 Version 0.2 was published on the [Chrome Web Store](https://chrome.google.com/webstore/detail/convertisseur-textehtml/pggkolecpaldniejpimefojpacbhjbmb).
 
