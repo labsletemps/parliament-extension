@@ -5,12 +5,10 @@
  */
 
  function translateValue(elementId, messageName) {
-   var message = browser.i18n.getMessage(messageName);
-   document.getElementById(elementId).value = message;
+   document.getElementById(elementId).value = browser.i18n.getMessage(messageName);
  }
  function translateText(elementId, messageName){
-   var message = browser.i18n.getMessage(messageName);
-   document.getElementById(elementId).innerHTML = message;
+   document.getElementById(elementId).innerText = browser.i18n.getMessage(messageName);
  }
 
 document.addEventListener('DOMContentLoaded', () => {
