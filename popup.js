@@ -4,34 +4,60 @@
  * @param {string} method The method applied to select characters to bolden.
  */
 
+ function translateValue(elementId, messageName) {
+   var message = browser.i18n.getMessage(messageName);
+   document.getElementById(elementId).value = message;
+ }
+ function translateText(elementId, messageName){
+   var message = browser.i18n.getMessage(messageName);
+   document.getElementById(elementId).innerHTML = message;
+ }
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  document.getElementById('intertitres').addEventListener('click', () => {
+  document.getElementById('subtitles').addEventListener('click', () => {
     chrome.tabs.executeScript({
-        code: 'var method = "tete";'
+        code: 'var method = "subtitles";'
     }, function() {
         chrome.tabs.executeScript({file: 'addBold.js'});
     });
   });
 
-  document.getElementById('questions').addEventListener('click', () => {
+  document.getElementById('interview').addEventListener('click', () => {
     chrome.tabs.executeScript({
-        code: 'var method = "questions";'
+        code: 'var method = "interview";'
     }, function() {
         chrome.tabs.executeScript({file: 'addBold.js'});
     });
   });
 
-  document.getElementById('encadre').addEventListener('click', () => {
+  document.getElementById('factsheet').addEventListener('click', () => {
     chrome.tabs.executeScript({
-        code: 'var method = "encadre";'
+        code: 'var method = "factsheet";'
     }, function() {
         chrome.tabs.executeScript({file: 'addBold.js'});
     });
   });
 
-  //TODO: add an “undo” method, because ctrl-z has no effect on the script
+  // Undo method
+  document.getElementById('undo').addEventListener('click', () => {
+    chrome.tabs.executeScript({
+        code: 'var method = "undo";'
+    }, function() {
+        chrome.tabs.executeScript({file: 'addBold.js'});
+    });
+  });
 
-  // maybe add the functions for quotes ("" to «»)
+  // TODO maybe add the functions for quotes ("" to «»)
 
+  // i18n
+  translateValue("interview", "interviewButton");
+  translateValue("subtitles", "subtitlesButton");
+  translateValue("factsheet", "factsheetButton")
+  translateValue('undo', 'undoButton');
+  translateText('header', 'header');
+  translateText('instructions', 'instructions');
+  translateText('subtitlesLabel', 'subtitlesLabel');
+  translateText('interviewLabel', 'interviewLabel');
+  translateText('factsheetLabel', 'factsheetLabel');
 });

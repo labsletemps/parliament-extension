@@ -1,0 +1,62 @@
+{
+  "extensionName": {
+    "message": "Automatic bold for newspaper stories",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "This extension bolds subtitles, interview questions and fact sheets.",
+    "description": "Description of the extension."
+  },
+
+  "title": {
+    "message": "Bold subtitles or interview questions",
+    "description": "Title appearing when hovering the extension."
+  },
+
+  "header": {
+    "message": "Automatic bolding",
+    "description": "Header above the buttons."
+  },
+
+  "instructions":{
+    "message": "Focus the textarea then pickup a method :",
+    "description": "Instructions above the buttons."
+  },
+
+  "subtitlesButton": {
+    "message": "Subtitles",
+    "description": "Subtitles button"
+  },
+
+  "interviewButton": {
+    "message": "Interview",
+    "description": "Interview button."
+  },
+
+  "factsheetButton": {
+    "message": "Fact sheet",
+    "description": "Factsheet button."
+  },
+
+  "undoButton": {
+    "message": "Undo",
+    "description": "Undo button."
+  },
+
+  "subtitlesLabel": {
+    "message": "Each line without dot gets bold.",
+    "description": "Subtitles label"
+  },
+
+  "interviewLabel": {
+    "message": "The first paragraph with “?” gets bold, then each second paragraph.",
+    "description": "Interview label"
+  },
+
+  "factsheetLabel": {
+    "message": "Each beginning of paragraph gets bold until the “:”",
+    "description": "Factsheet label"
+  }
+
+}

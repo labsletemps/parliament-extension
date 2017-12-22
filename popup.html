@@ -21,6 +21,7 @@
     display: flex;
     justify-content: space-between;
   }
+  /* bootstrap buttons */
   .btn{
     display: inline-block;
     padding: 6px 12px;
@@ -43,6 +44,16 @@
     background-color: #286090;
     border-color: #204d74;
   }
+  .btn-secondary {
+    color: #292b2c;
+    background-color: #fff;
+    border-color: #ccc;
+  }
+  .btn-secondary:hover {
+    color: #292b2c;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+  }
   #container span{
     margin-left: 4px;
   }
@@ -51,13 +62,14 @@
 </head>
 
 <body>
-  <h1>Ajout automatique du gras</h1>
-  <p>Mettre le curseur dans le texte à traiter puis choisir l’une des méthodes :</p>
+  <h1 id="header">Ajout automatique du gras</h1>
+  <p id="instructions">Mettre le curseur dans le texte à traiter puis choisir l’une des méthodes :</p>
   <div id="container">
     <div class="form-group">
-      <p><input id="intertitres" class="btn btn-primary" type="button" value="Intertitres"> <span>Critère: chaque ligne sans point est passée en gras.</span></p>
-      <p><input id="questions" class="btn btn-primary" type="button" value="Questions"> <span>Un paragraphe sur deux est mis en gras, dès le premier contenant un «?».</span></p>
-      <p><input id="encadre" class="btn btn-primary" type="button" value="Encadré"> <span>Passe en gras chaque début de paragraphe jusqu’au «:»</span></p>
+      <p><input id="subtitles" class="btn btn-primary" type="button" value="Intertitres"> <span id="subtitlesLabel">Critère: chaque ligne sans point est passée en gras.</span></p>
+      <p><input id="interview" class="btn btn-primary" type="button" value="Questions"> <span id="interviewLabel">Un paragraphe sur deux est mis en gras, dès le premier contenant un «?».</span></p>
+      <p><input id="factsheet" class="btn btn-primary" type="button" value="Encadré"> <span id="factsheetLabel">Passe en gras chaque début de paragraphe jusqu’au «:»</span></p>
+      <p><input id="undo" class="btn btn-secondary" type="button" value="Annuler"></p>
     </div>
   </div>
 </body>

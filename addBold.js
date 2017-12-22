@@ -11,7 +11,8 @@ function eraseFalseBreaks(textArea){ // Elimine les faux sauts de ligne de Metho
   textArea.value = textAreaRaw;
 }
 
-function tete(textArea){ // Mise en gras avec espacement
+function subtitles(textArea){ // Mise en gras avec espacement
+  localStorage.setItem('initialText', textArea.value);
   eraseFalseBreaks(textArea);
   var txtNew = "";
   var arr = textArea.value.split("\n");
@@ -31,6 +32,7 @@ function tete(textArea){ // Mise en gras avec espacement
 }
 
 function interview(textArea){ // Mise en gras avec espacement
+  localStorage.setItem('initialText', textArea.value);
   eraseFalseBreaks(textArea);
   var txtNew = "";
   var textAreaLines = textArea.value.split('\n');
@@ -76,7 +78,8 @@ function interview(textArea){ // Mise en gras avec espacement
   textArea.value = txtNew;
 }
 
-function encadre(textArea){
+function factsheet(textArea){
+  localStorage.setItem('initialText', textArea.value);
   var txtNew = "";
   var arr = textArea.value.split("\n");
 
@@ -135,15 +138,18 @@ We could avoid it if we hadn’t to inject code using executeScript.
 
 if(activeElement.value != ''){
   switch(method) {
-    case 'tete':
-    tete(activeElement);
-    break;
-    case 'questions':
-    interview(activeElement);
-    break;
-    case 'encadre':
-    encadre(activeElement);
-    break;
+    case 'subtitles':
+      subtitles(activeElement);
+      break;
+    case 'interview':
+      interview(activeElement);
+      break;
+    case 'factsheet':
+      factsheet(activeElement);
+      break;
+    case 'undo':
+      activeElement.value = localStorage.getItem('initialText');
+      break;
   }
 }else{
   console.log('Empty textarea.')

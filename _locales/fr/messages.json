@@ -1,0 +1,62 @@
+{
+  "extensionName": {
+    "message": "Convertisseur texte/HTML",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "Cette extension ajoute le gras aux intertitres et questions d’interviews.",
+    "description": "Description of the extension."
+  },
+
+  "title": {
+    "message": "Mettre les intertitres ou questions en gras",
+    "description": "Title appearing when hovering the extension."
+  },
+
+  "header": {
+    "message": "Ajout automatique du gras",
+    "description": "Header above the buttons."
+  },
+
+  "instructions":{
+    "message": "Mettre le curseur dans le texte à traiter puis choisir l’une des méthodes :",
+    "description": "Instructions above the buttons."
+  },
+
+  "subtitlesButton": {
+    "message": "Intertitres",
+    "description": "Subtitles button"
+  },
+
+  "interviewButton": {
+    "message": "Interview",
+    "description": "Interview button."
+  },
+
+  "factsheetButton": {
+    "message": "Encadré",
+    "description": "Factsheet button."
+  },
+
+  "undoButton": {
+    "message": "Annuler",
+    "description": "Undo button."
+  },
+
+  "subtitlesLabel": {
+    "message": "Critère: chaque ligne sans point est passée en gras.",
+    "description": "Subtitles label"
+  },
+
+  "interviewLabel": {
+    "message": "Un paragraphe sur deux est mis en gras, dès le premier contenant un «?».",
+    "description": "Interview label"
+  },
+
+  "factsheetLabel": {
+    "message": "Passe en gras chaque début de paragraphe jusqu’au «:»",
+    "description": "Factsheet label"
+  }
+
+}
