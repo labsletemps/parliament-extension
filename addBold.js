@@ -131,6 +131,75 @@ if(!elementFound){
   }
 }
 
+/**
+* shortcuts for bold, italic and links
+*/
+
+function addTag(startTag, endTag, textArea){
+  var len = textArea.value.length;
+  var selectionStart = textArea.selectionStart;
+  var selectionEnd = textArea.selectionEnd;
+
+  // preserve potential area scrolling
+  var scrollTop = textArea.scrollTop;
+  var scrollLeft = textArea.scrollLeft;
+  var currentSelection = textArea.value.substring(selectionStart, selectionEnd);
+
+  var replace = '';
+  var tagsLength = startTag.length + endTag.length;
+  if(currentSelection.indexOf(startTag) < 0){
+    replace = startTag + currentSelection + endTag;
+  }else{
+    // remove tag if tag was already formatted
+    replace = currentSelection.replace(startTag, '').replace(endTag, '');
+    tagsLength *= -1;
+  }
+
+  // replace textarea value
+  textArea.value = textArea.value.substring(0, selectionStart) + replace + textArea.value.substring(selectionEnd, len);
+
+  // restore selection
+  textArea.setSelectionRange(selectionStart, selectionEnd + tagsLength);
+  textArea.scrollTop = scrollTop;
+  textArea.scrollLeft = scrollLeft;
+}
+
+var macos = navigator.appVersion.indexOf("Mac") != -1;
+
+if (typeof shortcutsOn == 'undefined') {
+  var shortcutsOn = true;
+}
+if(shortcutsOn){
+  console.log('Listening to shortcuts…')
+  document.onkeydown = function(e){
+
+    if(e.ctrlKey || e.metaKey){
+
+      // If not MacOS, only take the ctrl key into account
+      if(e.ctrlKey || macos){
+        switch(e.key){
+          case 'b':
+            e.preventDefault();
+            addTag('<b>', '</b>', document.activeElement);
+            break;
+          case 'i':
+            e.preventDefault();
+            addTag('<i>', '</i>', document.activeElement);
+            break;
+          case 'k':
+            e.preventDefault();
+            addTag('<a href="">', '</a>', document.activeElement);
+            break;
+          default:
+            break;
+        }
+      }
+    }
+  }
+}else{
+  document.onkeydown = null;
+}
+
 /*
 Call the appropriate function.
 We could avoid it if we hadn’t to inject code using executeScript.

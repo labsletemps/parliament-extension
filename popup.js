@@ -4,14 +4,33 @@
  * @param {string} method The method applied to select characters to bolden.
  */
 
- function translateValue(elementId, messageName) {
-   document.getElementById(elementId).value = browser.i18n.getMessage(messageName);
- }
- function translateText(elementId, messageName){
-   document.getElementById(elementId).innerText = browser.i18n.getMessage(messageName);
- }
+function translateValue(elementId, messageName) {
+ document.getElementById(elementId).value = browser.i18n.getMessage(messageName);
+}
+function translateText(elementId, messageName){
+ document.getElementById(elementId).innerText = browser.i18n.getMessage(messageName);
+}
+function setShortcutAvailability(){
+  console.log('Setting shortcut thing')
+  if( document.getElementById('shortcuts').checked ){
+    chrome.tabs.executeScript({
+      code: 'var shortcutsOn = "true"; console.log(shortcutsOn)';
+    }
+  }else{
+    chrome.tabs.executeScript({
+      code: 'var shortcutsOn = "false";';
+    }
+  }
+}
+// here we should get what the user choosed last using localStorage
+setShortcutAvailability();
+
+console.log('fu')
+// and also save his preference when he changes
 
 document.addEventListener('DOMContentLoaded', () => {
+
+
 
   document.getElementById('subtitles').addEventListener('click', () => {
     chrome.tabs.executeScript({
@@ -44,6 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }, function() {
         chrome.tabs.executeScript({file: 'addBold.js'});
     });
+  });
+
+  document.getElementById('shortcuts_p').addEventListener('click', () => {
+    setShortcutAvailability();
   });
 
   // TODO maybe add the functions for quotes ("" to «»)
