@@ -79,11 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if(navigator.appVersion.indexOf("Mac") != -1){
     // label for mac with "cmd" character
-    console.log('Mac os')
     translateText('shortcutsLabel', 'shortcutsLabelMac');
+    translateText('extensionShortcutLabel', 'extensionShortcutLabelMac')
   }else{
-    console.log('not mac os')
     translateText('shortcutsLabel', 'shortcutsLabel');
+    translateText('extensionShortcutLabel', 'extensionShortcutLabel')
   }
 
   // here we should get what the user choosed last using localStorage

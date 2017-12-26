@@ -67,6 +67,16 @@
   "shortcutsLabelMac": {
     "message": "Raccourcis ⌘B (gras), ⌘I (italique) et ⌘K (lien)",
     "description": "Shortcut checkbox label for Mac OS"
+  },
+
+  "extensionShortcutLabel": {
+    "message": "Raccourci pour ouvrir ou fermer l’extension: Ctrl-Shift-E",
+    "description": "Extension shortcut label for mac"
+  },
+
+  "extensionShortcutLabelMac": {
+    "message": "Raccourci pour ouvrir ou fermer l’extension: ⇧⌘E",
+    "description": "Extension shortcut label for mac"
   }
 
 }

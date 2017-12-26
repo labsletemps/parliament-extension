@@ -67,6 +67,16 @@
   "shortcutsLabelMac": {
     "message": "Enable shortcuts: ⌘B (bold), ⌘I (italic) and ⌘K (link)",
     "description": "Shortcut checkbox label for Mac OS"
+  },
+
+  "extensionShortcutLabel": {
+    "message": "Toggle extension: Ctrl-Shift-E",
+    "description": "Extension shortcut label for mac"
+  },
+
+  "extensionShortcutLabelMac": {
+    "message": "Toggle extension: ⇧⌘E",
+    "description": "Extension shortcut label for mac"
   }
 
 }
