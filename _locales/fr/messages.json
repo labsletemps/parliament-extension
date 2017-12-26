@@ -57,6 +57,16 @@
   "factsheetLabel": {
     "message": "Passe en gras chaque début de paragraphe jusqu’au «:»",
     "description": "Factsheet label"
+  },
+
+  "shortcutsLabel": {
+    "message": "Raccourcis Ctrl-B (gras), Ctrl-I (italique) et Ctrl-K (lien)",
+    "description": "Shortcut checkbox label"
+  },
+
+  "shortcutsLabelMac": {
+    "message": "Raccourcis ⌘B (gras), ⌘I (italique) et ⌘K (lien)",
+    "description": "Shortcut checkbox label for Mac OS"
   }
 
 }

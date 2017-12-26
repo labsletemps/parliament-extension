@@ -57,6 +57,16 @@
   "factsheetLabel": {
     "message": "Each beginning of paragraph gets bold until the “:”",
     "description": "Factsheet label"
+  },
+
+  "shortcutsLabel": {
+    "message": "Enable shortcuts: Ctrl-B (bold), Ctrl-I (italic) and Ctrl-K (link)",
+    "description": "Shortcut checkbox label"
+  },
+
+  "shortcutsLabelMac": {
+    "message": "Enable shortcuts: ⌘B (bold), ⌘I (italic) and ⌘K (link)",
+    "description": "Shortcut checkbox label for Mac OS"
   }
 
 }
