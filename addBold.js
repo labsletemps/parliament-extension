@@ -76,7 +76,6 @@ function interview(textArea){ // Mise en gras avec espacement
 }
 
 function factsheet(textArea){
-  console.log('fs')
   // save current text for “undo” function
   localStorage.setItem('initialText', textArea.value);
 
@@ -173,12 +172,13 @@ if (typeof shortcutsOn == 'undefined') {
   var shortcutsOn = true;
 }
 
-// TODO
-// replace with browser.commands
-/*
+// NB Maybe browser.commands may be better in the future.
+// Right now it doesn’t seem flexible enough.
+
 if(shortcutsOn){
   console.log('Listening to shortcuts…')
   document.onkeydown = function(e){
+    // TODO: return if shift key / alt key is down
 
     if(e.ctrlKey || e.metaKey){
 
@@ -205,7 +205,7 @@ if(shortcutsOn){
   }
 }else{
   document.onkeydown = null;
-}*/
+}
 
 /**
 * Call the appropriate function.
@@ -213,7 +213,6 @@ if(shortcutsOn){
 */
 if (typeof method == 'undefined') {
   var method = 'not set';
-  console.log('WARNING: Method was not set.')
 }
 
 if(activeElement.value != ''){
@@ -231,6 +230,4 @@ if(activeElement.value != ''){
       activeElement.value = localStorage.getItem('initialText');
       break;
   }
-}else{
-  console.log('Empty textarea.')
 }
