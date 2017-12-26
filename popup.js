@@ -5,32 +5,26 @@
  */
 
 function translateValue(elementId, messageName) {
- document.getElementById(elementId).value = browser.i18n.getMessage(messageName);
+ document.getElementById(elementId).value = chrome.i18n.getMessage(messageName);
 }
 function translateText(elementId, messageName){
- document.getElementById(elementId).innerText = browser.i18n.getMessage(messageName);
+ document.getElementById(elementId).innerText = chrome.i18n.getMessage(messageName);
 }
 function setShortcutAvailability(){
-  console.log('Setting shortcut thing')
+  console.log('Disabling shortcuts')
+  // TODO clean this up
   if( document.getElementById('shortcuts').checked ){
     chrome.tabs.executeScript({
-      code: 'var shortcutsOn = "true"; console.log(shortcutsOn)';
-    }
+      code: 'var shortcutsOn = "false";'
+    });
   }else{
     chrome.tabs.executeScript({
-      code: 'var shortcutsOn = "false";';
-    }
+      code: 'var shortcutsOn = "false";'
+    });
   }
 }
-// here we should get what the user choosed last using localStorage
-setShortcutAvailability();
-
-console.log('fu')
-// and also save his preference when he changes
 
 document.addEventListener('DOMContentLoaded', () => {
-
-
 
   document.getElementById('subtitles').addEventListener('click', () => {
     chrome.tabs.executeScript({
@@ -65,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
   document.getElementById('shortcuts_p').addEventListener('click', () => {
     setShortcutAvailability();
   });
@@ -81,4 +76,19 @@ document.addEventListener('DOMContentLoaded', () => {
   translateText('subtitlesLabel', 'subtitlesLabel');
   translateText('interviewLabel', 'interviewLabel');
   translateText('factsheetLabel', 'factsheetLabel');
+
+  if(navigator.appVersion.indexOf("Mac") != -1){
+    // label for mac with "cmd" character
+    console.log('Mac os')
+    translateText('shortcutsLabel', 'shortcutsLabelMac');
+  }else{
+    console.log('not mac os')
+    translateText('shortcutsLabel', 'shortcutsLabel');
+  }
+
+  // here we should get what the user choosed last using localStorage
+  setShortcutAvailability();
+  // and also save his preference when he changes
+
+
 });
