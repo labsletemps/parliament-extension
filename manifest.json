@@ -24,6 +24,15 @@
       "run_at": "document_end"
     }
   ],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E",
+        "mac": "Command+Shift+E"
+      },
+      "description": "Shortcut to toggle the popup"
+    }
+  },
   "permissions": [
     "activeTab",
     "storage"
