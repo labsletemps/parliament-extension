@@ -1,17 +1,20 @@
 /**
- * Functions for each method.
- * eraseFalseBreaks deals with erroneous line breaks from PDF or editing softwares.
- *
+ *  This function removes wrong line breaks.
+ *  It searches for each line beginning with a small letter.
  *  @param {object} textArea The textarea to edit.
  */
-
-function eraseFalseBreaks(textArea){ // Elimine les faux sauts de ligne de Methode
-  var textAreaRaw = textArea.value;
+function eraseFalseBreaks(textArea){
+  let textAreaRaw = textArea.value;
   textAreaRaw = textAreaRaw.replace(/\n([a-z])/g, " $1");
   textArea.value = textAreaRaw;
 }
 
-function subtitles(textArea){ // Mise en gras avec espacement
+/**
+ *  Adds bold to each line without a dot.
+ *  @param {object} textArea The textarea to edit.
+ */
+
+function subtitles(textArea){
   // save current text for “undo” function
   localStorage.setItem('initialText', textArea.value);
 
@@ -31,7 +34,12 @@ function subtitles(textArea){ // Mise en gras avec espacement
   textArea.value = lines.join('\n');
 }
 
-function interview(textArea){ // Mise en gras avec espacement
+/**
+ *  Adds bold to each interview question.
+ *  @param {object} textArea The textarea to edit.
+ */
+
+function interview(textArea){
   // save current text for “undo” function
   localStorage.setItem('initialText', textArea.value);
 
@@ -75,6 +83,11 @@ function interview(textArea){ // Mise en gras avec espacement
   textArea.value = lines.join('\n');
 }
 
+/**
+ *  Adds bold to each beginning of line until the “:” character.
+ *  @param {object} textArea The textarea to edit.
+ */
+
 function factsheet(textArea){
   // save current text for “undo” function
   localStorage.setItem('initialText', textArea.value);
@@ -107,17 +120,17 @@ function factsheet(textArea){
 
 
 /**
-Get the focused textarea.
-Find it even if our user doesn’t focus it.
-*/
+ * Get the focused textarea.
+ * Find it even if our user didn't focus it.
+ */
+
+// We use “var” instead of “let” so the variable may be overwritten when the script reloads.
 var elementFound = false;
 var activeElement = document.activeElement;
 if(activeElement){
   if(activeElement.tagName == 'TEXTAREA'){
     console.log('Active element is a textarea.')
     elementFound = true;
-  }else{
-    console.log('Active element is NOT a textarea.')
   }
 }
 if(!elementFound){
@@ -134,25 +147,25 @@ if(!elementFound){
 }
 
 /**
-* shortcuts for bold, italic and links
-*/
+ * Add tags for bold, italic and hyperlink
+ */
 
 function addTag(startTag, endTag, textArea){
-  var len = textArea.value.length;
-  var selectionStart = textArea.selectionStart;
-  var selectionEnd = textArea.selectionEnd;
+  let len = textArea.value.length;
+  let selectionStart = textArea.selectionStart;
+  let selectionEnd = textArea.selectionEnd;
 
   // preserve potential area scrolling
-  var scrollTop = textArea.scrollTop;
-  var scrollLeft = textArea.scrollLeft;
-  var currentSelection = textArea.value.substring(selectionStart, selectionEnd);
+  let scrollTop = textArea.scrollTop;
+  let scrollLeft = textArea.scrollLeft;
+  let currentSelection = textArea.value.substring(selectionStart, selectionEnd);
 
-  var replace = '';
-  var tagsLength = startTag.length + endTag.length;
+  let replace = '';
+  let tagsLength = startTag.length + endTag.length;
   if(currentSelection.indexOf(startTag) < 0){
     replace = startTag + currentSelection + endTag;
   }else{
-    // remove tag if tag was already formatted
+    // If the tag is already there, remove it
     replace = currentSelection.replace(startTag, '').replace(endTag, '');
     tagsLength *= -1;
   }
@@ -167,54 +180,88 @@ function addTag(startTag, endTag, textArea){
 }
 
 var macos = navigator.appVersion.indexOf("Mac") != -1;
+var eventListenerAdded = false;
+
+// To prevent an error when the extension loads at first.
+// We use “var” instead of “let” so it may be overwritten.
+chrome.storage.sync.get({
+ noShortcut: false
+}, function(items){
+  console.log(items);
+  noShortcut = items.noShortcut;
+
+ console.log("No shortcut has value (addbold): " + noShortcut);
+ if(noShortcut){
+   shortcutsOn = false;
+ }
+});
 
 if (typeof shortcutsOn == 'undefined') {
   var shortcutsOn = true;
 }
 
-// NB Maybe browser.commands may be better in the future.
-// Right now it doesn’t seem flexible enough.
+/**
+ * NB browser.commands may be better in the future.
+ * It doesn’t seem flexible enough yet:
+ * we need to easily toggle these shortcuts.
+*/
 
-if(shortcutsOn){
-  console.log('Listening to shortcuts…')
-  document.onkeydown = function(e){
-    // TODO: return if shift key / alt key is down
-
-    if(e.ctrlKey || e.metaKey){
-
-      // If not MacOS, only take the ctrl key into account
-      if(e.ctrlKey || macos){
-        switch(e.key){
-          case 'b':
-            e.preventDefault();
-            addTag('<b>', '</b>', document.activeElement);
-            break;
-          case 'i':
-            e.preventDefault();
-            addTag('<i>', '</i>', document.activeElement);
-            break;
-          case 'k':
-            e.preventDefault();
-            addTag('<a href="">', '</a>', document.activeElement);
-            break;
-          default:
-            break;
-        }
+/**
+ * Named function called by the named function sendShortcut
+ * All this to be able to remove the eventListener
+ */
+function applyShortcut(e){
+  if(e.ctrlKey || e.metaKey){
+    // If alt or shift modifier: exit here
+    if(e.altKey || e.shiftKey){
+      return;
+    }
+    // If not MacOS, only take the ctrl key into account
+    if(e.ctrlKey || macos){
+      switch(e.key){
+        case 'b':
+          e.preventDefault();
+          addTag('<b>', '</b>', document.activeElement);
+          break;
+        case 'i':
+          e.preventDefault();
+          addTag('<i>', '</i>', document.activeElement);
+          break;
+        case 'k':
+          e.preventDefault();
+          addTag('<a href="">', '</a>', document.activeElement);
+          break;
+        default:
+          break;
       }
     }
   }
+}
+
+function sendShortcut(e){
+  if(shortcutsOn){
+    applyShortcut(e);
+  }
+}
+
+if(shortcutsOn && !eventListenerAdded){
+  // Avoid adding multiple listeners
+  document.addEventListener('keydown', sendShortcut);
+  eventListenerAdded = true;
 }else{
-  document.onkeydown = null;
+  // disable shortcuts when the script is already running
+  document.removeEventListener('keydown', sendShortcut);
 }
 
 /**
-* Call the appropriate function.
-* Sort of argument, the extension way
-*/
+ * Call the appropriate function.
+ * Sort of argument, the extension way.
+ */
 if (typeof method == 'undefined') {
+  // To prevent an error when the extension loads at first.
+  // We use “var” instead of “let” so it may be overwritten.
   var method = 'not set';
 }
-
 if(activeElement.value != ''){
   switch(method) {
     case 'subtitles':

@@ -4,23 +4,66 @@
  * @param {string} method The method applied to select characters to bolden.
  */
 
+var popupLoaded = false;
+function setShortcutPreference(value) {
+ console.log("Saving pref: " + value)
+ chrome.storage.sync.set({
+   noShortcut: value
+ }, function(){
+   setTimeout(function(){
+     document.getElementById('shortcutsTick').style.display = 'inline-block';
+   }, 200);
+ });
+}
+function getShortcutPreference(){
+ chrome.storage.sync.get({
+   noShortcut: false
+ }, function(items){
+   document.getElementById('shortcuts').checked = !items.noShortcut;
+   setDisableShortcut(items.noShortcut);
+   return items.noShortcut;
+ });
+}
+
 function translateValue(elementId, messageName) {
  document.getElementById(elementId).value = chrome.i18n.getMessage(messageName);
 }
 function translateText(elementId, messageName){
  document.getElementById(elementId).innerText = chrome.i18n.getMessage(messageName);
 }
-function setShortcutAvailability(){
-  console.log('Disabling shortcuts')
-  // TODO clean this up
-  if( document.getElementById('shortcuts').checked ){
+
+function setDisableShortcut(disable = false){
+  document.getElementById('shortcutsTick').style.display = 'none';
+
+  // Immediately disable the shortcut if the user saved this choice
+  if(disable){
+    console.log('Disable directly')
     chrome.tabs.executeScript({
       code: 'var shortcutsOn = "false";'
+    }, function() {
+        chrome.tabs.executeScript({file: 'addBold.js'});
     });
+  }else if ( document.getElementById('shortcuts').checked == false ){
+
+    // Enable shortcut
+    chrome.tabs.executeScript({
+      code: 'var shortcutsOn = "false";'
+    }, function() {
+        chrome.tabs.executeScript({file: 'addBold.js'});
+    });
+
+    // Save pref in browser
+    setShortcutPreference(true);
   }else{
+    // Disable shortcuts
     chrome.tabs.executeScript({
-      code: 'var shortcutsOn = "false";'
+      code: 'var shortcutsOn = "true";'
+    }, function() {
+        chrome.tabs.executeScript({file: 'addBold.js'});
     });
+
+    // Save pref in browser
+    setShortcutPreference(false);
   }
 }
 
@@ -59,10 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
-  document.getElementById('shortcuts_p').addEventListener('click', () => {
-    setShortcutAvailability();
-  });
+  if(!popupLoaded){
+    document.getElementById('shortcuts_p').addEventListener('click', () => {
+      setDisableShortcut();
+    });
+  }
 
   // TODO maybe add the functions for quotes ("" to «»)
 
@@ -86,9 +130,19 @@ document.addEventListener('DOMContentLoaded', () => {
     translateText('extensionShortcutLabel', 'extensionShortcutLabel')
   }
 
-  // here we should get what the user choosed last using localStorage
-  setShortcutAvailability();
-  // and also save his preference when he changes
+  // Get the user’s choice using localStorage
+  // otherwise toggling the extension or changing tab loses his choice
 
+  console.log(getShortcutPreference());
+  /*
+  if(getShortcutPreference() == "true"){
+    document.getElementById('shortcuts').checked = false;
+    setShortcutAvailability(true);
+  }else{
+    console.log("No shortcuts is false.")
+    setShortcutAvailability();
+  }*/
+
+  popupLoaded = true;
 
 });
