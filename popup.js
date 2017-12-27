@@ -6,7 +6,7 @@
 
 function log(obj){
   // toggle for debug
-  console.log(obj);
+  // console.log(obj);
 }
 
 var popupLoaded = false;
