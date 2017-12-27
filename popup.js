@@ -6,13 +6,13 @@
 
 function log(obj){
   // toggle for debug
-  // console.log(obj);
+  console.log(obj);
 }
 
 var popupLoaded = false;
 function setShortcutPreference(value) {
  log("Saving pref: " + value)
- browser.storage.sync.set({
+ browser.storage.local.set({
    noShortcut: value
  }, function(){
    setTimeout(function(){
@@ -21,7 +21,7 @@ function setShortcutPreference(value) {
  });
 }
 function getShortcutPreference(){
- browser.storage.sync.get({
+ browser.storage.local.get({
    noShortcut: false
  }, function(items){
    document.getElementById('shortcuts').checked = !items.noShortcut;
@@ -31,10 +31,10 @@ function getShortcutPreference(){
 }
 
 function translateValue(elementId, messageName) {
- document.getElementById(elementId).value = browser.i18n.getMessage(messageName);
+ document.getElementById(elementId).value = chrome.i18n.getMessage(messageName);
 }
 function translateText(elementId, messageName){
- document.getElementById(elementId).innerText = browser.i18n.getMessage(messageName);
+ document.getElementById(elementId).innerText = chrome.i18n.getMessage(messageName);
 }
 
 function setDisableShortcut(disable = false){
@@ -43,28 +43,28 @@ function setDisableShortcut(disable = false){
   // Immediately disable the shortcut if the user saved this choice
   if(disable){
     log('Disable directly')
-    browser.tabs.executeScript({
+    chrome.tabs.executeScript({
       code: 'var shortcutsOn = "false";'
     }, function() {
-        browser.tabs.executeScript({file: 'addBold.js'});
+        chrome.tabs.executeScript({file: 'addBold.js'});
     });
   }else if ( document.getElementById('shortcuts').checked == false ){
 
     // Enable shortcut
-    browser.tabs.executeScript({
+    chrome.tabs.executeScript({
       code: 'var shortcutsOn = "false";'
     }, function() {
-        browser.tabs.executeScript({file: 'addBold.js'});
+        chrome.tabs.executeScript({file: 'addBold.js'});
     });
 
     // Save pref in browser
     setShortcutPreference(true);
   }else{
     // Disable shortcuts
-    browser.tabs.executeScript({
+    chrome.tabs.executeScript({
       code: 'var shortcutsOn = "true";'
     }, function() {
-        browser.tabs.executeScript({file: 'addBold.js'});
+        chrome.tabs.executeScript({file: 'addBold.js'});
     });
 
     // Save pref in browser
@@ -75,35 +75,35 @@ function setDisableShortcut(disable = false){
 document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('subtitles').addEventListener('click', () => {
-    browser.tabs.executeScript({
+    chrome.tabs.executeScript({
         code: 'var method = "subtitles";'
     }, function() {
-        browser.tabs.executeScript({file: 'addBold.js'});
+        chrome.tabs.executeScript({file: 'addBold.js'});
     });
   });
 
   document.getElementById('interview').addEventListener('click', () => {
-    browser.tabs.executeScript({
+    chrome.tabs.executeScript({
         code: 'var method = "interview";'
     }, function() {
-        browser.tabs.executeScript({file: 'addBold.js'});
+        chrome.tabs.executeScript({file: 'addBold.js'});
     });
   });
 
   document.getElementById('factsheet').addEventListener('click', () => {
-    browser.tabs.executeScript({
+    chrome.tabs.executeScript({
         code: 'var method = "factsheet";'
     }, function() {
-        browser.tabs.executeScript({file: 'addBold.js'});
+        chrome.tabs.executeScript({file: 'addBold.js'});
     });
   });
 
   // Undo method
   document.getElementById('undo').addEventListener('click', () => {
-    browser.tabs.executeScript({
+    chrome.tabs.executeScript({
         code: 'var method = "undo";'
     }, function() {
-        browser.tabs.executeScript({file: 'addBold.js'});
+        chrome.tabs.executeScript({file: 'addBold.js'});
     });
   });
 

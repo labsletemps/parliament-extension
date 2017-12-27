@@ -1,6 +1,6 @@
 function log(obj){
   // toggle for debug
-  // console.log(obj);
+  console.log(obj);
 }
 
 /**
@@ -189,7 +189,7 @@ var eventListenerAdded = false;
 
 // To prevent an error when the extension loads at first.
 // We use “var” instead of “let” so it may be overwritten.
-browser.storage.sync.get({
+browser.storage.local.get({
  noShortcut: false
 }, function(items){
   log(items);
