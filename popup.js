@@ -4,9 +4,14 @@
  * @param {string} method The method applied to select characters to bolden.
  */
 
+function log(obj){
+  // toggle for debug
+  // console.log(obj);
+}
+
 var popupLoaded = false;
 function setShortcutPreference(value) {
- console.log("Saving pref: " + value)
+ log("Saving pref: " + value)
  chrome.storage.sync.set({
    noShortcut: value
  }, function(){
@@ -37,7 +42,7 @@ function setDisableShortcut(disable = false){
 
   // Immediately disable the shortcut if the user saved this choice
   if(disable){
-    console.log('Disable directly')
+    log('Disable directly')
     chrome.tabs.executeScript({
       code: 'var shortcutsOn = "false";'
     }, function() {
@@ -133,13 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Get the user’s choice using localStorage
   // otherwise toggling the extension or changing tab loses his choice
 
-  console.log(getShortcutPreference());
+  log(getShortcutPreference());
   /*
   if(getShortcutPreference() == "true"){
     document.getElementById('shortcuts').checked = false;
     setShortcutAvailability(true);
   }else{
-    console.log("No shortcuts is false.")
+    log("No shortcuts is false.")
     setShortcutAvailability();
   }*/
 

@@ -1,3 +1,8 @@
+function log(obj){
+  // toggle for debug
+  // console.log(obj);
+}
+
 /**
  *  This function removes wrong line breaks.
  *  It searches for each line beginning with a small letter.
@@ -129,19 +134,19 @@ var elementFound = false;
 var activeElement = document.activeElement;
 if(activeElement){
   if(activeElement.tagName == 'TEXTAREA'){
-    console.log('Active element is a textarea.')
+    log('Active element is a textarea.')
     elementFound = true;
   }
 }
 if(!elementFound){
   let activeElement = document.getElementById('bodytext');
   if(activeElement){
-    console.log('Textarea found using id “bodytext”.')
+    log('Textarea found using id “bodytext”.')
   }else{
     let taList = document.getElementsByTagName("TEXTAREA");
     if (taList.length > 0){
       activeElement = taList[0];
-      console.log('First textarea selected.')
+      log('First textarea selected.')
     }
   }
 }
@@ -187,10 +192,10 @@ var eventListenerAdded = false;
 chrome.storage.sync.get({
  noShortcut: false
 }, function(items){
-  console.log(items);
+  log(items);
   noShortcut = items.noShortcut;
 
- console.log("No shortcut has value (addbold): " + noShortcut);
+ log("No shortcut has value (addbold): " + noShortcut);
  if(noShortcut){
    shortcutsOn = false;
  }
