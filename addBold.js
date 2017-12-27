@@ -189,7 +189,7 @@ var eventListenerAdded = false;
 
 // To prevent an error when the extension loads at first.
 // We use “var” instead of “let” so it may be overwritten.
-chrome.storage.sync.get({
+browser.storage.sync.get({
  noShortcut: false
 }, function(items){
   log(items);
