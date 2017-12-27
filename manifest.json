@@ -37,11 +37,5 @@
     "activeTab",
     "tabs",
     "storage"
-  ],
-  "applications": {
-    "gecko": {
-      "id": "bold@paulronga.ch",
-      "strict_min_version": "48.0"
-    }
-  }
+  ]
 }
