@@ -131,11 +131,13 @@ function factsheet(textArea){
 
 // We use “var” instead of “let” so the variable may be overwritten when the script reloads.
 var elementFound = false;
+var textareaActive = false;
 var activeElement = document.activeElement;
 if(activeElement){
   if(activeElement.tagName == 'TEXTAREA'){
     log('Active element is a textarea.')
     elementFound = true;
+    textareaActive = true;
   }
 }
 if(!elementFound){
@@ -216,6 +218,10 @@ if (typeof shortcutsOn == 'undefined') {
  * All this to be able to remove the eventListener
  */
 function applyShortcut(e){
+  if(!textareaActive){
+    // If no textarea is focused
+    return;
+  }
   if(e.ctrlKey || e.metaKey){
     // If alt or shift modifier: exit here
     if(e.altKey || e.shiftKey){
