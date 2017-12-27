@@ -57,6 +57,9 @@
   #container span{
     margin-left: 4px;
   }
+  #shortcutsTick{
+    display: none;
+  }
   </style>
   <script src="popup.js"></script>
 </head>
@@ -73,6 +76,7 @@
       <p id="shortcuts_p">
         <input id="shortcuts" class="form-check-input" type="checkbox" value="" checked>
         <label for="shortcuts" id="shortcutsLabel" checked>Raccourcis ctrl-b (gras), ctrl-i (italique) et ctrl-k (lien)</label>
+        <span id="shortcutsTick">✓</span>
       </p>
       <p id="extensionShortcutLabel">Raccourci pour ouvrir ou fermer l’extension: ctrl-shift-E.</p>
     </div>
