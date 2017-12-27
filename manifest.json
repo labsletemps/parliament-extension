@@ -37,11 +37,5 @@
     "activeTab",
     "tabs",
     "storage"
-  ],
-  "applications": {
-    "gecko": {
-      "id": "b70966ce-1fb4-4297-bfe8-69cb018cdd68",
-      "strict_min_version": "48.0"
-    }
-  }
+  ]
 }
