@@ -4,11 +4,16 @@ function log(obj){
 }
 
 /**
- *  This function removes wrong line breaks.
+ *  Disabled function. Removes wrong line breaks.
  *  It searches for each line beginning with a small letter.
  *  @param {object} textArea The textarea to edit.
  */
 function eraseFalseBreaks(textArea){
+  return;
+
+  // TODO: set an option to enable this.
+  // Disabled because it may have unwanted side-effects
+
   let textAreaRaw = textArea.value;
   textAreaRaw = textAreaRaw.replace(/\n([a-z])/g, " $1");
   textArea.value = textAreaRaw;
