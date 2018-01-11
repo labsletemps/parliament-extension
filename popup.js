@@ -12,7 +12,7 @@ function log(obj){
 var popupLoaded = false;
 function setShortcutPreference(value) {
  log("Saving pref: " + value)
- browser.storage.local.set({
+ chrome.storage.local.set({
    noShortcut: value
  }, function(){
    setTimeout(function(){
@@ -21,7 +21,7 @@ function setShortcutPreference(value) {
  });
 }
 function getShortcutPreference(){
- browser.storage.local.get({
+ chrome.storage.local.get({
    noShortcut: false
  }, function(items){
    document.getElementById('shortcuts').checked = !items.noShortcut;

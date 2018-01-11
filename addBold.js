@@ -196,7 +196,7 @@ var eventListenerAdded = false;
 
 // To prevent an error when the extension loads at first.
 // We use “var” instead of “let” so it may be overwritten.
-browser.storage.local.get({
+chrome.storage.local.get({
  noShortcut: false
 }, function(items){
   log(items);
