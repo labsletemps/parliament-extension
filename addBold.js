@@ -279,6 +279,8 @@ if (typeof method == 'undefined') {
   var method = 'not set';
 }
 if(activeElement.value != ''){
+  log('Method is')
+  log(method)
   switch(method) {
     case 'subtitles':
       subtitles(activeElement);
@@ -290,7 +292,14 @@ if(activeElement.value != ''){
       factsheet(activeElement);
       break;
     case 'undo':
+      log('undo');
       activeElement.value = localStorage.getItem('initialText');
       break;
+    default:
+      break;
   }
+  // reset method -- quick dirty fix, need to clean it
+  method = 'not set';
+}else{
+  method = 'not set';
 }
