@@ -3,7 +3,7 @@
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
-  "version": "0.7",
+  "version": "0.8",
   "icons": {  "16": "icon16.png",
               "32": "icon32.png",
               "64": "icon64.png",
@@ -20,8 +20,7 @@
       ],
       "js": [
         "addBold.js"
-      ],
-      "run_at": "document_end"
+      ]
     }
   ],
   "commands": {
