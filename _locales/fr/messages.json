@@ -20,8 +20,13 @@
   },
 
   "instructions":{
-    "message": "Mettre le curseur dans le texte à traiter puis choisir l’une des méthodes :",
+    "message": "Mettre le curseur dans le texte à traiter avant d’ouvrir l’extension puis choisir l’une des trois méthodes ci-dessous. Le texte sélectionné est",
     "description": "Instructions above the buttons."
+  },
+
+  "sampleHighlight":{
+    "message": "encadré en bleu",
+    "description": "Highlighted text."
   },
 
   "subtitlesButton": {

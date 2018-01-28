@@ -15,11 +15,19 @@
   h1 {
     font-size: 15px;
   }
-
+  .highlighted{
+    border: 3px dashed #1c55a0;
+    margin: 2px;
+    padding: 1px;
+    display: inline-block;
+  }
   #container {
     align-items: center;
     display: flex;
     justify-content: space-between;
+  }
+  .instructionsContainer{
+    white-space: normal;
   }
   /* bootstrap buttons */
   .btn{
@@ -66,7 +74,9 @@
 
 <body>
   <h1 id="header">Ajout automatique du gras</h1>
-  <p id="instructions">Mettre le curseur dans le texte à traiter puis choisir l’une des méthodes :</p>
+  <p class="instructionsContainer"><span id="instructions">Mettre le curseur dans le texte à traiter avant d’ouvrir l’extension puis choisir l’une des trois méthodes ci-dessous.
+    Le texte sélectionné est</span> <span id="sampleHighlight" class="highlighted">encadré en bleu</span>.
+  </p>
   <div id="container">
     <div class="form-group">
       <p><input id="subtitles" class="btn btn-primary" type="button" value="Intertitres"> <span id="subtitlesLabel">Critère: chaque ligne sans point est passée en gras.</span></p>

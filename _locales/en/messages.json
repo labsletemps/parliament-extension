@@ -20,7 +20,12 @@
   },
 
   "instructions":{
-    "message": "Focus the textarea then pickup a method :",
+    "message": "Focus the textarea before opening the extension, then pickup a method. Focused text is ",
+    "description": "Instructions above the buttons."
+  },
+
+  "sampleHighlight":{
+    "message": "has a blue dashed border",
     "description": "Instructions above the buttons."
   },
 
