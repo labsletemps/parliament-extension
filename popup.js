@@ -73,6 +73,9 @@ function setDisableShortcut(disable = false){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  chrome.tabs.executeScript({
+    code: 'var method = "highlight";'
+  });
 
   document.getElementById('subtitles').addEventListener('click', () => {
     chrome.tabs.executeScript({
@@ -122,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   translateValue('undo', 'undoButton');
   translateText('header', 'header');
   translateText('instructions', 'instructions');
+  translateText('sampleHighlight', 'sampleHighlight');
   translateText('subtitlesLabel', 'subtitlesLabel');
   translateText('interviewLabel', 'interviewLabel');
   translateText('factsheetLabel', 'factsheetLabel');
@@ -139,14 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // otherwise toggling the extension or changing tab loses his choice
 
   log(getShortcutPreference());
-  /*
-  if(getShortcutPreference() == "true"){
-    document.getElementById('shortcuts').checked = false;
-    setShortcutAvailability(true);
-  }else{
-    log("No shortcuts is false.")
-    setShortcutAvailability();
-  }*/
 
   popupLoaded = true;
 
