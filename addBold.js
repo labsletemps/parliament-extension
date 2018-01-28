@@ -1,3 +1,19 @@
+/**
+ Globals
+*/
+
+var elementFound = false;
+var textareaActive = false;
+var activeElement = document.activeElement;
+var macos = navigator.appVersion.indexOf("Mac") != -1;
+var eventListener;
+var eventListenerAdded = false;
+var tagTimeout = {
+  'b': false,
+  'i': false,
+  'a': false
+}
+
 function log(obj){
   // toggle for debug
   // console.log(obj);
@@ -11,7 +27,7 @@ function log(obj){
 function eraseFalseBreaks(textArea){
   return;
 
-  // TODO: set an option to enable this.
+  // TODO: add an option to enable this.
   // Disabled because it may have unwanted side-effects
 
   let textAreaRaw = textArea.value;
@@ -135,27 +151,35 @@ function factsheet(textArea){
  */
 
 // We use “var” instead of “let” so the variable may be overwritten when the script reloads.
-var elementFound = false;
-var textareaActive = false;
-var activeElement = document.activeElement;
-if(activeElement){
-  if(activeElement.tagName == 'TEXTAREA'){
-    log('Active element is a textarea.')
-    elementFound = true;
-    textareaActive = true;
-  }
-}
-if(!elementFound){
-  let activeElement = document.getElementById('bodytext');
-  if(activeElement){
-    log('Textarea found using id “bodytext”.')
+
+
+
+function highlightTextarea(textArea){
+  // remove previous highlighted element
+  let highlighted = document.querySelector('.addBoldHighlighted');
+  if(highlighted){
+    log('Removing previous highlight')
+    highlighted.style.border = '1px solid #1c55a0';
+    highlighted.classList.remove('addBoldHighlighted');
   }else{
-    let taList = document.getElementsByTagName("TEXTAREA");
-    if (taList.length > 0){
-      activeElement = taList[0];
-      log('First textarea selected.')
-    }
+    log('No previous highlight found')
   }
+
+  textArea.classList.add('addBoldHighlighted');
+  textArea.style.border = '3px dashed #1c55a0';
+}
+
+/**
+  100ms timeout to prevent duplicate action
+*/
+function getTagTimeout(tagName){
+  return tagTimeout[tagName];
+}
+function setTagTimeout(tagName){
+  tagTimeout[tagName] = true;
+  setTimeout(function(){
+    tagTimeout[tagName] = false;
+  }, 100);
 }
 
 /**
@@ -191,18 +215,14 @@ function addTag(startTag, endTag, textArea){
   textArea.scrollLeft = scrollLeft;
 }
 
-var macos = navigator.appVersion.indexOf("Mac") != -1;
-var eventListenerAdded = false;
 
 // To prevent an error when the extension loads at first.
 // We use “var” instead of “let” so it may be overwritten.
 chrome.storage.local.get({
  noShortcut: false
 }, function(items){
-  log(items);
   noShortcut = items.noShortcut;
 
- log("No shortcut has value (addbold): " + noShortcut);
  if(noShortcut){
    shortcutsOn = false;
  }
@@ -224,6 +244,7 @@ if (typeof shortcutsOn == 'undefined') {
  */
 function applyShortcut(e){
   if(!textareaActive){
+    log('NO active ta')
     // If no textarea is focused
     return;
   }
@@ -237,15 +258,24 @@ function applyShortcut(e){
       switch(e.key){
         case 'b':
           e.preventDefault();
-          addTag('<b>', '</b>', document.activeElement);
+          if(!getTagTimeout('b')){
+            setTagTimeout('b');
+            addTag('<b>', '</b>', document.activeElement);
+          }
           break;
         case 'i':
           e.preventDefault();
-          addTag('<i>', '</i>', document.activeElement);
+          if(!getTagTimeout('i')){
+            setTagTimeout('i');
+            addTag('<i>', '</i>', document.activeElement);
+          }
           break;
         case 'k':
           e.preventDefault();
-          addTag('<a href="">', '</a>', document.activeElement);
+          if(!getTagTimeout('k')){
+            setTagTimeout('k');
+            addTag('<a href="https://www.example.org">', '</a>', document.activeElement);
+          }
           break;
         default:
           break;
@@ -263,10 +293,33 @@ function sendShortcut(e){
 if(shortcutsOn && !eventListenerAdded){
   // Avoid adding multiple listeners
   document.addEventListener('keydown', sendShortcut);
+  //log(getEventListeners(document));
   eventListenerAdded = true;
 }else{
   // disable shortcuts when the script is already running
   document.removeEventListener('keydown', sendShortcut);
+  log('Removing event listener')
+}
+
+if(activeElement){
+  if(activeElement.tagName == 'TEXTAREA'){
+    log('Active element is a textarea.')
+    elementFound = true;
+    textareaActive = true;
+    // highlightTextarea(activeElement);
+  }
+}
+if(!elementFound){
+  let activeElement = document.getElementById('bodytext');
+  if(activeElement){
+    log('Textarea found using id “bodytext”.')
+  }else{
+    let taList = document.getElementsByTagName("TEXTAREA");
+    if (taList.length > 0){
+      activeElement = taList[0];
+      log('First textarea selected.')
+    }
+  }
 }
 
 /**
@@ -278,28 +331,33 @@ if (typeof method == 'undefined') {
   // We use “var” instead of “let” so it may be overwritten.
   var method = 'not set';
 }
-if(activeElement.value != ''){
-  log('Method is')
-  log(method)
-  switch(method) {
-    case 'subtitles':
-      subtitles(activeElement);
-      break;
-    case 'interview':
-      interview(activeElement);
-      break;
-    case 'factsheet':
-      factsheet(activeElement);
-      break;
-    case 'undo':
-      log('undo');
-      activeElement.value = localStorage.getItem('initialText');
-      break;
-    default:
-      break;
+if(activeElement){
+  if(method == 'highlight'){
+    highlightTextarea(activeElement);
+  }else if(activeElement.value != ''){
+    log('Method is')
+    log(method)
+    switch(method) {
+      case 'highlight':
+        highlightTextarea(activeElement);
+        break;
+      case 'subtitles':
+        subtitles(activeElement);
+        break;
+      case 'interview':
+        interview(activeElement);
+        break;
+      case 'factsheet':
+        factsheet(activeElement);
+        break;
+      case 'undo':
+        log('undo');
+        activeElement.value = localStorage.getItem('initialText');
+        break;
+      default:
+        break;
+    }
   }
-  // reset method -- quick dirty fix, need to clean it
-  method = 'not set';
-}else{
-  method = 'not set';
 }
+// reset method -- quick dirty fix
+method = 'not set';
