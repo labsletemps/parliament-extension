@@ -20,7 +20,7 @@
   },
 
   "instructions":{
-    "message": "Focus the textarea before opening the extension, then pickup a method. Focused text is ",
+    "message": "Focus the textarea before opening the extension, then pickup a method. Focused text",
     "description": "Instructions above the buttons."
   },
 
@@ -60,7 +60,7 @@
   },
 
   "factsheetLabel": {
-    "message": "Each beginning of paragraph gets bold until the “:”",
+    "message": "Each beginning of paragraph gets bold until the “:”.",
     "description": "Factsheet label"
   },
 
