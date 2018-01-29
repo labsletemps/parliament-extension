@@ -306,18 +306,23 @@ if(activeElement){
     log('Active element is a textarea.')
     elementFound = true;
     textareaActive = true;
-    // highlightTextarea(activeElement);
+  }else if((activeElement.tagName == 'INPUT')
+    && (activeElement.type == 'text')){
+      elementFound = true;
+      textareaActive = true;
   }
 }
 if(!elementFound){
-  let activeElement = document.getElementById('bodytext');
+  activeElement = document.getElementById('bodytext');
   if(activeElement){
     log('Textarea found using id “bodytext”.')
+    elementFound = true;
   }else{
     let taList = document.getElementsByTagName("TEXTAREA");
     if (taList.length > 0){
       activeElement = taList[0];
       log('First textarea selected.')
+      elementFound = true;
     }
   }
 }
@@ -331,7 +336,7 @@ if (typeof method == 'undefined') {
   // We use “var” instead of “let” so it may be overwritten.
   var method = 'not set';
 }
-if(activeElement){
+if(activeElement && elementFound){
   if(method == 'highlight'){
     highlightTextarea(activeElement);
   }else if(activeElement.value != ''){
