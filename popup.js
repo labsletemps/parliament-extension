@@ -80,9 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // i18n
   translateText('header', 'header');
   translateText('instructions', 'instructions');
-  translateText('subtitlesLabel', 'subtitlesLabel');
-  translateText('interviewLabel', 'interviewLabel');
-  translateText('factsheetLabel', 'factsheetLabel');
 
   if(navigator.appVersion.indexOf("Mac") != -1){
     // label for mac with "cmd" character
