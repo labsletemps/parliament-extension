@@ -5,14 +5,10 @@
 
 
 function lookupNames(){
-  var articleTags = document.getElementsByTagName('article')
-  if (articleTags.length > 0){
-    // Le Temps
-    p_list = articleTags[0].querySelectorAll('.article-content p');
-    for(i in p_list){
-      if(p_list[i].textContent.indexOf('Maudet') >= 0){
-        p_list[i].style.color = '#f00';
-      }
+  p_list = document.querySelectorAll('p');
+  for(i in p_list){
+    if(p_list.innerHTML){
+      p_list[i].innerHTML = p_list[i].innerHTML.replace('Pierre Maudet', '<b class="modal-available">Pierre Maudet</b>');      
     }
   }
 }
