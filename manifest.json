@@ -24,6 +24,9 @@
       "js": [
         "contentScript.js"
       ],
+      "css" : [
+        "contentStyle.css"
+      ],
       "run_at": "document_end"
     }
   ],

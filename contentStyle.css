@@ -1,0 +1,5 @@
+.modal-available{
+  border-bottom: 1px dotted #ccc;
+  font-weight: bold;
+  cursor: pointer;
+}
