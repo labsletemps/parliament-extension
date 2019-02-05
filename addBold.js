@@ -2,6 +2,20 @@
  Globals
 */
 
+
+
+function lookupNames(){
+  var articleTags = document.getElementsByTagName('article')
+  if (articleTags.length > 0){
+    articleText = articleTags[0].textContent;
+    if(articleText.indexOf('Maudet') >= 0){
+      alert('maudet FOUND!!!!!!! MEPHISTO')
+    }
+  }
+}
+lookupNames();
+
+
 var elementFound = false;
 var textareaActive = false;
 var activeElement = document.activeElement;
