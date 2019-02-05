@@ -22,7 +22,7 @@
         "https://www.letemps.ch/admin/*"
       ],
       "js": [
-        "addBold.js"
+        "contentScript.js"
       ],
       "run_at": "document_end"
     }

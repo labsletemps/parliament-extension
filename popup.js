@@ -73,59 +73,13 @@ function setDisableShortcut(disable = false){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  chrome.tabs.executeScript({
+  /* chrome.tabs.executeScript({
     code: 'var method = "highlight";'
-  });
-
-  document.getElementById('subtitles').addEventListener('click', () => {
-    chrome.tabs.executeScript({
-        code: 'var method = "subtitles";'
-    }, function() {
-        chrome.tabs.executeScript({file: 'addBold.js'});
-    });
-  });
-
-  document.getElementById('interview').addEventListener('click', () => {
-    chrome.tabs.executeScript({
-        code: 'var method = "interview";'
-    }, function() {
-        chrome.tabs.executeScript({file: 'addBold.js'});
-    });
-  });
-
-  document.getElementById('factsheet').addEventListener('click', () => {
-    chrome.tabs.executeScript({
-        code: 'var method = "factsheet";'
-    }, function() {
-        chrome.tabs.executeScript({file: 'addBold.js'});
-    });
-  });
-
-  // Undo method
-  document.getElementById('undo').addEventListener('click', () => {
-    chrome.tabs.executeScript({
-        code: 'var method = "undo";'
-    }, function() {
-        chrome.tabs.executeScript({file: 'addBold.js'});
-    });
-  });
-
-  if(!popupLoaded){
-    document.getElementById('shortcuts_p').addEventListener('click', () => {
-      setDisableShortcut();
-    });
-  }
-
-  // TODO maybe add the functions for quotes ("" to «»)
+  });*/
 
   // i18n
-  translateValue("interview", "interviewButton");
-  translateValue("subtitles", "subtitlesButton");
-  translateValue("factsheet", "factsheetButton")
-  translateValue('undo', 'undoButton');
   translateText('header', 'header');
   translateText('instructions', 'instructions');
-  translateText('sampleHighlight', 'sampleHighlight');
   translateText('subtitlesLabel', 'subtitlesLabel');
   translateText('interviewLabel', 'interviewLabel');
   translateText('factsheetLabel', 'factsheetLabel');
