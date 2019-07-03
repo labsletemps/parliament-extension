@@ -13,15 +13,23 @@ function getDataWho(name){
   return name.replace(' ', '-').toLowerCase();
 }
 
-function getParti(data){
+function getParty(data){
   if('partyMembership' in data){
     if ('party' in data['partyMembership']){
       if ('abbr' in data['partyMembership']['party']){
-        return data['partyMembership']['abbr']
+        return data['partyMembership']['party']['abbr']
       }
     }
   }
+  console.log('party not found')
   return '';
+}
+
+function getVia(via){
+  console.log(via);
+  if(via.length > 0){
+    return "(via l’invité: " + via[0]['to']['name'] + ')';
+  }
 }
 
 function getIndividualData(name){
@@ -35,6 +43,7 @@ function getIndividualData(name){
   return data;
 }
 
+// TODO hoster sur labs.letemps.ch
 function fetchParliamentIds(){
   $.ajax({
     method: "POST",
@@ -104,21 +113,21 @@ function eventHandler(who){
   }else{
     console.log('Data found for ' + currentPeople[who]);
   }
-  var parti = getParti(individualData);
+  var party = getParty(individualData);
 
   function addInfo(item){
     return '<p class="individual-info">' + item + '</p>';
   }
   function addListItem(item){
-    return '<p class="individual-list-item">' + item + '</p>';
+    return '<li class="individual-list-item">' + item + '</li>';
   }
+  // TODO: templating
   var content = '<h3>' + individualData['name'] + '</h3>';
   content += '<img class="individual-img" src="' + individualData['portrait'] + '" alt="' + individualData['name'] + '">';
+  content += addInfo(chrome.i18n.getMessage('tipParty') + ': ' + party);
   content += addInfo(individualData['councilTitle']);
   content += addInfo(individualData['canton']);
-  if(parti) {
-    content += addInfo(parti);
-  }
+  // content += addInfo('Profession: ' + individualData['occupation']);
 
   tippy('.modal-available.' + who, {
     content: content,
@@ -141,16 +150,36 @@ function eventHandler(who){
     updateDuration: 0,
 
     onShow(instance) {
+
+      // inner func
+      function displayData(data){
+        console.log(data);
+
+        if(!instance.loaded){
+          content += addInfo('<b>' + chrome.i18n.getMessage('tipInterests') + '</b>')
+
+
+          data['data']['getParliamentarian']['connections'].forEach(function(item){
+            var via = getVia(item['vias']);
+            if(!via){
+              content += addListItem(item['to']['name'] + ', ' + item['function']);
+            }else{
+              console.log(via)
+              // TODO
+            }
+          });
+          content += '</ol>';
+          instance.setContent(content);
+        }
+        instance.loaded = true;
+      }
+
       // TODO check if local version up to date
       var localIndividualData = localStorage.getItem(who);
 
       if(localIndividualData){
         data = JSON.parse(localIndividualData);
-        content += addInfo('<b>Liens d’intérêt</b>')
-        data['data']['getParliamentarian']['connections'].forEach(function(item){
-          content += addInfo(item['to']['name'])
-        });
-        instance.setContent(content);
+        displayData(data);
 
       }else{
         var load = {"query":
@@ -164,17 +193,12 @@ function eventHandler(who){
           contentType: "application/json",
           data: JSON.stringify(load),
           success : function(data, statut){ // code_html contient le HTML renvoyé
-            console.log('done')
-            console.log(data);
+            console.log('graphql query done')
             localStorage.setItem(who, JSON.stringify(data));
-            content += addInfo('<b>Liens d’intérêt</b>')
-            data['data']['getParliamentarian']['connections'].forEach(function(item){
-              content += addInfo(item['to']['name'])
-            })
-            instance.setContent(content);
+            displayData(data);
           },
           error : function() {
-            console.log('error')
+            console.log('error when querying lobbywatch')
           }
         });
 
