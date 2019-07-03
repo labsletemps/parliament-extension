@@ -1,11 +1,11 @@
 {
   "extensionName": {
-    "message": "Les lobbies du parlement",
+    "message": "Die Lobbies des Parlamentes",
     "description": "Name of the extension."
   },
 
   "extensionDescription": {
-    "message": "Cette affiche les liens d’intérêt des parlementaires mentionnés sur le Web.",
+    "message": "Dieses Addon zeigt, …",
     "description": "Description of the extension."
   },
 
