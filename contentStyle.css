@@ -15,6 +15,9 @@ p.individual-info{
   font-size: 1.2em;
   margin: 0;
 }
+li.individual-list-item{
+  text-align: left;
+}
 
 /*
 MDL
