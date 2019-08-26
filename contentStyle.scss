@@ -1,51 +1,17 @@
-.person{
-  background: white;
-  // colonne de gauche
-  .person-id{
-    // float: left; -> fait bugger, a voir
-    text-align: left;
+$black:#000;
+$white:#fff;
 
-    .person-id-picture{
-      // juste pour tester
-      height: 100px;
-      width: 80px;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: none;
-      float: left;
-      margin: 0 2em 1em 0;
-    }
+$blue: #4682b4;
 
-    .person-id-name{
-      font-size: 2em;
-      font-weight: bold;
-      margin: .5em 0;
-    }
-    .person-id-position{
+$red-lt: #b80021;
+$red-lt-darker: #930025;
 
-    }
-    .person-id-canton{
+@import 'reset.scss';
 
-    }
-    .person-id-parti{
-
-    }
-  }
-
-  // colonne principale
-  .person-links{
-    border-top: 1px solid #ccc;
-    clear: left;
-    // font-size: 1em;
-    text-align: left;
-
-    // float: left;
-    h3.person-links-title{
-      font-size: 1.5em;
-    }
-  }
-
-}
+/*
+style de https://unpkg.com/tippy.js@3/dist/themes/light-border.css
+voir https://atomiks.github.io/tippyjs/themes/
+*/
 
 // Le nom d’un député, souligné en traitillé
 .modal-available{
@@ -55,18 +21,103 @@
   /* background: #7bb7e0; */
 }
 
-img.individual-img{
-  max-height: 150px;
-  width: auto !important;
-  margin: auto;
-}
+.tippy-tooltip.light-border-theme {
+  max-width: 550px;
+  padding: 0;
 
-p.individual-info{
-  font-size: 1.2em;
-  margin: 0;
-}
-li.individual-list-item{
-  text-align: left;
+  background-color: #fff;
+  background-clip: padding-box;
+
+  border: 1px solid rgba(0, 8, 16, .15);
+  border-radius: 3px;
+
+  box-shadow: 0 3px 14px -.5px rgba(0, 8, 16, .2);
+
+  color: #26323d;
+  font-size: 16px;
+
+  .person{
+    max-height: 400px;
+    overflow: hidden;
+    background: white;
+    position: relative;
+
+    // bloc du haut
+    .person-id{
+      text-align: left;
+
+      .person-id-picture{
+        // juste pour tester
+        height: 100px;
+        width: 80px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: none;
+        float: left;
+        margin: 0 2em 1em 1em;
+      }
+
+      div{
+        color: $blue;
+
+        &.person-id-name{
+          font-size: 1.4em;
+          font-weight: bold;
+          margin: 1em 0 .5em 0;
+        }
+      }
+
+      .person-id-position, .person-id-canton, .person-id-parti{
+        display: inline-block;
+      }
+      .person-id-position:after, .person-id-canton:after{
+        content: ' |'
+      }
+      .person-lobbywatch-url a, .person-lobbywatch-url a:visited{
+        color: $blue;
+      }
+    }
+
+    // bloc principal
+    .person-links{
+      border-top: 1px solid #ccc;
+      clear: left;
+      // font-size: 1em;
+      text-align: left;
+
+      // float: left;
+      h3.person-links-title{
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: .5em;
+      }
+
+      ul.person-links-list{
+
+        li{
+          margin: 0 .5em;
+          list-style-type: none !important;
+          &:before{ /* handelszeitung */
+            content: none;
+          }
+          &.list-header{
+            font-weight: bold;
+            margin-top: .5em;
+          }
+        }
+      }
+    }
+
+    // bouton "display all"
+    .show-more{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #eee;
+    }
+  }
+
 }
 
 /*
@@ -84,146 +135,129 @@ MDL
   overflow: hidden;
 }
 
-/*
-  style de https://unpkg.com/tippy.js@3/dist/themes/light-border.css
-  voir https://atomiks.github.io/tippyjs/themes/
-*/
-
-.tippy-tooltip.light-border-theme {
-    max-width: 550px;
-    max-height: 400px;
-    overflow: hidden;
-    background-color: #fff;
-    background-clip: padding-box;
-    // border: 1px solid rgba(0, 8, 16, .15);
-    color: #26323d;
-    box-shadow: 0 3px 14px -.5px rgba(0, 8, 16, .08);
-    font-size: 14px;
-}
-
 .tippy-tooltip.light-border-theme .tippy-backdrop {
-    background-color: #fff
+  background-color: #fff
 }
 
 .tippy-tooltip.light-border-theme .tippy-arrow:after,
 .tippy-tooltip.light-border-theme .tippy-arrow:before,
 .tippy-tooltip.light-border-theme .tippy-roundarrow:after,
 .tippy-tooltip.light-border-theme .tippy-roundarrow:before {
-    content: "";
-    position: absolute;
-    z-index: -1
+  content: "";
+  position: absolute;
+  z-index: -1
 }
 
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-roundarrow:after {
-    top: 1px;
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg)
+  top: 1px;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
 }
 
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-arrow {
-    border-top-color: #fff
+  border-top-color: #fff
 }
 
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-arrow:after {
-    border-top: 7px solid #fff;
-    top: -7px
+  border-top: 7px solid #fff;
+  top: -7px
 }
 
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-arrow:before {
-    border-top: 7px solid rgba(0, 8, 16, .2);
-    bottom: -1px
+  border-top: 7px solid rgba(0, 8, 16, .2);
+  bottom: -1px
 }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-roundarrow:after {
-    top: -1px
+  top: -1px
 }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-arrow {
-    border-bottom-color: #fff
+  border-bottom-color: #fff
 }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-arrow:after {
-    border-bottom: 7px solid #fff;
-    bottom: -7px
+  border-bottom: 7px solid #fff;
+  bottom: -7px
 }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-arrow:before {
-    border-bottom: 7px solid rgba(0, 8, 16, .2);
-    bottom: -6px
+  border-bottom: 7px solid rgba(0, 8, 16, .2);
+  bottom: -6px
 }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-roundarrow:after {
-    left: 1px;
-    top: 0;
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg)
+  left: 1px;
+  top: 0;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg)
 }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-arrow {
-    border-left-color: #fff
+  border-left-color: #fff
 }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-arrow:after {
-    border-left: 7px solid #fff;
-    left: -7px
+  border-left: 7px solid #fff;
+  left: -7px
 }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-arrow:before {
-    border-left: 7px solid rgba(0, 8, 16, .2);
-    left: -6px
+  border-left: 7px solid rgba(0, 8, 16, .2);
+  left: -6px
 }
 
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-roundarrow:after {
-    left: -1px;
-    top: 0;
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg)
+  left: -1px;
+  top: 0;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg)
 }
 
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-arrow {
-    border-right-color: #fff
+  border-right-color: #fff
 }
 
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-arrow:after {
-    border-right: 7px solid #fff;
-    right: -7px
+  border-right: 7px solid #fff;
+  right: -7px
 }
 
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-arrow:before {
-    border-right: 7px solid rgba(0, 8, 16, .2);
-    right: -6px
+  border-right: 7px solid rgba(0, 8, 16, .2);
+  right: -6px
 }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-arrow,
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-roundarrow,
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-arrow,
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-roundarrow {
-    -webkit-transform: translateX(-1px);
-    transform: translateX(-1px)
+  -webkit-transform: translateX(-1px);
+  transform: translateX(-1px)
 }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-arrow:after,
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-arrow:before,
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-arrow:after,
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-arrow:before {
-    left: -7px;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent
+  left: -7px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent
 }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-arrow,
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-roundarrow,
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-arrow,
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-roundarrow {
-    -webkit-transform: translateY(-1px);
-    transform: translateY(-1px)
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px)
 }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-arrow:after,
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-arrow:before,
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-arrow:after,
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-arrow:before {
-    top: -7px;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent
+  top: -7px;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent
 }

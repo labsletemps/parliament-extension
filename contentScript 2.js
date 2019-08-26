@@ -135,11 +135,8 @@ function eventHandler(who){
   function addInfo(item){
     return '<p class="individual-info">' + item + '</p>';
   }
-  function addListHeader(item){
-    return '<li class="list-header">' + item + '</li>';
-  }
   function addListItem(item){
-    return '<li class="list-item">' + item + '</li>';
+    return '<li class="individual-list-item">' + item + '</li>';
   }
   // TODO: templating
 
@@ -162,11 +159,43 @@ function eventHandler(who){
 
   var content = '';
 
-  var targets = document.querySelector('.modal-available');
+  var targets = document.querySelector('.modal-available.'+who);
 
 
-  // tippy('.modal-available.' + who, {
   tippy('.modal-available.' + who, {
+  // tippy(targets, {
+    // triggerTarget: targets,
+    /*onTrigger(instance, event) {
+      console.group('TRIGGER')
+      console.groupEnd();
+      const rects = [].slice.call(anchor.getClientRects());
+
+      // We need to choose which rect to use. Check which rect
+      // the cursor landed on.
+      let index = -1;
+      rects.forEach((rect, i) => {
+        if (
+          event.clientY >= Math.floor(rect.top) &&
+          event.clientY <= Math.ceil(rect.bottom) &&
+          event.clientX >= Math.floor(rect.left) &&
+          event.clientX <= Math.ceil(rect.right)
+        ) {
+          index = i;
+        }
+      });
+
+      instance.reference.getBoundingClientRect = () => {
+        // If the trigger event was `focus` instead, you
+        // can either choose a rectIndex or use the whole
+        // boundingClientRect instead. The focus ring will
+        // help keyboard users.
+        return event instanceof MouseEvent
+          ? anchor.getClientRects()[index]
+          : anchor.getBoundingClientRect();
+      };
+    },*/
+
+    ///
     content: template_base,
     aria: null,
     autoFocus: false,
@@ -187,12 +216,6 @@ function eventHandler(who){
     updateDuration: 0,
 
     onShow(instance) {
-      /*document.querySelectorAll('.tippy-popper').forEach(popper => {
-        console.log('CLOSE')
-        if (popper !== instance.popper) {
-          popper._tippy.hide()
-        }
-      });*/
 
       // inner func
       function displayData(data){
@@ -211,25 +234,20 @@ function eventHandler(who){
 
           function sortGroups(a, b){
             // low high medium
-            // POTENCY_WEIGHT
           }
           console.group('Groupby');
           var groups = groupBy(data['data']['getParliamentarian']['connections'], 'group');
+          // console.log(groupBy(['one', 'two', 'three'], 'length'));
+          // console.log(groups);
 
+          /*groups.forEach(function(item){
+            console.log(item);
+
+          });*/
+          console.log(typeof(groups));
+          console.log(groups);
           Object.keys(groups).forEach(function(key) {
-               li_str += addListHeader(key);
-               groups[key].forEach(function(item){
-
-                 var via = getVia(item['vias']);
-                 if(!via){
-                   interests['parlamentarian'].push(item['to']['name'] + ', ' + item['function']);
-                   content += addListItem(item['to']['name'] + ', ' + item['function']);
-                   li_str += addListItem(item['to']['name'] + ', ' + item['function']);
-                 }else{
-                   console.log(via)
-                   // TODO
-                 }
-               });
+               console.log(key);
           });
 
           console.groupEnd();

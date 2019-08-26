@@ -1,32 +1,41 @@
-.person {
-  background: white;
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+.tippy-tooltip.light-border-theme {
+  /* HTML5 display-role reset for older browsers */
 }
-.person .person-id {
-  text-align: left;
+.tippy-tooltip.light-border-theme html, .tippy-tooltip.light-border-theme body, .tippy-tooltip.light-border-theme div, .tippy-tooltip.light-border-theme span, .tippy-tooltip.light-border-theme applet, .tippy-tooltip.light-border-theme object, .tippy-tooltip.light-border-theme iframe,
+.tippy-tooltip.light-border-theme h1, .tippy-tooltip.light-border-theme h2, .tippy-tooltip.light-border-theme h3, .tippy-tooltip.light-border-theme h4, .tippy-tooltip.light-border-theme h5, .tippy-tooltip.light-border-theme h6, .tippy-tooltip.light-border-theme p, .tippy-tooltip.light-border-theme blockquote, .tippy-tooltip.light-border-theme pre,
+.tippy-tooltip.light-border-theme a, .tippy-tooltip.light-border-theme abbr, .tippy-tooltip.light-border-theme acronym, .tippy-tooltip.light-border-theme address, .tippy-tooltip.light-border-theme big, .tippy-tooltip.light-border-theme cite, .tippy-tooltip.light-border-theme code,
+.tippy-tooltip.light-border-theme del, .tippy-tooltip.light-border-theme dfn, .tippy-tooltip.light-border-theme em, .tippy-tooltip.light-border-theme img, .tippy-tooltip.light-border-theme ins, .tippy-tooltip.light-border-theme kbd, .tippy-tooltip.light-border-theme q, .tippy-tooltip.light-border-theme s, .tippy-tooltip.light-border-theme samp,
+.tippy-tooltip.light-border-theme small, .tippy-tooltip.light-border-theme strike, .tippy-tooltip.light-border-theme strong, .tippy-tooltip.light-border-theme sub, .tippy-tooltip.light-border-theme sup, .tippy-tooltip.light-border-theme tt, .tippy-tooltip.light-border-theme var,
+.tippy-tooltip.light-border-theme b, .tippy-tooltip.light-border-theme u, .tippy-tooltip.light-border-theme i, .tippy-tooltip.light-border-theme center,
+.tippy-tooltip.light-border-theme dl, .tippy-tooltip.light-border-theme dt, .tippy-tooltip.light-border-theme dd, .tippy-tooltip.light-border-theme ol, .tippy-tooltip.light-border-theme ul, .tippy-tooltip.light-border-theme li,
+.tippy-tooltip.light-border-theme fieldset, .tippy-tooltip.light-border-theme form, .tippy-tooltip.light-border-theme label, .tippy-tooltip.light-border-theme legend,
+.tippy-tooltip.light-border-theme table, .tippy-tooltip.light-border-theme caption, .tippy-tooltip.light-border-theme tbody, .tippy-tooltip.light-border-theme tfoot, .tippy-tooltip.light-border-theme thead, .tippy-tooltip.light-border-theme tr, .tippy-tooltip.light-border-theme th, .tippy-tooltip.light-border-theme td,
+.tippy-tooltip.light-border-theme article, .tippy-tooltip.light-border-theme aside, .tippy-tooltip.light-border-theme canvas, .tippy-tooltip.light-border-theme details, .tippy-tooltip.light-border-theme embed,
+.tippy-tooltip.light-border-theme figure, .tippy-tooltip.light-border-theme figcaption, .tippy-tooltip.light-border-theme footer, .tippy-tooltip.light-border-theme header, .tippy-tooltip.light-border-theme hgroup,
+.tippy-tooltip.light-border-theme menu, .tippy-tooltip.light-border-theme nav, .tippy-tooltip.light-border-theme output, .tippy-tooltip.light-border-theme ruby, .tippy-tooltip.light-border-theme section, .tippy-tooltip.light-border-theme summary,
+.tippy-tooltip.light-border-theme time, .tippy-tooltip.light-border-theme mark, .tippy-tooltip.light-border-theme audio, .tippy-tooltip.light-border-theme video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-.person .person-id .person-id-picture {
-  height: 100px;
-  width: 80px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: none;
-  float: left;
-  margin: 0 2em 1em 0;
+.tippy-tooltip.light-border-theme article, .tippy-tooltip.light-border-theme aside, .tippy-tooltip.light-border-theme details, .tippy-tooltip.light-border-theme figcaption, .tippy-tooltip.light-border-theme figure,
+.tippy-tooltip.light-border-theme footer, .tippy-tooltip.light-border-theme header, .tippy-tooltip.light-border-theme hgroup, .tippy-tooltip.light-border-theme menu, .tippy-tooltip.light-border-theme nav, .tippy-tooltip.light-border-theme section {
+  display: block;
 }
-.person .person-id .person-id-name {
-  font-size: 2em;
-  font-weight: bold;
-  margin: 0.5em 0;
+.tippy-tooltip.light-border-theme body {
+  line-height: 1;
 }
-.person .person-links {
-  border-top: 1px solid #ccc;
-  clear: left;
-  text-align: left;
-}
-.person .person-links h3.person-links-title {
-  font-size: 1.5em;
-}
-
+/*
+style de https://unpkg.com/tippy.js@3/dist/themes/light-border.css
+voir https://atomiks.github.io/tippyjs/themes/
+*/
 .modal-available {
   border-bottom: 1px dotted #ccc;
   font-weight: bold;
@@ -34,19 +43,80 @@
   /* background: #7bb7e0; */
 }
 
-img.individual-img {
-  max-height: 150px;
-  width: auto !important;
-  margin: auto;
+.tippy-tooltip.light-border-theme {
+  max-width: 550px;
+  padding: 0;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 8, 16, 0.15);
+  border-radius: 3px;
+  box-shadow: 0 3px 14px -0.5px rgba(0, 8, 16, 0.2);
+  color: #26323d;
+  font-size: 16px;
 }
-
-p.individual-info {
-  font-size: 1.2em;
-  margin: 0;
+.tippy-tooltip.light-border-theme .person {
+  max-height: 400px;
+  overflow: hidden;
+  background: white;
+  position: relative;
 }
-
-li.individual-list-item {
+.tippy-tooltip.light-border-theme .person .person-id {
   text-align: left;
+}
+.tippy-tooltip.light-border-theme .person .person-id .person-id-picture {
+  height: 100px;
+  width: 80px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: none;
+  float: left;
+  margin: 0 2em 1em 1em;
+}
+.tippy-tooltip.light-border-theme .person .person-id div {
+  color: #4682b4;
+}
+.tippy-tooltip.light-border-theme .person .person-id div.person-id-name {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 1em 0 0.5em 0;
+}
+.tippy-tooltip.light-border-theme .person .person-id .person-id-position, .tippy-tooltip.light-border-theme .person .person-id .person-id-canton, .tippy-tooltip.light-border-theme .person .person-id .person-id-parti {
+  display: inline-block;
+}
+.tippy-tooltip.light-border-theme .person .person-id .person-id-position:after, .tippy-tooltip.light-border-theme .person .person-id .person-id-canton:after {
+  content: " |";
+}
+.tippy-tooltip.light-border-theme .person .person-id .person-lobbywatch-url a, .tippy-tooltip.light-border-theme .person .person-id .person-lobbywatch-url a:visited {
+  color: #4682b4;
+}
+.tippy-tooltip.light-border-theme .person .person-links {
+  border-top: 1px solid #ccc;
+  clear: left;
+  text-align: left;
+}
+.tippy-tooltip.light-border-theme .person .person-links h3.person-links-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0.5em;
+}
+.tippy-tooltip.light-border-theme .person .person-links ul.person-links-list li {
+  margin: 0 0.5em;
+  list-style-type: none !important;
+}
+.tippy-tooltip.light-border-theme .person .person-links ul.person-links-list li:before {
+  /* handelszeitung */
+  content: none;
+}
+.tippy-tooltip.light-border-theme .person .person-links ul.person-links-list li.list-header {
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+.tippy-tooltip.light-border-theme .person .show-more {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #eee;
 }
 
 /*
@@ -61,21 +131,6 @@ MDL
   width: 100%;
   z-index: 0;
   overflow: hidden;
-}
-
-/*
-  style de https://unpkg.com/tippy.js@3/dist/themes/light-border.css
-  voir https://atomiks.github.io/tippyjs/themes/
-*/
-.tippy-tooltip.light-border-theme {
-  max-width: 550px;
-  max-height: 400px;
-  overflow: hidden;
-  background-color: #fff;
-  background-clip: padding-box;
-  color: #26323d;
-  box-shadow: 0 3px 14px -0.5px rgba(0, 8, 16, 0.08);
-  font-size: 14px;
 }
 
 .tippy-tooltip.light-border-theme .tippy-backdrop {
