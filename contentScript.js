@@ -209,10 +209,12 @@ function eventHandler(who){
               <div class="person-id-parti">${party}</div>
             </div>
             <div class="person-links">
-              <h1 class="person-links-title">${chrome.i18n.getMessage('tipInterests')}</h1>
+              <h3 class="person-links-title">${chrome.i18n.getMessage('tipInterests')}</h3>
               <ul class="person-links-list">
                 ${li_str}
               </ul>
+            </div>
+            <div class="show-more">
             </div>
           </div>`;
 

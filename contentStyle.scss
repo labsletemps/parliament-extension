@@ -1,6 +1,5 @@
 .person{
   background: white;
-
   // colonne de gauche
   .person-id{
     // float: left; -> fait bugger, a voir
@@ -8,9 +7,11 @@
 
     .person-id-picture{
       // juste pour tester
-      width: 140px;
-      height: 140px;
-      background-size: contain;
+      height: 100px;
+      width: 80px;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: none;
       float: left;
       margin: 0 2em 1em 0;
     }
@@ -39,7 +40,7 @@
     text-align: left;
 
     // float: left;
-    h3{
+    h3.person-links-title{
       font-size: 1.5em;
     }
   }
@@ -90,9 +91,11 @@ MDL
 
 .tippy-tooltip.light-border-theme {
     max-width: 550px;
+    max-height: 400px;
+    overflow: hidden;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid rgba(0, 8, 16, .15);
+    // border: 1px solid rgba(0, 8, 16, .15);
     color: #26323d;
     box-shadow: 0 3px 14px -.5px rgba(0, 8, 16, .08);
     font-size: 14px;
