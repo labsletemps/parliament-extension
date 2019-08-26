@@ -122,15 +122,35 @@ function eventHandler(who){
     return '<li class="individual-list-item">' + item + '</li>';
   }
   // TODO: templating
-  var content = '<h3>' + individualData['name'] + '</h3>';
+
+  var template_base = `<div class="person">
+    <div class="person-id">
+      <div class="person-id-picture" style="background-image: url('${individualData['portrait']}')"></div>
+      <h2 class="person-id-name">${individualData['name']}</h2>
+      <div class="person-id-position">${individualData['councilTitle']}</div>
+      <div class="person-id-canton">${individualData['canton']}</div>
+      <div class="person-id-parti">${party}</div>
+    </div>
+    <div class="person-links">
+      <h3 class="person-links-title">${chrome.i18n.getMessage('tipInterests')}</h3>
+      <ul class="person-links-list">
+        <li>Chargement… TODO i18n</li>
+      </ul>
+    </div>
+  </div>`;
+
+  var content = '';
+/*
+  var content = '<div class="person-id"></div>';
+  content += '<h3>' + individualData['name'] + '</h3>';
   content += '<img class="individual-img" src="' + individualData['portrait'] + '" alt="' + individualData['name'] + '">';
   content += addInfo(chrome.i18n.getMessage('tipParty') + ': ' + party);
   content += addInfo(individualData['councilTitle']);
-  content += addInfo(individualData['canton']);
+  content += addInfo(individualData['canton']);*/
   // content += addInfo('Profession: ' + individualData['occupation']);
 
   tippy('.modal-available.' + who, {
-    content: content,
+    content: template_base,
     aria: null,
     autoFocus: false,
     trigger: 'click', // mouseenter
@@ -153,23 +173,47 @@ function eventHandler(who){
 
       // inner func
       function displayData(data){
-        console.log(data);
 
         if(!instance.loaded){
           content += addInfo('<b>' + chrome.i18n.getMessage('tipInterests') + '</b>')
+          li_str = '';
 
+          var interests = {'parlamentarian': [], 'guest1': [], 'guest2': []};
 
           data['data']['getParliamentarian']['connections'].forEach(function(item){
             var via = getVia(item['vias']);
             if(!via){
+              interests['parlamentarian'].push(item['to']['name'] + ', ' + item['function']);
               content += addListItem(item['to']['name'] + ', ' + item['function']);
+              li_str += addListItem(item['to']['name'] + ', ' + item['function']);
             }else{
               console.log(via)
               // TODO
             }
           });
+
+          console.log(interests);
+
           content += '</ol>';
-          instance.setContent(content);
+
+          var template_loaded = `<div class="person">
+            <div class="person-id">
+              <div class="person-id-picture" style="background-image: url('${individualData['portrait']}')"></div>
+              <div class="person-id-name">${individualData['name']}</div>
+              <div class="person-id-position">${individualData['councilTitle']}</div>
+              <div class="person-id-canton">${individualData['canton']}</div>
+              <div class="person-id-parti">${party}</div>
+            </div>
+            <div class="person-links">
+              <h1 class="person-links-title">${chrome.i18n.getMessage('tipInterests')}</h1>
+              <ul class="person-links-list">
+                ${li_str}
+              </ul>
+            </div>
+          </div>`;
+
+
+          instance.setContent(template_loaded);
         }
         instance.loaded = true;
       }

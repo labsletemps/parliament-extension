@@ -1,9 +1,23 @@
 .person {
   background: white; }
-  .person .person-id .person-id-picture {
-    width: 200px;
-    height: 200px;
-    background-size: contain; }
+  .person .person-id {
+    text-align: left; }
+    .person .person-id .person-id-picture {
+      width: 140px;
+      height: 140px;
+      background-size: contain;
+      float: left;
+      margin: 0 2em 1em 0; }
+    .person .person-id .person-id-name {
+      font-size: 2em;
+      font-weight: bold;
+      margin: .5em 0; }
+  .person .person-links {
+    border-top: 1px solid #ccc;
+    clear: left;
+    text-align: left; }
+    .person .person-links h3 {
+      font-size: 1.5em; }
 
 .modal-available {
   border-bottom: 1px dotted #ccc;

@@ -117,6 +117,9 @@
       $('span.modal-available').on('click mouseover', function(e){
         console.log('Survol / click sur ' + $(this).data('who'));
         eventHandler($(this).data('who'));
+
+
+
       });
     }, 200);
   }
@@ -327,6 +330,11 @@
       }
     }
   }`;
+
+  setTimeout(function(){
+    console.log('clic')
+    $( ".roger-nordmann" ).trigger( "click" );
+  }, 500)
   </script>
 
 </body>

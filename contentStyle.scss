@@ -4,19 +4,44 @@
   // colonne de gauche
   .person-id{
     // float: left; -> fait bugger, a voir
-    // width: 25%;
+    text-align: left;
 
     .person-id-picture{
       // juste pour tester
-      width: 200px;
-      height: 200px;
+      width: 140px;
+      height: 140px;
       background-size: contain;
+      float: left;
+      margin: 0 2em 1em 0;
+    }
+
+    .person-id-name{
+      font-size: 2em;
+      font-weight: bold;
+      margin: .5em 0;
+    }
+    .person-id-position{
+
+    }
+    .person-id-canton{
+
+    }
+    .person-id-parti{
+
     }
   }
 
   // colonne principale
   .person-links{
+    border-top: 1px solid #ccc;
+    clear: left;
+    // font-size: 1em;
+    text-align: left;
+
     // float: left;
+    h3{
+      font-size: 1.5em;
+    }
   }
 
 }
