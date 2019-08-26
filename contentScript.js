@@ -49,33 +49,37 @@ function fetchParliamentIds(){
     method: "POST",
     url: "https://web.tcch.ch/parliament/",
     success : function(data, statut){
+      console.log('Data retrieved');
       localStorage.setItem('parliamentarians', data);
       data['data']['parliamentarians'].forEach(function(item){
         nameList.push(item['name']);
       });
     },
-    error : function() {
-      console.log('error')
+    error : function(xhr, status, error) {
+      console.log('Error when fetching parliament data');
     }
   });
 }
 
 if(localData){
+  // console.log('also fetch to test')
+  // fetchParliamentIds();
+
   parliamentData = JSON.parse(localData);
   parliamentData['data']['parliamentarians'].forEach(function(item){
     nameList.push(item['name']);
   });
-  console.log('loaded from local')
+  console.log('Parliament: Interests loaded from localStorage');
 }else{
+  console.log('Parliament: fetching Interests data');
   fetchParliamentIds();
-  console.log('loaded from server')
 }
 
 function lookupNames(){
-  var articleTags = $('.article-content p');
+  var articleTags = $('p');
 
   if (articleTags.length > 0){
-    var p_list = $('.article-content p');     // Le Temps
+    var p_list = $('p');     // Le Temps
     var count0 = 0;
     var count = 0;
 

@@ -4,6 +4,11 @@
   "description": "__MSG_extensionDescription__",
   "default_locale": "fr",
   "version": "0.1",
+  "applications": {
+    "gecko": {
+      "strict_min_version": "54.0a1"
+    }
+  },
   "icons": {  "16": "icon16.png",
               "32": "icon32.png",
               "64": "icon64.png",
@@ -46,6 +51,6 @@
     "tabs",
     "storage",
     "https://lobbywatch.ch/",
-    "https://web.tcch.ch"
+    "https://web.tcch.ch/"
   ]
 }
