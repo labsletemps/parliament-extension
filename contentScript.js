@@ -2,11 +2,25 @@
 Globals
 */
 
+// TODO i18n change this for 'de'
+var locale = 'fr';
 var parliamentData;
 var nameList = [];
 var localData = localStorage.getItem('parliamentarians');
-
 var currentPeople = {};
+var POTENCY_WEIGHT = {
+  HIGH: 1000,
+  MEDIUM: 50,
+  LOW: 1
+}
+
+// Ceasar Bautista on https://stackoverflow.com/a/34890276
+var groupBy = function(xs, key) {
+  return xs.reduce(function(rv, x) {
+    (rv[x[key]] = rv[x[key]] || []).push(x);
+    return rv;
+  }, {});
+};
 
 function getDataWho(name){
   name.normalize('NFD').replace(/[\u0300-\u036f]/g, "")   // on enleve les accents
@@ -134,6 +148,7 @@ function eventHandler(who){
       <div class="person-id-position">${individualData['councilTitle']}</div>
       <div class="person-id-canton">${individualData['canton']}</div>
       <div class="person-id-parti">${party}</div>
+      <div class="person-lobbywatch-url"><a href="https://lobbywatch.ch/fr/daten/parlamentarier/235/Christian%20Levrat" target="_blank">${chrome.i18n.getMessage('lobbywatchURL')}</a></div>
     </div>
     <div class="person-links">
       <h3 class="person-links-title">${chrome.i18n.getMessage('tipInterests')}</h3>
@@ -144,14 +159,6 @@ function eventHandler(who){
   </div>`;
 
   var content = '';
-/*
-  var content = '<div class="person-id"></div>';
-  content += '<h3>' + individualData['name'] + '</h3>';
-  content += '<img class="individual-img" src="' + individualData['portrait'] + '" alt="' + individualData['name'] + '">';
-  content += addInfo(chrome.i18n.getMessage('tipParty') + ': ' + party);
-  content += addInfo(individualData['councilTitle']);
-  content += addInfo(individualData['canton']);*/
-  // content += addInfo('Profession: ' + individualData['occupation']);
 
   tippy('.modal-available.' + who, {
     content: template_base,
@@ -184,7 +191,35 @@ function eventHandler(who){
 
           var interests = {'parlamentarian': [], 'guest1': [], 'guest2': []};
 
+          /* group and nest:
+            https://github.com/lobbywatch/website/blob/master/src/components/Connections/index.js
+            https://github.com/lobbywatch/website/blob/master/src/components/Connections/nest.js
+
+          */
+
+          function sortGroups(a, b){
+            // low high medium
+          }
+          console.group('Groupby');
+          var groups = groupBy(data['data']['getParliamentarian']['connections'], 'group');
+          // console.log(groupBy(['one', 'two', 'three'], 'length'));
+          // console.log(groups);
+
+          /*groups.forEach(function(item){
+            console.log(item);
+
+          });*/
+          console.log(typeof(groups));
+          console.log(groups);
+          Object.keys(groups).forEach(function(key) {
+               console.log(key);
+          });
+
+          console.groupEnd();
+
+
           data['data']['getParliamentarian']['connections'].forEach(function(item){
+
             var via = getVia(item['vias']);
             if(!via){
               interests['parlamentarian'].push(item['to']['name'] + ', ' + item['function']);
@@ -195,7 +230,6 @@ function eventHandler(who){
               // TODO
             }
           });
-
           console.log(interests);
 
           content += '</ol>';
@@ -207,6 +241,7 @@ function eventHandler(who){
               <div class="person-id-position">${individualData['councilTitle']}</div>
               <div class="person-id-canton">${individualData['canton']}</div>
               <div class="person-id-parti">${party}</div>
+              <div class="person-lobbywatch-url"><a href="https://lobbywatch.ch/fr/daten/parlamentarier/${individualData['id']}/${individualData['name']}" target="_blank">${chrome.i18n.getMessage('lobbywatchURL')}</a></div>
             </div>
             <div class="person-links">
               <h3 class="person-links-title">${chrome.i18n.getMessage('tipInterests')}</h3>
@@ -215,6 +250,7 @@ function eventHandler(who){
               </ul>
             </div>
             <div class="show-more">
+              ${chrome.i18n.getMessage('showMore')}
             </div>
           </div>`;
 
@@ -234,7 +270,7 @@ function eventHandler(who){
       }else{
         var load = {"query":
           query,
-          "variables":{"locale":"fr","id": individualData['id']}
+          "variables":{"locale": locale, "id": individualData['id']}
         }
 
         $.ajax({

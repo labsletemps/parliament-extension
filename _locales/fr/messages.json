@@ -24,6 +24,16 @@
     "description": "«Party» in the tip."
   },
 
+  "showMore": {
+    "message": "Tout afficher",
+    "description": "Display all"
+  },
+
+  "lobbywatchURL": {
+    "message": "Profil sur lobbywatch.ch",
+    "description": "Link text for profile link"
+  },
+
   "header": {
     "message": "Préférences",
     "description": "Header above the preferences."
