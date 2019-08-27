@@ -49,6 +49,17 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"/contentScript 2.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/contentScript 2-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/contentScript-min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -80,6 +91,14 @@
 		"oAP": "/contentStyle-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"/contentStyle.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/contentStyle.css.map",
+		"oF": 0
 		},
 	"/contentStyle.scss": {
 		"aP": 0,
@@ -221,6 +240,14 @@
 		"oAP": "/my-archive.zip",
 		"oF": 0
 		},
+	"/package-lock.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/package-lock-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"/popup.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -270,6 +297,19 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"/reset.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/reset.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/template.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -318,6 +358,14 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
+		},
+	"/tooltip-tester-v2.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tooltip-tester-v2.html",
+		"oF": 0
 		},
 	"/tooltip-tester.html": {
 		"cB": 0,
