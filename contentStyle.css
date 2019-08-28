@@ -43,80 +43,99 @@ voir https://atomiks.github.io/tippyjs/themes/
   /* background: #7bb7e0; */
 }
 
-.tippy-tooltip.light-border-theme {
-  max-width: 550px;
+.tippy-tooltip {
+  width: 430px;
+  max-width: 430px !important;
   padding: 0;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 8, 16, 0.15);
   border-radius: 3px;
-  box-shadow: 0 3px 14px -0.5px rgba(0, 8, 16, 0.2);
+  box-shadow: 0 14px 23px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 2px 2px 2px 0 0 0 2px;
   color: #26323d;
-  font-size: 16px;
 }
-.tippy-tooltip.light-border-theme .person {
-  max-height: 400px;
+.tippy-tooltip .person {
+  height: 180px;
+  width: 100%;
   overflow: hidden;
-  background: white;
+  background: #fff;
   position: relative;
 }
-.tippy-tooltip.light-border-theme .person .person-id {
-  text-align: left;
-}
-.tippy-tooltip.light-border-theme .person .person-id .person-id-picture {
-  height: 100px;
-  width: 80px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: none;
+.tippy-tooltip .person .person-picture {
+  width: 150px;
+  height: 100%;
+  background: green;
   float: left;
-  margin: 0 2em 1em 1em;
+  background-size: cover !important;
+  background-position: center center !important;
 }
-.tippy-tooltip.light-border-theme .person .person-id div {
-  color: #4682b4;
-}
-.tippy-tooltip.light-border-theme .person .person-id div.person-id-name {
-  font-size: 1.4em;
-  font-weight: bold;
-  margin: 1em 0 0.5em 0;
-}
-.tippy-tooltip.light-border-theme .person .person-id .person-id-position, .tippy-tooltip.light-border-theme .person .person-id .person-id-canton, .tippy-tooltip.light-border-theme .person .person-id .person-id-parti {
-  display: inline-block;
-}
-.tippy-tooltip.light-border-theme .person .person-id .person-id-position:after, .tippy-tooltip.light-border-theme .person .person-id .person-id-canton:after {
-  content: " |";
-}
-.tippy-tooltip.light-border-theme .person .person-id .person-lobbywatch-url a, .tippy-tooltip.light-border-theme .person .person-id .person-lobbywatch-url a:visited {
-  color: #4682b4;
-}
-.tippy-tooltip.light-border-theme .person .person-links {
-  border-top: 1px solid #ccc;
-  clear: left;
+.tippy-tooltip .person .person-txt {
+  width: calc(100% - 150px);
+  height: 100%;
+  float: left;
+  overflow-y: scroll;
   text-align: left;
 }
-.tippy-tooltip.light-border-theme .person .person-links h3.person-links-title {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin: 0.5em;
+.tippy-tooltip .person .person-txt::-webkit-scrollbar-thumb {
+  background-color: #000000;
 }
-.tippy-tooltip.light-border-theme .person .person-links ul.person-links-list li {
-  margin: 0 0.5em;
-  list-style-type: none !important;
+.tippy-tooltip .person .person-txt .person-txt-header {
+  width: 100%;
+  height: 45px;
+  background: #f2f2f2;
+  padding: 12px 10px;
 }
-.tippy-tooltip.light-border-theme .person .person-links ul.person-links-list li:before {
+.tippy-tooltip .person .person-txt .person-txt-header .person-name, .tippy-tooltip .person .person-txt .person-txt-header .person-name a, .tippy-tooltip .person .person-txt .person-txt-header .person-name:visited {
+  font-family: "Ratio-Medium", sans-serif;
+  font-size: 17px;
+  color: #557797;
+  text-align: left;
+  display: block;
+  width: 100%;
+  line-height: 8px;
+  /* @TODO 5px */
+}
+.tippy-tooltip .person .person-txt .person-txt-header .person-infos {
+  font-family: "Rooney-Light", sans-serif;
+  font-size: 13px;
+  color: #12606F;
+  text-align: left;
+}
+.tippy-tooltip .person .person-txt .person-txt-header .person-lobbywatch-url {
+  display: none;
+}
+.tippy-tooltip .person .person-txt .person-text-body {
+  /*background: red;*/
+  padding: 10px;
+  color: #000;
+  font-family: "Rooney-Light", sans-serif;
+}
+.tippy-tooltip .person .person-txt .person-text-body .person-text-body-title {
+  font-family: "Ratio-Medium", sans-serif;
+  font-size: 17px;
+  text-align: left;
+  font-weight: 500;
+  /* @TODO remove quand police accessible */
+}
+.tippy-tooltip .person .person-txt .person-text-body ul.person-links-list {
+  padding-left: 18px;
+}
+.tippy-tooltip .person .person-txt .person-text-body ul.person-links-list li {
+  font-family: "Rooney-Light", sans-serif;
+  font-size: 13px;
+  color: #000000;
+  text-align: left;
+}
+.tippy-tooltip .person .person-txt .person-text-body ul.person-links-list li:before {
   /* handelszeitung */
   content: none;
 }
-.tippy-tooltip.light-border-theme .person .person-links ul.person-links-list li.list-header {
+.tippy-tooltip .person .person-txt .person-text-body ul.person-links-list li.list-header {
+  list-style-type: none;
+  margin-left: -18px;
   font-weight: bold;
   margin-top: 0.5em;
-}
-.tippy-tooltip.light-border-theme .person .show-more {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #eee;
 }
 
 /*
