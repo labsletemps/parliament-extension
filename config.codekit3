@@ -25,6 +25,17 @@
 		"oAP": "/.gitignore",
 		"oF": 0
 		},
+	"/3092.jpg": {
+		"ft": 16384,
+		"iS": 18376,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/3092.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/_locales/de/messages.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -56,17 +67,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/contentScript 2-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/contentScript-min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/contentScript-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -316,6 +316,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/template.html",
+		"oF": 0
+		},
+	"/test-popup.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/test-popup.html",
 		"oF": 0
 		},
 	"/tester graphql.js": {
