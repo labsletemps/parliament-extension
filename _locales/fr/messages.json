@@ -14,8 +14,23 @@
     "description": "Title appearing when hovering the extension."
   },
 
+  "loadingInterests": {
+    "message": "Chargement…",
+    "description": "Appears before interests gets loaded"
+  },
+
   "tipInterests": {
     "message": "Liens d’intérêt",
+    "description": "«Interests» subtitle in the tip."
+  },
+
+  "tipInterestsHigh": {
+    "message": "Liens d’intérêt forts",
+    "description": "«Interests» subtitle in the tip."
+  },
+
+  "tipInterestsOther": {
+    "message": "Autres liens d’intérêt",
     "description": "«Interests» subtitle in the tip."
   },
 

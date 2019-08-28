@@ -144,19 +144,21 @@ function eventHandler(who){
   // TODO: templating
 
   var template_base = `<div class="person">
-    <div class="person-id">
-      <div class="person-id-picture" style="background-image: url('${individualData['portrait']}')"></div>
-      <h2 class="person-id-name">${individualData['name']}</h2>
-      <div class="person-id-position">${individualData['councilTitle']}</div>
-      <div class="person-id-canton">${individualData['canton']}</div>
-      <div class="person-id-parti">${party}</div>
-      <div class="person-lobbywatch-url"><a href="https://lobbywatch.ch/fr/daten/parlamentarier/235/Christian%20Levrat" target="_blank">${chrome.i18n.getMessage('lobbywatchURL')}</a></div>
-    </div>
-    <div class="person-links">
-      <h3 class="person-links-title">${chrome.i18n.getMessage('tipInterests')}</h3>
-      <ul class="person-links-list">
-        <li>Chargement… TODO i18n</li>
-      </ul>
+      <div class="person-picture" style="background-image: url('${individualData['portrait']}')"></div>
+      <div class="person-txt">
+        <div class="person-txt-header">
+          <h2 class="person-name">${individualData['name']}</h2>
+          <div class="person-infos">${individualData['councilTitle']}, ${individualData['canton']}, ${party}</div>
+          <div class="person-lobbywatch-url"><a href="https://lobbywatch.ch/fr/daten/parlamentarier/235/Christian%20Levrat" target="_blank">${chrome.i18n.getMessage('lobbywatchURL')}</a></div>
+        </div>
+
+        <div class="person-text-body">
+          <h3 class="person-text-body-title">${chrome.i18n.getMessage('tipInterestsHigh')}</h3>
+          <ul class="person-links-list">
+            <li>${chrome.i18n.getMessage('loadingInterests')}</li>
+          </ul>
+        </div>
+
     </div>
   </div>`;
 
@@ -214,9 +216,39 @@ function eventHandler(who){
             // POTENCY_WEIGHT
           }
           console.group('Groupby');
-          var groups = groupBy(data['data']['getParliamentarian']['connections'], 'group');
+
+          var groups = groupBy(data['data']['getParliamentarian']['connections'], 'potency');
+
+          function displayGroup(group){
+            if(!group){
+              console.log('WARNING: Empty group')
+              return;
+            }
+            _li_str = '';
+            group.forEach(function(item){
+              var via = getVia(item['vias']);
+              if(!via){
+                _li_str += addListItem(item['to']['name'] + ', ' + item['function']);
+              }else{
+                console.log(via)
+                // TODO
+              }
+            });
+            return _li_str;
+          }
+
+          li_str += displayGroup(groups['HIGH']);
+          li_str += addListHeader('Liens d’intérêt moyens');
+          li_str += displayGroup(groups['MEDIUM']);
+          li_str += addListHeader('Liens d’intérêt faibles');
+          li_str += displayGroup(groups['LOW']);
+
+          /*var groups = groupBy(data['data']['getParliamentarian']['connections'], 'group');
 
           Object.keys(groups).forEach(function(key) {
+            console.log('length: ' + groups[key].length)
+            console.log(groups[key])
+            if(groups[key].length > 0){
                li_str += addListHeader(key);
                groups[key].forEach(function(item){
 
@@ -230,7 +262,8 @@ function eventHandler(who){
                    // TODO
                  }
                });
-          });
+              }
+          });*/
 
           console.groupEnd();
 
@@ -247,28 +280,30 @@ function eventHandler(who){
               // TODO
             }
           });
-          console.log(interests);
+          // console.log(interests);
 
           content += '</ol>';
 
           var template_loaded = `<div class="person">
-            <div class="person-id">
-              <div class="person-id-picture" style="background-image: url('${individualData['portrait']}')"></div>
-              <div class="person-id-name">${individualData['name']}</div>
-              <div class="person-id-position">${individualData['councilTitle']}</div>
-              <div class="person-id-canton">${individualData['canton']}</div>
-              <div class="person-id-parti">${party}</div>
-              <div class="person-lobbywatch-url"><a href="https://lobbywatch.ch/fr/daten/parlamentarier/${individualData['id']}/${individualData['name']}" target="_blank">${chrome.i18n.getMessage('lobbywatchURL')}</a></div>
+              <div class="person-picture" style="background-image: url('${individualData['portrait']}')"></div>
+
+              <div class="person-txt">
+
+                <div class="person-txt-header">
+                  <span class="person-name"><a target="_blank" href="https://lobbywatch.ch/fr/daten/parlamentarier/235/Christian%20Levrat">${individualData['name']}</a></span>
+                  <span class="person-infos">${individualData['councilTitle']}, ${individualData['canton']}, ${party}</span>
+                  <div class="person-lobbywatch-url"><a href="https://lobbywatch.ch/fr/daten/parlamentarier/235/Christian%20Levrat" target="_blank">${chrome.i18n.getMessage('lobbywatchURL')}</a></div>
+                </div>
+
+                <div class="person-text-body">
+                  <h3 class="person-text-body-title">${chrome.i18n.getMessage('tipInterestsHigh')}</h3>
+                  <ul class="person-links-list">
+                    ${li_str}
+                  </ul>
+                </div>
+
             </div>
-            <div class="person-links">
-              <h3 class="person-links-title">${chrome.i18n.getMessage('tipInterests')}</h3>
-              <ul class="person-links-list">
-                ${li_str}
-              </ul>
-            </div>
-            <div class="show-more">
-              ${chrome.i18n.getMessage('showMore')}
-            </div>
+
           </div>`;
 
 
