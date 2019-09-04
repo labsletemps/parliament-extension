@@ -3,35 +3,30 @@
    License: none (public domain)
 */
 .tippy-tooltip.light-border-theme {
-  /* HTML5 display-role reset for older browsers */
-}
-.tippy-tooltip.light-border-theme html, .tippy-tooltip.light-border-theme body, .tippy-tooltip.light-border-theme div, .tippy-tooltip.light-border-theme span, .tippy-tooltip.light-border-theme applet, .tippy-tooltip.light-border-theme object, .tippy-tooltip.light-border-theme iframe,
-.tippy-tooltip.light-border-theme h1, .tippy-tooltip.light-border-theme h2, .tippy-tooltip.light-border-theme h3, .tippy-tooltip.light-border-theme h4, .tippy-tooltip.light-border-theme h5, .tippy-tooltip.light-border-theme h6, .tippy-tooltip.light-border-theme p, .tippy-tooltip.light-border-theme blockquote, .tippy-tooltip.light-border-theme pre,
-.tippy-tooltip.light-border-theme a, .tippy-tooltip.light-border-theme abbr, .tippy-tooltip.light-border-theme acronym, .tippy-tooltip.light-border-theme address, .tippy-tooltip.light-border-theme big, .tippy-tooltip.light-border-theme cite, .tippy-tooltip.light-border-theme code,
-.tippy-tooltip.light-border-theme del, .tippy-tooltip.light-border-theme dfn, .tippy-tooltip.light-border-theme em, .tippy-tooltip.light-border-theme img, .tippy-tooltip.light-border-theme ins, .tippy-tooltip.light-border-theme kbd, .tippy-tooltip.light-border-theme q, .tippy-tooltip.light-border-theme s, .tippy-tooltip.light-border-theme samp,
-.tippy-tooltip.light-border-theme small, .tippy-tooltip.light-border-theme strike, .tippy-tooltip.light-border-theme strong, .tippy-tooltip.light-border-theme sub, .tippy-tooltip.light-border-theme sup, .tippy-tooltip.light-border-theme tt, .tippy-tooltip.light-border-theme var,
-.tippy-tooltip.light-border-theme b, .tippy-tooltip.light-border-theme u, .tippy-tooltip.light-border-theme i, .tippy-tooltip.light-border-theme center,
-.tippy-tooltip.light-border-theme dl, .tippy-tooltip.light-border-theme dt, .tippy-tooltip.light-border-theme dd, .tippy-tooltip.light-border-theme ol, .tippy-tooltip.light-border-theme ul, .tippy-tooltip.light-border-theme li,
-.tippy-tooltip.light-border-theme fieldset, .tippy-tooltip.light-border-theme form, .tippy-tooltip.light-border-theme label, .tippy-tooltip.light-border-theme legend,
-.tippy-tooltip.light-border-theme table, .tippy-tooltip.light-border-theme caption, .tippy-tooltip.light-border-theme tbody, .tippy-tooltip.light-border-theme tfoot, .tippy-tooltip.light-border-theme thead, .tippy-tooltip.light-border-theme tr, .tippy-tooltip.light-border-theme th, .tippy-tooltip.light-border-theme td,
-.tippy-tooltip.light-border-theme article, .tippy-tooltip.light-border-theme aside, .tippy-tooltip.light-border-theme canvas, .tippy-tooltip.light-border-theme details, .tippy-tooltip.light-border-theme embed,
-.tippy-tooltip.light-border-theme figure, .tippy-tooltip.light-border-theme figcaption, .tippy-tooltip.light-border-theme footer, .tippy-tooltip.light-border-theme header, .tippy-tooltip.light-border-theme hgroup,
-.tippy-tooltip.light-border-theme menu, .tippy-tooltip.light-border-theme nav, .tippy-tooltip.light-border-theme output, .tippy-tooltip.light-border-theme ruby, .tippy-tooltip.light-border-theme section, .tippy-tooltip.light-border-theme summary,
-.tippy-tooltip.light-border-theme time, .tippy-tooltip.light-border-theme mark, .tippy-tooltip.light-border-theme audio, .tippy-tooltip.light-border-theme video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-.tippy-tooltip.light-border-theme article, .tippy-tooltip.light-border-theme aside, .tippy-tooltip.light-border-theme details, .tippy-tooltip.light-border-theme figcaption, .tippy-tooltip.light-border-theme figure,
-.tippy-tooltip.light-border-theme footer, .tippy-tooltip.light-border-theme header, .tippy-tooltip.light-border-theme hgroup, .tippy-tooltip.light-border-theme menu, .tippy-tooltip.light-border-theme nav, .tippy-tooltip.light-border-theme section {
-  display: block;
-}
-.tippy-tooltip.light-border-theme body {
-  line-height: 1;
-}
+  /* HTML5 display-role reset for older browsers */ }
+  .tippy-tooltip.light-border-theme div, .tippy-tooltip.light-border-theme span, .tippy-tooltip.light-border-theme applet, .tippy-tooltip.light-border-theme object, .tippy-tooltip.light-border-theme iframe,
+  .tippy-tooltip.light-border-theme h1, .tippy-tooltip.light-border-theme h2, .tippy-tooltip.light-border-theme h3, .tippy-tooltip.light-border-theme h4, .tippy-tooltip.light-border-theme h5, .tippy-tooltip.light-border-theme h6, .tippy-tooltip.light-border-theme p, .tippy-tooltip.light-border-theme blockquote, .tippy-tooltip.light-border-theme pre,
+  .tippy-tooltip.light-border-theme a, .tippy-tooltip.light-border-theme abbr, .tippy-tooltip.light-border-theme acronym, .tippy-tooltip.light-border-theme address, .tippy-tooltip.light-border-theme big, .tippy-tooltip.light-border-theme cite, .tippy-tooltip.light-border-theme code,
+  .tippy-tooltip.light-border-theme del, .tippy-tooltip.light-border-theme dfn, .tippy-tooltip.light-border-theme em, .tippy-tooltip.light-border-theme img, .tippy-tooltip.light-border-theme ins, .tippy-tooltip.light-border-theme kbd, .tippy-tooltip.light-border-theme q, .tippy-tooltip.light-border-theme s, .tippy-tooltip.light-border-theme samp,
+  .tippy-tooltip.light-border-theme small, .tippy-tooltip.light-border-theme strike, .tippy-tooltip.light-border-theme strong, .tippy-tooltip.light-border-theme sub, .tippy-tooltip.light-border-theme sup, .tippy-tooltip.light-border-theme tt, .tippy-tooltip.light-border-theme var,
+  .tippy-tooltip.light-border-theme b, .tippy-tooltip.light-border-theme u, .tippy-tooltip.light-border-theme i, .tippy-tooltip.light-border-theme center,
+  .tippy-tooltip.light-border-theme dl, .tippy-tooltip.light-border-theme dt, .tippy-tooltip.light-border-theme dd, .tippy-tooltip.light-border-theme ol, .tippy-tooltip.light-border-theme ul, .tippy-tooltip.light-border-theme li,
+  .tippy-tooltip.light-border-theme fieldset, .tippy-tooltip.light-border-theme form, .tippy-tooltip.light-border-theme label, .tippy-tooltip.light-border-theme legend,
+  .tippy-tooltip.light-border-theme table, .tippy-tooltip.light-border-theme caption, .tippy-tooltip.light-border-theme tbody, .tippy-tooltip.light-border-theme tfoot, .tippy-tooltip.light-border-theme thead, .tippy-tooltip.light-border-theme tr, .tippy-tooltip.light-border-theme th, .tippy-tooltip.light-border-theme td,
+  .tippy-tooltip.light-border-theme article, .tippy-tooltip.light-border-theme aside, .tippy-tooltip.light-border-theme canvas, .tippy-tooltip.light-border-theme details, .tippy-tooltip.light-border-theme embed,
+  .tippy-tooltip.light-border-theme figure, .tippy-tooltip.light-border-theme figcaption, .tippy-tooltip.light-border-theme footer, .tippy-tooltip.light-border-theme header, .tippy-tooltip.light-border-theme hgroup,
+  .tippy-tooltip.light-border-theme menu, .tippy-tooltip.light-border-theme nav, .tippy-tooltip.light-border-theme output, .tippy-tooltip.light-border-theme ruby, .tippy-tooltip.light-border-theme section, .tippy-tooltip.light-border-theme summary,
+  .tippy-tooltip.light-border-theme time, .tippy-tooltip.light-border-theme mark, .tippy-tooltip.light-border-theme audio, .tippy-tooltip.light-border-theme video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; }
+  .tippy-tooltip.light-border-theme article, .tippy-tooltip.light-border-theme aside, .tippy-tooltip.light-border-theme details, .tippy-tooltip.light-border-theme figcaption, .tippy-tooltip.light-border-theme figure,
+  .tippy-tooltip.light-border-theme footer, .tippy-tooltip.light-border-theme header, .tippy-tooltip.light-border-theme hgroup, .tippy-tooltip.light-border-theme menu, .tippy-tooltip.light-border-theme nav, .tippy-tooltip.light-border-theme section {
+    display: block; }
+
 /*
 style de https://unpkg.com/tippy.js@3/dist/themes/light-border.css
 voir https://atomiks.github.io/tippyjs/themes/
@@ -40,103 +35,97 @@ voir https://atomiks.github.io/tippyjs/themes/
   border-bottom: 1px dotted #ccc;
   font-weight: bold;
   cursor: pointer;
-  /* background: #7bb7e0; */
-}
+  /* background: #7bb7e0; */ }
 
 .tippy-tooltip {
   width: 430px;
   max-width: 430px !important;
-  padding: 0;
+  padding: 0 !important;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 8, 16, 0.15);
   border-radius: 3px;
   box-shadow: 0 14px 23px 0 rgba(0, 0, 0, 0.5);
   border-radius: 2px 2px 2px 0 0 0 2px;
-  color: #26323d;
-}
-.tippy-tooltip .person {
-  height: 180px;
-  width: 100%;
-  overflow: hidden;
-  background: #fff;
-  position: relative;
-}
-.tippy-tooltip .person .person-picture {
-  width: 150px;
-  height: 100%;
-  background: green;
-  float: left;
-  background-size: cover !important;
-  background-position: center center !important;
-}
-.tippy-tooltip .person .person-txt {
-  width: calc(100% - 150px);
-  height: 100%;
-  float: left;
-  overflow-y: scroll;
-  text-align: left;
-}
-.tippy-tooltip .person .person-txt::-webkit-scrollbar-thumb {
-  background-color: #000000;
-}
-.tippy-tooltip .person .person-txt .person-txt-header {
-  width: 100%;
-  height: 45px;
-  background: #f2f2f2;
-  padding: 12px 10px;
-}
-.tippy-tooltip .person .person-txt .person-txt-header .person-name, .tippy-tooltip .person .person-txt .person-txt-header .person-name a, .tippy-tooltip .person .person-txt .person-txt-header .person-name:visited {
-  font-family: "Ratio-Medium", sans-serif;
-  font-size: 17px;
-  color: #557797;
-  text-align: left;
-  display: block;
-  width: 100%;
-  line-height: 8px;
-  /* @TODO 5px */
-}
-.tippy-tooltip .person .person-txt .person-txt-header .person-infos {
-  font-family: "Rooney-Light", sans-serif;
-  font-size: 13px;
-  color: #12606F;
-  text-align: left;
-}
-.tippy-tooltip .person .person-txt .person-txt-header .person-lobbywatch-url {
-  display: none;
-}
-.tippy-tooltip .person .person-txt .person-text-body {
-  /*background: red;*/
-  padding: 10px;
-  color: #000;
-  font-family: "Rooney-Light", sans-serif;
-}
-.tippy-tooltip .person .person-txt .person-text-body .person-text-body-title {
-  font-family: "Ratio-Medium", sans-serif;
-  font-size: 17px;
-  text-align: left;
-  font-weight: 500;
-  /* @TODO remove quand police accessible */
-}
-.tippy-tooltip .person .person-txt .person-text-body ul.person-links-list {
-  padding-left: 18px;
-}
-.tippy-tooltip .person .person-txt .person-text-body ul.person-links-list li {
-  font-family: "Rooney-Light", sans-serif;
-  font-size: 13px;
-  color: #000000;
-  text-align: left;
-}
-.tippy-tooltip .person .person-txt .person-text-body ul.person-links-list li:before {
-  /* handelszeitung */
-  content: none;
-}
-.tippy-tooltip .person .person-txt .person-text-body ul.person-links-list li.list-header {
-  list-style-type: none;
-  margin-left: -18px;
-  font-weight: bold;
-  margin-top: 0.5em;
-}
+  color: #26323d; }
+  .tippy-tooltip .person {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    position: relative; }
+    .tippy-tooltip .person .person-picture {
+      width: 150px;
+      height: 100%;
+      background: green;
+      float: left;
+      background-size: cover !important;
+      background-position: center center !important; }
+    .tippy-tooltip .person .person-txt {
+      width: calc(100% - 150px);
+      height: 100%;
+      float: left;
+      overflow-y: scroll;
+      text-align: left; }
+      .tippy-tooltip .person .person-txt::-webkit-scrollbar-thumb {
+        background-color: #000000; }
+      .tippy-tooltip .person .person-txt .lobbywatch-logo {
+        float: right;
+        margin: 6px 6px 0 0; }
+        .tippy-tooltip .person .person-txt .lobbywatch-logo img {
+          width: 32px;
+          height: 32px; }
+      .tippy-tooltip .person .person-txt .person-txt-header {
+        width: 100%;
+        height: 45px;
+        background: #f2f2f2;
+        padding: 12px 10px; }
+        .tippy-tooltip .person .person-txt .person-txt-header .person-name, .tippy-tooltip .person .person-txt .person-txt-header .person-name a, .tippy-tooltip .person .person-txt .person-txt-header .person-name:visited {
+          font-family: 'Ratio-Medium', sans-serif;
+          font-size: 17px;
+          color: #557797;
+          text-align: left;
+          display: block;
+          width: 100%;
+          line-height: 8px;
+          /* @TODO 5px */ }
+        .tippy-tooltip .person .person-txt .person-txt-header .person-infos {
+          font-family: 'Rooney-Light', sans-serif;
+          font-size: 13px;
+          color: #12606F;
+          text-align: left; }
+        .tippy-tooltip .person .person-txt .person-txt-header .person-lobbywatch-url {
+          display: none; }
+      .tippy-tooltip .person .person-txt .person-text-body {
+        /*background: red;*/
+        padding: 10px;
+        color: #000;
+        font-family: 'Rooney-Light', sans-serif; }
+        .tippy-tooltip .person .person-txt .person-text-body .person-text-body-title {
+          font-family: 'Ratio-Medium', sans-serif;
+          font-size: 17px;
+          text-align: left;
+          font-weight: 500;
+          /* @TODO remove quand police accessible */ }
+        .tippy-tooltip .person .person-txt .person-text-body p {
+          font-size: 13px; }
+          .tippy-tooltip .person .person-txt .person-text-body p b {
+            font-weight: bold; }
+        .tippy-tooltip .person .person-txt .person-text-body ul.person-links-list {
+          padding-left: 18px; }
+          .tippy-tooltip .person .person-txt .person-text-body ul.person-links-list li {
+            font-family: 'Rooney-Light', sans-serif;
+            font-size: 13px;
+            color: #000000;
+            text-align: left; }
+            .tippy-tooltip .person .person-txt .person-text-body ul.person-links-list li:before {
+              /* handelszeitung */
+              content: none; }
+            .tippy-tooltip .person .person-txt .person-text-body ul.person-links-list li.list-header {
+              list-style-type: none;
+              margin-left: -18px;
+              font-weight: bold;
+              margin-top: .5em; }
 
 /*
 MDL
@@ -149,12 +138,10 @@ MDL
   top: 0;
   width: 100%;
   z-index: 0;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 .tippy-tooltip.light-border-theme .tippy-backdrop {
-  background-color: #fff;
-}
+  background-color: #fff; }
 
 .tippy-tooltip.light-border-theme .tippy-arrow:after,
 .tippy-tooltip.light-border-theme .tippy-arrow:before,
@@ -162,96 +149,78 @@ MDL
 .tippy-tooltip.light-border-theme .tippy-roundarrow:before {
   content: "";
   position: absolute;
-  z-index: -1;
-}
+  z-index: -1; }
 
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-roundarrow:after {
   top: 1px;
   -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
+  transform: rotate(180deg); }
 
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-arrow {
-  border-top-color: #fff;
-}
+  border-top-color: #fff; }
 
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-arrow:after {
   border-top: 7px solid #fff;
-  top: -7px;
-}
+  top: -7px; }
 
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-arrow:before {
   border-top: 7px solid rgba(0, 8, 16, 0.2);
-  bottom: -1px;
-}
+  bottom: -1px; }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-roundarrow:after {
-  top: -1px;
-}
+  top: -1px; }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-arrow {
-  border-bottom-color: #fff;
-}
+  border-bottom-color: #fff; }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-arrow:after {
   border-bottom: 7px solid #fff;
-  bottom: -7px;
-}
+  bottom: -7px; }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-arrow:before {
   border-bottom: 7px solid rgba(0, 8, 16, 0.2);
-  bottom: -6px;
-}
+  bottom: -6px; }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-roundarrow:after {
   left: 1px;
   top: 0;
   -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
+  transform: rotate(90deg); }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-arrow {
-  border-left-color: #fff;
-}
+  border-left-color: #fff; }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-arrow:after {
   border-left: 7px solid #fff;
-  left: -7px;
-}
+  left: -7px; }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-arrow:before {
   border-left: 7px solid rgba(0, 8, 16, 0.2);
-  left: -6px;
-}
+  left: -6px; }
 
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-roundarrow:after {
   left: -1px;
   top: 0;
   -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}
+  transform: rotate(-90deg); }
 
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-arrow {
-  border-right-color: #fff;
-}
+  border-right-color: #fff; }
 
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-arrow:after {
   border-right: 7px solid #fff;
-  right: -7px;
-}
+  right: -7px; }
 
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-arrow:before {
   border-right: 7px solid rgba(0, 8, 16, 0.2);
-  right: -6px;
-}
+  right: -6px; }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-arrow,
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-roundarrow,
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-arrow,
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-roundarrow {
   -webkit-transform: translateX(-1px);
-  transform: translateX(-1px);
-}
+  transform: translateX(-1px); }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-arrow:after,
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.light-border-theme .tippy-arrow:before,
@@ -259,16 +228,14 @@ MDL
 .tippy-popper[x-placement^=top] .tippy-tooltip.light-border-theme .tippy-arrow:before {
   left: -7px;
   border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-}
+  border-right: 7px solid transparent; }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-arrow,
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-roundarrow,
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-arrow,
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-roundarrow {
   -webkit-transform: translateY(-1px);
-  transform: translateY(-1px);
-}
+  transform: translateY(-1px); }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-arrow:after,
 .tippy-popper[x-placement^=left] .tippy-tooltip.light-border-theme .tippy-arrow:before,
@@ -276,7 +243,4 @@ MDL
 .tippy-popper[x-placement^=right] .tippy-tooltip.light-border-theme .tippy-arrow:before {
   top: -7px;
   border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-}
-
-/*# sourceMappingURL=contentStyle.css.map */
+  border-bottom: 7px solid transparent; }

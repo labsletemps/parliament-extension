@@ -2,6 +2,12 @@ $black:#000;
 $white:#fff;
 
 $blue: #4682b4;
+$dark-blue: #557797;
+
+// more lobbywatch-istic
+// $blue: rgb(0, 119, 215)
+// $dark-blue: rgb(0, 119, 215);
+
 
 $red-lt: #b80021;
 $red-lt-darker: #930025;
@@ -24,7 +30,7 @@ voir https://atomiks.github.io/tippyjs/themes/
 .tippy-tooltip {
   width: 430px;
   max-width: 430px !important;
-  padding: 0;
+  padding: 0 !important;
 
   background-color: #fff;
   background-clip: padding-box;
@@ -66,6 +72,18 @@ voir https://atomiks.github.io/tippyjs/themes/
           background-color: #000000;
       }
 
+      .lobbywatch-logo{
+        float: right;
+        margin: 6px 6px 0 0;
+
+        img{
+          width: 32px;
+          height: 32px;
+        }
+        :hover{
+          // @TODO
+        }
+      }
       .person-txt-header
       {
         width: 100%;
@@ -73,11 +91,21 @@ voir https://atomiks.github.io/tippyjs/themes/
         background: #f2f2f2;
         padding:12px 10px;
 
+        // .person-name a::after{
+        //   display: inline-block;
+        //   content: url('icon16.png');
+        //   margin-left: 6px;
+        //   /*content: '';
+        //   width: 16px;
+        //   height: 16px;
+        //   background: transparent url('icon16.png');
+        //   background-size: contain;*/
+        // }
         .person-name, .person-name a, .person-name:visited
         {
           font-family: 'Ratio-Medium', sans-serif;
           font-size: 17px;
-          color: #557797;
+          color: $dark-blue;
           text-align: left;
           display: block;
           width: 100%;
@@ -112,6 +140,12 @@ voir https://atomiks.github.io/tippyjs/themes/
           font-weight: 500; /* @TODO remove quand police accessible */
         }
 
+        p{
+          font-size: 13px;
+          b {
+            font-weight: bold;
+          }
+        }
         ul.person-links-list{
           padding-left: 18px;
 
