@@ -2,11 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Projet YOUYOUOYU</title>
+  <title></title>
   <style type="text/css">
   body {
     margin: 10px;
-    white-space: nowrap;
   }
   span{
     /*white-space: normal;*/
@@ -21,10 +20,8 @@
     padding: 1px;
     display: inline-block;
   }
-  #container {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
+  .container{
+    width: 300px;
   }
   .instructionsContainer{
     white-space: normal;
@@ -62,9 +59,6 @@
     background-color: #e6e6e6;
     border-color: #adadad;
   }
-  #container span{
-    margin-left: 4px;
-  }
   #shortcutsTick{
     display: none;
   }
@@ -73,19 +67,13 @@
 </head>
 
 <body>
-  <h1 id="header">Projet MEPHISTO</h1>
-  <p class="instructionsContainer"><span id="instructions">Des infos.
-  </p>
-  <div id="container">
-    <div class="form-group">
 
-      <p id="shortcuts_p">
-        <input id="shortcuts" class="form-check-input" type="checkbox" value="" checked>
-        <label for="shortcuts" id="shortcutsLabel" checked>Raccourcis ctrl-b (gras), ctrl-i (italique) et ctrl-k (lien)</label>
-        <span id="shortcutsTick">✓</span>
-      </p>
-      <p id="extensionShortcutLabel">Raccourci pour ouvrir ou fermer l’extension: ctrl-shift-E.</p>
-    </div>
+  <h1 id="popupHeader">A propos</h1>
+  <div class="container">
+    <p><span id="popupInfoLine1">Cette extensions utilise les données de Lobbywatch pour indiquer les liens d’intérêts des Conseillers nationaux et Conseillers aux Etats suisses.</span></p>
+    <p><span id="popupInfoLine2">Les élus sont repérés par leur prénom et nom. Les liens d’intérêts peuvent donc apparaître pour des homonymes qui ne siègent pas au parlement.</span></p>
+    <p><span id="popupInfoLine3">Plus d’informations sur</span>: <a target="_blank" href="https://lobbywatch.ch/">lobbywatch.ch</a></p>
   </div>
+
 </body>
 </html>

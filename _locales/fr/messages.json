@@ -5,7 +5,7 @@
   },
 
   "extensionDescription": {
-    "message": "Cette affiche les liens d’intérêt des parlementaires mentionnés sur le Web.",
+    "message": "Cette extension affiche les liens d’intérêt des parlementaires suisses mentionnés sur le Web, grâce aux données de Lobbywatch.ch.",
     "description": "Description of the extension."
   },
 
@@ -19,18 +19,23 @@
     "description": "Appears before interests gets loaded"
   },
 
-  "tipInterests": {
-    "message": "Liens d’intérêt",
+  "guests": {
+    "message": "Invités",
     "description": "«Interests» subtitle in the tip."
   },
 
-  "tipInterestsHigh": {
+  "tipInterestsHIGH": {
     "message": "Liens d’intérêt forts",
     "description": "«Interests» subtitle in the tip."
   },
 
-  "tipInterestsOther": {
-    "message": "Autres liens d’intérêt",
+  "tipInterestsMEDIUM": {
+    "message": "Liens d’intérêt moyens",
+    "description": "«Interests» subtitle in the tip."
+  },
+
+  "tipInterestsLOW": {
+    "message": "Liens d’intérêt faibles",
     "description": "«Interests» subtitle in the tip."
   },
 
@@ -49,34 +54,21 @@
     "description": "Link text for profile link"
   },
 
-  "header": {
-    "message": "Préférences",
-    "description": "Header above the preferences."
+  "popupHeader": {
+    "message": "A propos",
+    "description": "Popup title."
   },
-
-  "instructions":{
-    "message": "Une explication",
-    "description": "Instructions above the buttons."
+  "popupInfoLine1":{
+    "message": "Cette extensions utilise les données de Lobbywatch pour indiquer les liens d’intérêts des Conseillers nationaux et Conseillers aux Etats suisses.",
+    "description": "Popup informations."
   },
-
-  "shortcutsLabel": {
-    "message": "Le label d’une pref",
-    "description": "Shortcut checkbox label"
+  "popupInfoLine2":{
+    "message": "Les élus sont repérés par leur prénom et nom. Les liens d’intérêts peuvent donc apparaître pour des homonymes qui ne siègent pas au parlement.",
+    "description": "Popup informations."
   },
-
-  "shortcutsLabelMac": {
-    "message": "Raccourcis ⌘B (gras), ⌘I (italique) et ⌘K (lien)",
-    "description": "Shortcut checkbox label for Mac OS"
-  },
-
-  "extensionShortcutLabel": {
-    "message": "Raccourci pour ouvrir ou fermer l’extension: Ctrl-Shift-E",
-    "description": "Extension shortcut label for mac"
-  },
-
-  "extensionShortcutLabelMac": {
-    "message": "Raccourci pour ouvrir ou fermer l’extension: ⇧⌘E",
-    "description": "Extension shortcut label for mac"
+  "popupInfoLine3":{
+    "message": "Plus d’informations sur",
+    "description": "Popup informations."
   }
 
 }
