@@ -40,9 +40,8 @@ function getParty(data){
 }
 
 function getVia(via){
-  console.log(via);
   if(via.length > 0){
-    return "(via l’invité: " + via[0]['to']['name'] + ')';
+    return "(via " + via[0]['to']['name'] + ')';
   }
 }
 
@@ -147,13 +146,11 @@ function eventHandler(who){
       <div class="person-picture" style="background-image: url('${individualData['portrait']}')"></div>
       <div class="person-txt">
         <div class="person-txt-header">
-          <h2 class="person-name">${individualData['name']}</h2>
+          <span class="person-name"><a target="_blank" href="https://lobbywatch.ch/fr/daten/parlamentarier/${individualData['id']}/${individualData['name']}">${individualData['name']}</a></span>
           <div class="person-infos">${individualData['councilTitle']}, ${individualData['canton']}, ${party}</div>
-          <div class="person-lobbywatch-url"><a href="https://lobbywatch.ch/fr/daten/parlamentarier/235/Christian%20Levrat" target="_blank">${chrome.i18n.getMessage('lobbywatchURL')}</a></div>
         </div>
 
         <div class="person-text-body">
-          <h3 class="person-text-body-title">${chrome.i18n.getMessage('tipInterestsHigh')}</h3>
           <ul class="person-links-list">
             <li>${chrome.i18n.getMessage('loadingInterests')}</li>
           </ul>
@@ -198,31 +195,34 @@ function eventHandler(who){
 
       // inner func
       function displayData(data){
+        console.log(data);
 
         if(!instance.loaded){
           content += addInfo('<b>' + chrome.i18n.getMessage('tipInterests') + '</b>')
           li_str = '';
 
-          var interests = {'parlamentarian': [], 'guest1': [], 'guest2': []};
+          /* guests */
+          var guests = data['data']['getParliamentarian']['guests'];
+          var guestNames = [];
+          if(guests.length > 0){
+            guests.forEach(function(item){
+              guestNames.push(item['name']);
+              content += addListItem(item['name']);
+            });
+          }
 
-          /* group and nest:
+          /*
+            group and nest:
             https://github.com/lobbywatch/website/blob/master/src/components/Connections/index.js
             https://github.com/lobbywatch/website/blob/master/src/components/Connections/nest.js
-
           */
 
-          function sortGroups(a, b){
-            // low high medium
-            // POTENCY_WEIGHT
-          }
-          console.group('Groupby');
 
           var groups = groupBy(data['data']['getParliamentarian']['connections'], 'potency');
 
           function displayGroup(group){
             if(!group){
-              console.log('WARNING: Empty group')
-              return;
+              return null;
             }
             _li_str = '';
             group.forEach(function(item){
@@ -230,73 +230,43 @@ function eventHandler(who){
               if(!via){
                 _li_str += addListItem(item['to']['name'] + ', ' + item['function']);
               }else{
-                console.log(via)
-                // TODO
+                _li_str += addListItem(item['to']['name'] + ' ' + via);
               }
             });
             return _li_str;
           }
 
-          li_str += displayGroup(groups['HIGH']);
-          li_str += addListHeader('Liens d’intérêt moyens');
-          li_str += displayGroup(groups['MEDIUM']);
-          li_str += addListHeader('Liens d’intérêt faibles');
-          li_str += displayGroup(groups['LOW']);
-
-          /*var groups = groupBy(data['data']['getParliamentarian']['connections'], 'group');
-
-          Object.keys(groups).forEach(function(key) {
-            console.log('length: ' + groups[key].length)
-            console.log(groups[key])
-            if(groups[key].length > 0){
-               li_str += addListHeader(key);
-               groups[key].forEach(function(item){
-
-                 var via = getVia(item['vias']);
-                 if(!via){
-                   interests['parlamentarian'].push(item['to']['name'] + ', ' + item['function']);
-                   content += addListItem(item['to']['name'] + ', ' + item['function']);
-                   li_str += addListItem(item['to']['name'] + ', ' + item['function']);
-                 }else{
-                   console.log(via)
-                   // TODO
-                 }
-               });
-              }
-          });*/
-
-          console.groupEnd();
-
-
-          data['data']['getParliamentarian']['connections'].forEach(function(item){
-
-            var via = getVia(item['vias']);
-            if(!via){
-              interests['parlamentarian'].push(item['to']['name'] + ', ' + item['function']);
-              content += addListItem(item['to']['name'] + ', ' + item['function']);
-              li_str += addListItem(item['to']['name'] + ', ' + item['function']);
-            }else{
-              console.log(via)
-              // TODO
-            }
-          });
-          // console.log(interests);
-
-          content += '</ol>';
+          var interestsHigh = displayGroup(groups['HIGH']);
+          if(interestsHigh){
+            li_str += addListHeader( chrome.i18n.getMessage('tipInterestsHIGH') );
+            li_str += interestsHigh;
+          }
+          var interestsMedium = displayGroup(groups['MEDIUM']);
+          if(interestsMedium){
+            li_str += addListHeader( chrome.i18n.getMessage('tipInterestsMEDIUM') );
+            li_str += interestsMedium;
+          }
+          var interestsLow = displayGroup(groups['LOW']);
+          if(interestsLow){
+            li_str += addListHeader( chrome.i18n.getMessage('tipInterestsLOW') );
+            li_str += interestsLow;
+          }
 
           var template_loaded = `<div class="person">
               <div class="person-picture" style="background-image: url('${individualData['portrait']}')"></div>
 
               <div class="person-txt">
+                <a class="lobbywatch-logo" target="_blank" href="https://lobbywatch.ch/fr/daten/parlamentarier/${individualData['id']}/${individualData['name']}">
+                  <img src="${chrome.extension.getURL('icon32.png')}" alt="Lobbywatch" />
+                </a>
 
                 <div class="person-txt-header">
-                  <span class="person-name"><a target="_blank" href="https://lobbywatch.ch/fr/daten/parlamentarier/235/Christian%20Levrat">${individualData['name']}</a></span>
+                  <span class="person-name"><a target="_blank" href="https://lobbywatch.ch/fr/daten/parlamentarier/${individualData['id']}/${individualData['name']}">${individualData['name']}</a></span>
                   <span class="person-infos">${individualData['councilTitle']}, ${individualData['canton']}, ${party}</span>
-                  <div class="person-lobbywatch-url"><a href="https://lobbywatch.ch/fr/daten/parlamentarier/235/Christian%20Levrat" target="_blank">${chrome.i18n.getMessage('lobbywatchURL')}</a></div>
                 </div>
 
                 <div class="person-text-body">
-                  <h3 class="person-text-body-title">${chrome.i18n.getMessage('tipInterestsHigh')}</h3>
+                  <p><b>${chrome.i18n.getMessage('guests')}:</b> ${guestNames.join(", ")}</p>
                   <ul class="person-links-list">
                     ${li_str}
                   </ul>
@@ -331,7 +301,6 @@ function eventHandler(who){
           contentType: "application/json",
           data: JSON.stringify(load),
           success : function(data, statut){ // code_html contient le HTML renvoyé
-            console.log('graphql query done')
             localStorage.setItem(who, JSON.stringify(data));
             displayData(data);
           },

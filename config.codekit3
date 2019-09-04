@@ -25,33 +25,6 @@
 		"oAP": "/.gitignore",
 		"oF": 0
 		},
-	"/3092.jpg": {
-		"ft": 16384,
-		"iS": 18376,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/3092.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_locales/de/messages.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/_locales/de/messages-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/_locales/en/messages.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/_locales/en/messages-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
 	"/_locales/fr/messages.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -60,13 +33,13 @@
 		"oO": 0,
 		"oS": 1
 		},
-	"/contentScript 2.js": {
+	"/contentScript-min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/contentScript 2-min.js",
+		"oAP": "/contentScript-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -126,7 +99,7 @@
 		},
 	"/icon128.png": {
 		"ft": 32768,
-		"iS": 2691,
+		"iS": 11360,
 		"oA": 0,
 		"oAP": "/icon128.png",
 		"oF": 0,
@@ -152,8 +125,8 @@
 		"oA": 0,
 		"oAP": "/icon32.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -163,8 +136,8 @@
 		"oA": 0,
 		"oAP": "/icon48.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -232,14 +205,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"/my-archive.zip": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/my-archive.zip",
-		"oF": 0
-		},
 	"/package-lock.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -263,17 +228,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/popup-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/pym.v1.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/pym.v1-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -310,52 +264,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/template.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/template.html",
-		"oF": 0
-		},
-	"/test-popup.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/test-popup.html",
-		"oF": 0
-		},
-	"/tester graphql.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/tester graphql-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/tester.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/tester.html",
-		"oF": 0
-		},
-	"/tester.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/tester-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"/tippy.all.min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -366,22 +274,6 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
-		},
-	"/tooltip-tester-v2.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/tooltip-tester-v2.html",
-		"oF": 0
-		},
-	"/tooltip-tester.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/tooltip-tester.html",
-		"oF": 0
 		}
 	},
 "hooks": [
