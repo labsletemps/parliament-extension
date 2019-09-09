@@ -14,6 +14,8 @@ var POTENCY_WEIGHT = {
   LOW: 1
 }
 
+$('body').append('<div class="addon-overlay" id="addon-overlay"></div>');
+
 // Ceasar Bautista on https://stackoverflow.com/a/34890276
 var groupBy = function(xs, key) {
   return xs.reduce(function(rv, x) {
@@ -104,9 +106,12 @@ function lookupNames(){
           if(innerHTML.indexOf(name) !== -1){
             var dataWho = getDataWho(name);
             currentPeople[dataWho] = name;
-            p_list[i].innerHTML = innerHTML.replace(name, '<span class="modal-available ' + dataWho + '" data-who="' + dataWho + '">' + name + '</span>');
+            // var regexp = new RegExp(name, "g");
+            innerHTML = innerHTML.replace(name, '<span class="modal-available ' + dataWho + '" data-who="' + dataWho + '">' + name + '</span>');
           }
         });
+
+        p_list[i].innerHTML = innerHTML;
       }
     }
   }
@@ -175,6 +180,8 @@ function eventHandler(who){
       reference.setAttribute('aria-expanded', 'true')
     },
     onHide({ reference }) {
+      // $('#addon-overlay').hide('fade', 300);
+      // $('#addon-overlay').css('opacity', 0);
       reference.setAttribute('aria-expanded', 'false')
     },
     placement: 'bottom',
@@ -186,6 +193,8 @@ function eventHandler(who){
     updateDuration: 0,
 
     onShow(instance) {
+      // $('.addon-overlay').show('fade', 300);
+
       /*document.querySelectorAll('.tippy-popper').forEach(popper => {
         console.log('CLOSE')
         if (popper !== instance.popper) {
@@ -195,13 +204,15 @@ function eventHandler(who){
 
       // inner func
       function displayData(data){
-        console.log(data);
 
         if(!instance.loaded){
           content += addInfo('<b>' + chrome.i18n.getMessage('tipInterests') + '</b>')
           li_str = '';
 
           /* guests */
+          if(!data){
+            li_str = '<p class="error">' + chrome.i18n.getMessage('errorMessage') + '</p>';
+          }
           var guests = data['data']['getParliamentarian']['guests'];
           var guestNames = [];
           if(guests.length > 0){
