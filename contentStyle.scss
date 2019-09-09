@@ -27,6 +27,19 @@ voir https://atomiks.github.io/tippyjs/themes/
   /* background: #7bb7e0; */
 }
 
+#addon-overlay{
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .tippy-tooltip {
   width: 430px;
   max-width: 430px !important;
@@ -36,7 +49,8 @@ voir https://atomiks.github.io/tippyjs/themes/
   background-clip: padding-box;
 
   border: 1px solid rgba(0, 8, 16, .15);
-  border-radius: 3px;
+  border-width: 1px 0 0 0;
+  // border-radius: 3px;
 
   box-shadow: 0 14px 23px 0 rgba(0,0,0,0.50);
   border-radius: 2px 2px 2px 0 0 0 2px;
@@ -103,8 +117,8 @@ voir https://atomiks.github.io/tippyjs/themes/
         // }
         .person-name, .person-name a, .person-name:visited
         {
-          font-family: 'Ratio-Medium', sans-serif;
-          font-size: 17px;
+          font-family: 'Ratio-Medium', sans-serif !important;
+          font-size: 17px !important;
           color: $dark-blue;
           text-align: left;
           display: block;
@@ -114,8 +128,8 @@ voir https://atomiks.github.io/tippyjs/themes/
 
         .person-infos
         {
-          font-family: 'Rooney-Light', sans-serif;
-          font-size: 13px;
+          font-family: 'Rooney-Light', sans-serif !important;
+          font-size: 13px !important;
           color: #12606F;
           text-align: left;
         }
