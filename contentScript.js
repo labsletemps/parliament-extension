@@ -31,6 +31,9 @@ function getDataWho(name){
 
 function getParty(data){
   if('partyMembership' in data){
+    if(data['partyMembership'] == null){
+      return '–';
+    }
     if ('party' in data['partyMembership']){
       if ('abbr' in data['partyMembership']['party']){
         return data['partyMembership']['party']['abbr']
@@ -128,6 +131,7 @@ lookupNames();
 
 function eventHandler(who){
   var individualData = getIndividualData(currentPeople[who]);
+
   if(! individualData){
     console.log('Not found in data')
     return false;
@@ -175,7 +179,7 @@ function eventHandler(who){
     aria: null,
     autoFocus: false,
     trigger: 'click', // mouseenter
-    appendTo: ref => ref.parentNode,
+    // appendTo: ref => ref.parentNode,
     onMount({ reference }) {
       reference.setAttribute('aria-expanded', 'true')
     },
