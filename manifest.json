@@ -24,7 +24,7 @@
       "js": [
         "tippy.all.min.js",
         "jquery-3.3.1.min.js",
-        "contentScript-min.js"
+        "contentScript.js"
       ],
       "css" : [
         "contentStyle.css"
