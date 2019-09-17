@@ -205,6 +205,14 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/my-archive.zip": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/my-archive.zip",
+		"oF": 0
+		},
 	"/package-lock.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -212,6 +220,17 @@
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
+		},
+	"/popup-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/popup-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
 	"/popup.html": {
 		"cB": 0,

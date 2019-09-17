@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Les lobbies du parlement",
+    "message": "Les liens d’intérêt des parlementaires",
     "description": "Name of the extension."
   },
 
@@ -22,6 +22,11 @@
   "guests": {
     "message": "Invités",
     "description": "«Interests» subtitle in the tip."
+  },
+
+  "errorMessage": {
+    "message": "Une erreur s’est produite.",
+    "description": "Generic error message"
   },
 
   "tipInterestsHIGH": {
