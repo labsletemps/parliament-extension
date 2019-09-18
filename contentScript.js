@@ -3,6 +3,7 @@ Globals
 */
 
 // TODO i18n change this for 'de'
+// chrome.i18n.getMessage(
 var locale = 'fr';
 var parliamentData;
 var nameList = [];
@@ -109,8 +110,8 @@ function lookupNames(){
           if(innerHTML.indexOf(name) !== -1){
             var dataWho = getDataWho(name);
             currentPeople[dataWho] = name;
-            // var regexp = new RegExp(name, "g");
-            innerHTML = innerHTML.replace(name, '<span class="modal-available ' + dataWho + '" data-who="' + dataWho + '">' + name + '</span>');
+            regexp = new RegExp('([^"])' + name);
+            innerHTML = innerHTML.replace(regexp, '$1<span class="modal-available ' + dataWho + '" data-who="' + dataWho + '">' + name + '</span>');
           }
         });
 
