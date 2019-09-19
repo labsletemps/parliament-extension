@@ -15,7 +15,17 @@ var POTENCY_WEIGHT = {
   LOW: 1
 }
 
-$('body').append('<div class="addon-overlay" id="addon-overlay"></div>');
+// $('body').append('<div class="addon-overlay" id="addon-overlay"></div>');
+
+if( window.location.origin.includes('beobachter.ch') ){
+  // console.log('Beobachter – trigger on click')
+  $('body').click(function(){
+    setTimeout(lookupNames, 1200);
+    setTimeout(lookupNames, 2100);
+  })
+}
+
+
 
 // Ceasar Bautista on https://stackoverflow.com/a/34890276
 var groupBy = function(xs, key) {
