@@ -1,11 +1,11 @@
 {
   "extensionName": {
-    "message": "Les liens d’intérêt des parlementaires",
+    "message": "Intérêts des parlementaires",
     "description": "Name of the extension."
   },
 
   "extensionDescription": {
-    "message": "Cette extension affiche les liens d’intérêt des parlementaires suisses mentionnés sur le Web, grâce aux données de Lobbywatch.ch.",
+    "message": "Cette extension affiche les liens d’intérêt des parlementaires suisses mentionnés dans certains médias, grâce aux données de Lobbywatch.",
     "description": "Description of the extension."
   },
 
