@@ -7,6 +7,7 @@ Globals
 var locale = 'fr';
 var parliamentData;
 var localData = localStorage.getItem('parliamentarians');
+var lastUpdate = localStorage.getItem('parliamentarians-update');
 var nameList = [];
 var currentPeople = {};
 var POTENCY_WEIGHT = {
@@ -17,13 +18,21 @@ var POTENCY_WEIGHT = {
 
 var needsUpdate = function(){
   // uncomment to bypass cache
-  console.log('yes needs update')
-  return true;
+  // return true;
+  try {
+    lastUpdate = parseInt(lastUpdate);
+  }
+  catch(error) {
+    console.log('could not parse')
+    return true;
+  }
 
   // expire après 1 heure:                       milli  sec  min  heures
-  if( (new Date().getTime() - localData['data']['lastUpdate']) < (1000 * 60 * 60 * 1) ){
+  if( (new Date().getTime() - lastUpdate) < (1000 * 60 * 60 * 1) ){
+    console.log('Parliament Extension: use cache')
     return false;
   }else{
+    console.log('Parliament Extension: cache timed out')
     return true;
   }
 }
@@ -98,29 +107,28 @@ function fetchParliamentIds(){
   $.ajax({
     type: "json",
     method: "POST",
-    // url: "https://labs.letemps.ch/interactive/2019/parliament-extension/data/",
-    url: "https://web.tcch.ch/parliament/v3/",
+    url: "https://labs.letemps.ch/interactive/2019/parliament-extension/data/",
+    // url: "https://web.tcch.ch/parliament/v3/",
     success : function(data, statut){
       console.log('Data retrieved');
-      localStorage.setItem('parliamentarians', data);
+      localStorage.setItem('parliamentarians', data); // as string
+      localStorage.setItem('parliamentarians-update', String(new Date().getTime()));
+
       parliamentData = JSON.parse(data);
-      console.log(parliamentData['data']['updated'])
       parliamentData['data']['parliamentarians'].forEach(function(item){
         nameList.push(item['name']);
       });
       lookupNames();
     },
     error : function(xhr, status, error) {
-      console.log('Error when fetching parliament data: ' + status + ' ' + error);
+      console.log('Parliament Extension: error when fetching data: ' + error);
     }
   });
 }
 
-if(localData && !needsUpdate){
-  // console.log('also fetch to test')
-  // fetchParliamentIds();
-
+if(localData && !needsUpdate()){
   parliamentData = JSON.parse(localData);
+
   parliamentData['data']['parliamentarians'].forEach(function(item){
     nameList.push(item['name']);
   });
