@@ -13,6 +13,7 @@ $red-lt: #b80021;
 $red-lt-darker: #930025;
 
 @import 'reset.scss';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,600&display=swap');
 
 /*
 style de https://unpkg.com/tippy.js@3/dist/themes/light-border.css
@@ -80,6 +81,7 @@ voir https://atomiks.github.io/tippyjs/themes/
       height: 100%;
       float: left;
       overflow-y: scroll;
+      overflow-x: hidden;
       text-align: left;
 
       &::-webkit-scrollbar-thumb
@@ -118,8 +120,9 @@ voir https://atomiks.github.io/tippyjs/themes/
         // }
         .person-name, .person-name a, .person-name:visited
         {
-          font-family: 'Ratio-Medium', sans-serif !important;
+          font-family: 'Ratio-Medium', 'Montserrat', sans-serif !important;
           font-size: 17px !important;
+          font-weight: 600;
           color: $dark-blue;
           text-align: left;
           display: block;
@@ -129,10 +132,13 @@ voir https://atomiks.github.io/tippyjs/themes/
 
         .person-infos
         {
-          font-family: 'Rooney-Light', sans-serif !important;
+          font-family: 'Rooney-Light', 'Montserrat', sans-serif !important;
+          font-weight: 300;
           font-size: 13px !important;
           color: #12606F;
           text-align: left;
+          margin-top: 5px;
+          display: block;
         }
 
         .person-lobbywatch-url{
@@ -145,11 +151,12 @@ voir https://atomiks.github.io/tippyjs/themes/
         /*background: red;*/
         padding: 10px;
         color: $black;
-        font-family: 'Rooney-Light', sans-serif;
+        font-family: 'Rooney-Light', 'Montserrat', sans-serif;
+        font-weight: 300;
 
         .person-text-body-title
         {
-          font-family: 'Ratio-Medium', sans-serif;
+          font-family: 'Ratio-Medium', 'Montserrat', sans-serif;
           font-size: 17px;
           text-align: left;
           font-weight: 500; /* @TODO remove quand police accessible */
@@ -165,10 +172,12 @@ voir https://atomiks.github.io/tippyjs/themes/
           padding-left: 18px;
 
           li{
-            font-family: 'Rooney-Light', sans-serif;
+            font-family: 'Rooney-Light', 'Montserrat', sans-serif;
+            font-weight: 300;
             font-size: 13px;
             color: #000000;
             text-align: left;
+            display: block; /* overwrite tamedia webspecial */
 
             &:before{ /* handelszeitung */
               content: none;
