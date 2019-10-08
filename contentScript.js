@@ -40,6 +40,13 @@ var needsUpdate = function(){
 // Maybe for a next release? Overlay
 // $('body').append('<div class="addon-overlay" id="addon-overlay"></div>');
 
+// Interaction: depends on the visited websites
+var triggerAction = 'click'
+if( window.location.origin.includes('lenouvelliste.ch|lacote.ch|arcinfo.ch') ){
+  triggerAction += ' mouseover'
+}
+
+
 // For react websites
 var first_href = window.location.href;
 if( window.location.origin.includes('beobachter.ch') ){
@@ -107,7 +114,7 @@ function fetchParliamentIds(){
   $.ajax({
     type: "json",
     method: "POST",
-    url: "https://labs.letemps.ch/interactive/2019/parliament-extension/data/",
+    url: "https://labs.letemps.ch/interactive/2019/parliament-extension/data/v1/",
     // url: "https://web.tcch.ch/parliament/v3/",
     success : function(data, statut){
       console.log('Data retrieved');
@@ -220,7 +227,7 @@ function eventHandler(who){
     content: template_base,
     aria: null,
     autoFocus: false,
-    trigger: 'click', // mouseenter
+    trigger: triggerAction, // mouseenter
     // appendTo: ref => ref.parentNode,
     onMount({ reference }) {
       reference.setAttribute('aria-expanded', 'true')
@@ -255,6 +262,14 @@ function eventHandler(who){
               guestNames.push(item['name']);
               content += addListItem(item['name']);
             });
+          }
+          var guestInfo = '';
+          if(guestNames.length > 1){
+            guestInfo = `<p><b>${chrome.i18n.getMessage('guests')}:</b> ${guestNames.join(", ")}
+            (${individualData['name'] + ' ' + chrome.i18n.getMessage('guestsComplement')})</p>`;
+          }else if (guestNames.length == 1){
+            guestInfo = `<p><b>${chrome.i18n.getMessage('guest')}:</b> ${guestNames.join(", ")}
+            (${individualData['name'] + ' ' + chrome.i18n.getMessage('guestComplement')})</p>`;
           }
 
           /*
@@ -297,6 +312,8 @@ function eventHandler(who){
             li_str += interestsLow;
           }
 
+
+
           var template_loaded = `<div class="person">
               <div class="person-picture" style="background-image: url('${individualData['portrait']}')"></div>
 
@@ -311,7 +328,7 @@ function eventHandler(who){
                 </div>
 
                 <div class="person-text-body">
-                  <p><b>${chrome.i18n.getMessage('guests')}:</b> ${guestNames.join(", ")}</p>
+                  <p>${guestInfo}</p>
                   <ul class="person-links-list">
                     ${li_str}
                   </ul>
