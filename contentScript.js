@@ -6,8 +6,8 @@ Globals
 // chrome.i18n.getMessage(
 var locale = 'fr';
 var parliamentData;
-var nameList = [];
 var localData = localStorage.getItem('parliamentarians');
+var nameList = [];
 var currentPeople = {};
 var POTENCY_WEIGHT = {
   HIGH: 1000,
@@ -15,17 +15,38 @@ var POTENCY_WEIGHT = {
   LOW: 1
 }
 
+var needsUpdate = function(){
+  // uncomment to bypass cache
+  console.log('yes needs update')
+  return true;
+
+  // expire après 1 heure:                       milli  sec  min  heures
+  if( (new Date().getTime() - localData['data']['lastUpdate']) < (1000 * 60 * 60 * 1) ){
+    return false;
+  }else{
+    return true;
+  }
+}
+
+// Maybe for a next release? Overlay
 // $('body').append('<div class="addon-overlay" id="addon-overlay"></div>');
 
+// For react websites
+var first_href = window.location.href;
 if( window.location.origin.includes('beobachter.ch') ){
   // console.log('Beobachter – trigger on click')
   $('body').click(function(){
-    setTimeout(lookupNames, 1200);
-    setTimeout(lookupNames, 2100);
+    console.log('click')
+    if(window.location.href != first_href){
+      console.log('New href: ' + window.location.href);
+      setTimeout(lookupNames, 1200);
+      setTimeout(lookupNames, 2100);
+      first_href = window.location.href;
+    }else{
+      console.log('no href change')
+    }
   })
 }
-
-
 
 // Ceasar Bautista on https://stackoverflow.com/a/34890276
 var groupBy = function(xs, key) {
@@ -37,7 +58,7 @@ var groupBy = function(xs, key) {
 
 function getDataWho(name){
   name.normalize('NFD').replace(/[\u0300-\u036f]/g, "")   // on enleve les accents
-  return name.replace(' ', '-').toLowerCase();
+  return name.replace(/ /g, '-').toLowerCase();
 }
 
 function getParty(data){
@@ -75,22 +96,27 @@ function getIndividualData(name){
 // TODO hoster sur labs.letemps.ch
 function fetchParliamentIds(){
   $.ajax({
+    type: "json",
     method: "POST",
-    url: "https://web.tcch.ch/parliament/",
+    // url: "https://labs.letemps.ch/interactive/2019/parliament-extension/data/",
+    url: "https://web.tcch.ch/parliament/v3/",
     success : function(data, statut){
       console.log('Data retrieved');
       localStorage.setItem('parliamentarians', data);
-      data['data']['parliamentarians'].forEach(function(item){
+      parliamentData = JSON.parse(data);
+      console.log(parliamentData['data']['updated'])
+      parliamentData['data']['parliamentarians'].forEach(function(item){
         nameList.push(item['name']);
       });
+      lookupNames();
     },
     error : function(xhr, status, error) {
-      console.log('Error when fetching parliament data');
+      console.log('Error when fetching parliament data: ' + status + ' ' + error);
     }
   });
 }
 
-if(localData){
+if(localData && !needsUpdate){
   // console.log('also fetch to test')
   // fetchParliamentIds();
 
@@ -132,7 +158,7 @@ function lookupNames(){
 
   setTimeout(function(){
     $('span.modal-available').on('click mouseover', function(e){
-      console.log('Survol / click sur ' + $(this).data('who'));
+      // console.log('Survol / click sur ' + $(this).data('who'));
       eventHandler($(this).data('who'));
     });
   }, 200);
@@ -144,10 +170,8 @@ function eventHandler(who){
   var individualData = getIndividualData(currentPeople[who]);
 
   if(! individualData){
-    console.log('Not found in data')
+    console.log('Parliament Extension: politician not found in data')
     return false;
-  }else{
-    console.log('Data found for ' + currentPeople[who]);
   }
   var party = getParty(individualData);
 
@@ -183,7 +207,6 @@ function eventHandler(who){
 
   var targets = document.querySelector('.modal-available');
 
-
   // tippy('.modal-available.' + who, {
   tippy('.modal-available.' + who, {
     content: template_base,
@@ -195,8 +218,6 @@ function eventHandler(who){
       reference.setAttribute('aria-expanded', 'true')
     },
     onHide({ reference }) {
-      // $('#addon-overlay').hide('fade', 300);
-      // $('#addon-overlay').css('opacity', 0);
       reference.setAttribute('aria-expanded', 'false')
     },
     placement: 'bottom',
@@ -208,15 +229,6 @@ function eventHandler(who){
     updateDuration: 0,
 
     onShow(instance) {
-      // $('.addon-overlay').show('fade', 300);
-
-      /*document.querySelectorAll('.tippy-popper').forEach(popper => {
-        console.log('CLOSE')
-        if (popper !== instance.popper) {
-          popper._tippy.hide()
-        }
-      });*/
-
       // inner func
       function displayData(data){
 
@@ -242,7 +254,6 @@ function eventHandler(who){
             https://github.com/lobbywatch/website/blob/master/src/components/Connections/index.js
             https://github.com/lobbywatch/website/blob/master/src/components/Connections/nest.js
           */
-
 
           var groups = groupBy(data['data']['getParliamentarian']['connections'], 'potency');
 
