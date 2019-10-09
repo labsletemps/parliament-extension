@@ -1,1 +1,98 @@
-{"extensionName":"Interessenbindungen der Parlamentarier","extensionDescription":"Diese Erweiterung zeigt Interessenbindungen von Parlamentarierinnen und Parlamentarier anhand Daten von Lobbywatch.","title":"Interessenbindungen","loadingInterests":"laden...","errorMessage":"Ein Fehler ist aufgetreten","guests":"Interessenbindungen","guest":"Interessenbindungen","guestsComplement":"Erteilte Zutrittsberechtigungen zum Bundeshaus","guestComplement":"ERteilte Zutrittsberechtigung zum Bundeshaus","noParty":"parteilos","tipInterestsHIGH":"Starke Wirksamkeit","tipInterestsMEDIUM":"Mittlere Wirksamkeit","tipInterestsLOW":"Geringe Wirksamkeit","tipParty":"Partei","showMore":"Alles anzeigen","lobbywatchURL":"Profil auf lobbywatch.ch","popupHeader":"Über","popupInfoLine1":"Diese Erweiterung verwendet Datenvon Lobbywatch um Interessenbindungen von Schweizer Parlamentarierinnen und Parlamentarier anzuzeigen.","popupInfoLine2":"Gewählte Amtsträger werden anhand ihres Namens identifiziert. Personen mit gleichem Namen können fälschlicherweise als Parlamentarier erkannt werden.","popupInfoLine3":"Weitere Informationen zu","detailedDescription":"Parlamentarierinnen und Parlamentarier, welche auf der aktuellen Website erwähnt werden, werden automatisch erkannt und hervorgehoben. Ein Klick auf den Namen zeigt die Interessenbindungen, vergebenen Zutrittsberechtigungen an Lobbyisten und relevante Link zur entsprechenden Person an. Da Amtsträger anhand des Namens erkannt werden, können Namensvetter fälschlicherweise als Politiker erkannt werden.\n\nDie Daten stammen vom gemeinnützigen Verein Lobbywatch, welcher Interessenbindungen zwischen National‐ und Ständeräten zu Firmen, Vereinigungen und Institutionen von Parlamentarier thematisiert. Weitere Informationen: www.lobbywatch.ch\n\nEntwickelt wurde die Erweiterung von der Tageszeitung «Le Temps» (Entwicklung: Paul Ronga, Webdesign: César Greppin). Deutsche Übersetzung: Simon Huwiler.\n\n› Fehler gefunden? Schreiben Sie uns: data@letemps.ch\n\n› Der Quellcode ist frei verfügbar: https:\/\/github.com\/labsletemps\/parliament-extension\n\nUnterstützte Websites:\nblick.ch\nbeobachter.ch\nhandelszeitung.ch\n20min.ch\nsrf.ch\nrts.ch\ntdg.ch\nletemps.ch\nlenouvelliste.ch\nbluewin.ch\narcinfo.ch\nlacote.ch\n24heures.ch\n\nErweiterung testen:\nhttps:\/\/www.letemps.ch\/suisse\/pdc-trois-cantons-romands-meilleur-pire-scenarios\nhttps:\/\/www.rts.ch\/info\/suisse\/10720933-des-jeunes-pour-le-climat-interrompent-les-debats-au-conseil-national.html\nhttps:\/\/www.tdg.ch\/suisse\/identite-electronique-referendum\/story\/25608562\nhttps:\/\/www.20min.ch\/ro\/news\/suisse\/story\/Petra-Goessi-mise-sur-une-generation-volontariste-26390818\nhttps:\/\/www.lenouvelliste.ch\/dossiers\/elections-federales-2019-vues-du-valais\/articles\/transparence-trois-conseillers-nationaux-valaisans-revelent-leurs-revenus-869322\nhttps:\/\/www.bluewin.ch\/fr\/infos\/suisse\/polemique-autour-de-tweets-de-claude-begle-278434.html\nhttps:\/\/www.arcinfo.ch\/articles\/suisse\/le-conseiller-national-begle-se-dit-neutre-et-impartial-855930\nhttps:\/\/www.lacote.ch\/dossiers\/elections-federales-2019\/articles\/vaud-nombre-record-de-candidats-au-national-859520\nhttps:\/\/www.blick.ch\/news\/politik\/sp-nordmann-lanciert-radikale-idee-zahl-der-fluege-pro-kopf-soll-limitiert-werden-id15552580.html","chromeScreenshot":null,"chromeImgSmall":null,"chromeImgBig":null}
+{
+ "extensionName": {
+  "message": "Interessenbindungen der Parlamentarier",
+  "description": "Name of the extension."
+ },
+ "extensionDescription": {
+  "message": "Diese Erweiterung zeigt Interessenbindungen von Parlamentarierinnen und Parlamentarier anhand Daten von Lobbywatch.",
+  "description": "Description of the extension."
+ },
+ "title": {
+  "message": "Interessenbindungen",
+  "description": "Title appearing when hovering the extension."
+ },
+ "loadingInterests": {
+  "message": "laden...",
+  "description": "Appears before interests gets loaded"
+ },
+ "errorMessage": {
+  "message": "Ein Fehler ist aufgetreten",
+  "description": "Generic error message"
+ },
+ "guests": {
+  "message": "Interessenbindungen",
+  "description": "«Interests» subtitle in the tip."
+ },
+ "guest": {
+  "message": "Interessenbindungen",
+  "description": "«Interests» subtitle in the tip (sg.)"
+ },
+ "guestsComplement": {
+  "message": "Erteilte Zutrittsberechtigungen zum Bundeshaus",
+  "description": "«Interests» suffix in the tip. Full sentence: \"Céline Amaudruz"
+ },
+ "guestComplement": {
+  "message": "ERteilte Zutrittsberechtigung zum Bundeshaus",
+  "description": "«Interests» suffix in the tip - singular"
+ },
+ "noParty": {
+  "message": "parteilos",
+  "description": "When someone has no party"
+ },
+ "tipInterestsHIGH": {
+  "message": "Starke Wirksamkeit",
+  "description": "«Interests» subtitle in the tip."
+ },
+ "tipInterestsMEDIUM": {
+  "message": "Mittlere Wirksamkeit",
+  "description": "«Interests» subtitle in the tip."
+ },
+ "tipInterestsLOW": {
+  "message": "Geringe Wirksamkeit",
+  "description": "«Interests» subtitle in the tip."
+ },
+ "tipParty": {
+  "message": "Partei",
+  "description": "«Party» in the tip."
+ },
+ "showMore": {
+  "message": "Alles anzeigen",
+  "description": "Display all"
+ },
+ "lobbywatchURL": {
+  "message": "Profil auf lobbywatch.ch",
+  "description": "Link text for profile link"
+ },
+ "popupHeader": {
+  "message": "Über",
+  "description": "Popup title."
+ },
+ "popupInfoLine1": {
+  "message": "Diese Erweiterung verwendet Datenvon Lobbywatch um Interessenbindungen von Schweizer Parlamentarierinnen und Parlamentarier anzuzeigen.",
+  "description": "Popup informations."
+ },
+ "popupInfoLine2": {
+  "message": "Gewählte Amtsträger werden anhand ihres Namens identifiziert. Personen mit gleichem Namen können fälschlicherweise als Parlamentarier erkannt werden.",
+  "description": "Popup informations."
+ },
+ "popupInfoLine3": {
+  "message": "Weitere Informationen zu",
+  "description": "Popup informations."
+ },
+ "detailedDescription": {
+  "message": "Parlamentarierinnen und Parlamentarier, welche auf der aktuellen Website erwähnt werden, werden automatisch erkannt und hervorgehoben. Ein Klick auf den Namen zeigt die Interessenbindungen, vergebenen Zutrittsberechtigungen an Lobbyisten und relevante Link zur entsprechenden Person an. Da Amtsträger anhand des Namens erkannt werden, können Namensvetter fälschlicherweise als Politiker erkannt werden.\n\nDie Daten stammen vom gemeinnützigen Verein Lobbywatch, welcher Interessenbindungen zwischen National‐ und Ständeräten zu Firmen, Vereinigungen und Institutionen von Parlamentarier thematisiert. Weitere Informationen: www.lobbywatch.ch\n\nEntwickelt wurde die Erweiterung von der Tageszeitung «Le Temps» (Entwicklung: Paul Ronga, Webdesign: César Greppin). Deutsche Übersetzung: Simon Huwiler.\n\n› Fehler gefunden? Schreiben Sie uns: data@letemps.ch\n\n› Der Quellcode ist frei verfügbar: https://github.com/labsletemps/parliament-extension\n\nUnterstützte Websites:\nblick.ch\nbeobachter.ch\nhandelszeitung.ch\n20min.ch\nsrf.ch\nrts.ch\ntdg.ch\nletemps.ch\nlenouvelliste.ch\nbluewin.ch\narcinfo.ch\nlacote.ch\n24heures.ch\n\nErweiterung testen:\nhttps://www.letemps.ch/suisse/pdc-trois-cantons-romands-meilleur-pire-scenarios\nhttps://www.rts.ch/info/suisse/10720933-des-jeunes-pour-le-climat-interrompent-les-debats-au-conseil-national.html\nhttps://www.tdg.ch/suisse/identite-electronique-referendum/story/25608562\nhttps://www.20min.ch/ro/news/suisse/story/Petra-Goessi-mise-sur-une-generation-volontariste-26390818\nhttps://www.lenouvelliste.ch/dossiers/elections-federales-2019-vues-du-valais/articles/transparence-trois-conseillers-nationaux-valaisans-revelent-leurs-revenus-869322\nhttps://www.bluewin.ch/fr/infos/suisse/polemique-autour-de-tweets-de-claude-begle-278434.html\nhttps://www.arcinfo.ch/articles/suisse/le-conseiller-national-begle-se-dit-neutre-et-impartial-855930\nhttps://www.lacote.ch/dossiers/elections-federales-2019/articles/vaud-nombre-record-de-candidats-au-national-859520\nhttps://www.blick.ch/news/politik/sp-nordmann-lanciert-radikale-idee-zahl-der-fluege-pro-kopf-soll-limitiert-werden-id15552580.html",
+  "description": "For the Chrome Web Store. Max 10000 characters"
+ },
+ "chromeScreenshot": {
+  "message": NaN,
+  "description": "For the Chrome Web Store. 1 280 x 800 or 640 x 400"
+ },
+ "chromeImgSmall": {
+  "message": NaN,
+  "description": "440 x 280"
+ },
+ "chromeImgBig": {
+  "message": NaN,
+  "description": "920 x 680"
+ }
+}
