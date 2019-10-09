@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,600&display=swap");
 .tippy-tooltip.light-border-theme {
   /* HTML5 display-role reset for older browsers */ }
   .tippy-tooltip.light-border-theme div, .tippy-tooltip.light-border-theme span, .tippy-tooltip.light-border-theme applet, .tippy-tooltip.light-border-theme object, .tippy-tooltip.light-border-theme iframe,
@@ -79,6 +80,7 @@ voir https://atomiks.github.io/tippyjs/themes/
       height: 100%;
       float: left;
       overflow-y: scroll;
+      overflow-x: hidden;
       text-align: left; }
       .tippy-tooltip .person .person-txt::-webkit-scrollbar-thumb {
         background-color: #000000; }
@@ -94,8 +96,9 @@ voir https://atomiks.github.io/tippyjs/themes/
         background: #f2f2f2;
         padding: 12px 10px; }
         .tippy-tooltip .person .person-txt .person-txt-header .person-name, .tippy-tooltip .person .person-txt .person-txt-header .person-name a, .tippy-tooltip .person .person-txt .person-txt-header .person-name:visited {
-          font-family: 'Ratio-Medium', sans-serif !important;
+          font-family: 'Ratio-Medium', 'Montserrat', sans-serif !important;
           font-size: 17px !important;
+          font-weight: 600;
           color: #557797;
           text-align: left;
           display: block;
@@ -103,19 +106,23 @@ voir https://atomiks.github.io/tippyjs/themes/
           line-height: 8px;
           /* @TODO 5px */ }
         .tippy-tooltip .person .person-txt .person-txt-header .person-infos {
-          font-family: 'Rooney-Light', sans-serif !important;
+          font-family: 'Rooney-Light', 'Montserrat', sans-serif !important;
+          font-weight: 300;
           font-size: 13px !important;
           color: #12606F;
-          text-align: left; }
+          text-align: left;
+          margin-top: 5px;
+          display: block; }
         .tippy-tooltip .person .person-txt .person-txt-header .person-lobbywatch-url {
           display: none; }
       .tippy-tooltip .person .person-txt .person-text-body {
         /*background: red;*/
         padding: 10px;
         color: #000;
-        font-family: 'Rooney-Light', sans-serif; }
+        font-family: 'Rooney-Light', 'Montserrat', sans-serif;
+        font-weight: 300; }
         .tippy-tooltip .person .person-txt .person-text-body .person-text-body-title {
-          font-family: 'Ratio-Medium', sans-serif;
+          font-family: 'Ratio-Medium', 'Montserrat', sans-serif;
           font-size: 17px;
           text-align: left;
           font-weight: 500;
@@ -127,10 +134,13 @@ voir https://atomiks.github.io/tippyjs/themes/
         .tippy-tooltip .person .person-txt .person-text-body ul.person-links-list {
           padding-left: 18px; }
           .tippy-tooltip .person .person-txt .person-text-body ul.person-links-list li {
-            font-family: 'Rooney-Light', sans-serif;
+            font-family: 'Rooney-Light', 'Montserrat', sans-serif;
+            font-weight: 300;
             font-size: 13px;
             color: #000000;
-            text-align: left; }
+            text-align: left;
+            display: block;
+            /* overwrite tamedia webspecial */ }
             .tippy-tooltip .person .person-txt .person-text-body ul.person-links-list li:before {
               /* handelszeitung */
               content: none; }
