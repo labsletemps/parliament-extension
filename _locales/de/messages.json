@@ -19,6 +19,10 @@
   "message": "Ein Fehler ist aufgetreten",
   "description": "Generic error message"
  },
+ "currentLocale": {
+  "message": "de",
+  "description": "Used to send the right ajax requests"
+ },
  "guests": {
   "message": "Interessenbindungen",
   "description": "«Interests» subtitle in the tip."

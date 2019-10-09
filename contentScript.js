@@ -4,7 +4,8 @@ Globals
 
 // TODO i18n change this for 'de'
 // chrome.i18n.getMessage(
-var locale = 'fr';
+var locale = chrome.i18n.getMessage('currentLocale');
+console.log('Parliament Extension: current locale is ' + locale);
 var parliamentData;
 var localData = localStorage.getItem('parliamentarians');
 var lastUpdate = localStorage.getItem('parliamentarians-update');
@@ -18,7 +19,7 @@ var POTENCY_WEIGHT = {
 
 var needsUpdate = function(){
   // uncomment to bypass cache
-  // return true;
+  return true;
   try {
     lastUpdate = parseInt(lastUpdate);
   }
@@ -114,7 +115,7 @@ function fetchParliamentIds(){
   $.ajax({
     type: "json",
     method: "POST",
-    url: "https://labs.letemps.ch/interactive/2019/parliament-extension/data/v1/",
+    url: "https://labs.letemps.ch/interactive/2019/parliament-extension/data/" + locale,
     // url: "https://web.tcch.ch/parliament/v3/",
     success : function(data, statut){
       console.log('Data retrieved');

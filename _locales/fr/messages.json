@@ -1,94 +1,86 @@
 {
-  "extensionName": {
-    "message": "Intérêts des parlementaires",
-    "description": "Name of the extension."
-  },
-
-  "extensionDescription": {
-    "message": "Cette extension affiche les liens d’intérêt des parlementaires suisses grâce aux données de Lobbywatch.",
-    "description": "Description of the extension."
-  },
-
-  "title": {
-    "message": "",
-    "description": "Title appearing when hovering the extension."
-  },
-
-  "loadingInterests": {
-    "message": "Chargement…",
-    "description": "Appears before interests gets loaded"
-  },
-
-  "guests": {
-    "message": "Invités",
-    "description": "«Interests» subtitle in the tip."
-  },
-
-  "guest": {
-    "message": "Invité",
-    "description": "«Interests» subtitle in the tip - singular."
-  },
-
-  "guestsComplement": {
-    "message": "leur donne accès au palais fédéral",
-    "description": "«Interests» suffix in the tip."
-  },
-
-  "guestComplement": {
-    "message": "lui donne accès au palais fédéral",
-    "description": "«Interests» suffix in the tip - singular."
-  },
-
-  "errorMessage": {
-    "message": "Une erreur s’est produite.",
-    "description": "Generic error message"
-  },
-
-  "tipInterestsHIGH": {
-    "message": "Liens d’intérêt forts",
-    "description": "«Interests» subtitle in the tip."
-  },
-
-  "tipInterestsMEDIUM": {
-    "message": "Liens d’intérêt moyens",
-    "description": "«Interests» subtitle in the tip."
-  },
-
-  "tipInterestsLOW": {
-    "message": "Liens d’intérêt faibles",
-    "description": "«Interests» subtitle in the tip."
-  },
-
-  "tipParty": {
-    "message": "Parti",
-    "description": "«Party» in the tip."
-  },
-
-  "showMore": {
-    "message": "Tout afficher",
-    "description": "Display all"
-  },
-
-  "lobbywatchURL": {
-    "message": "Profil sur lobbywatch.ch",
-    "description": "Link text for profile link"
-  },
-
-  "popupHeader": {
-    "message": "A propos",
-    "description": "Popup title."
-  },
-  "popupInfoLine1":{
-    "message": "Cette extensions utilise les données de Lobbywatch pour indiquer les liens d’intérêts des Conseillers nationaux et Conseillers aux Etats suisses.",
-    "description": "Popup informations."
-  },
-  "popupInfoLine2":{
-    "message": "Les élus sont repérés par leur prénom et nom. Les liens d’intérêts peuvent donc apparaître pour des homonymes qui ne siègent pas au parlement.",
-    "description": "Popup informations."
-  },
-  "popupInfoLine3":{
-    "message": "Plus d’informations sur",
-    "description": "Popup informations."
-  }
-
+ "extensionName": {
+  "message": "Intérêts des parlementaires",
+  "description": "Name of the extension."
+ },
+ "extensionDescription": {
+  "message": "Cette extension affiche les liens d’intérêt des parlementaires suisses grâce aux données de Lobbywatch.",
+  "description": "Description of the extension."
+ },
+ "title": {
+  "message": "Liens d’intérêt",
+  "description": "Title appearing when hovering the extension."
+ },
+ "loadingInterests": {
+  "message": "Chargement…",
+  "description": "Appears before interests gets loaded"
+ },
+ "errorMessage": {
+  "message": "Une erreur s’est produite.",
+  "description": "Generic error message"
+ },
+ "currentLocale": {
+  "message": "fr",
+  "description": "Used to send the right ajax requests"
+ },
+ "guests": {
+  "message": "Invités",
+  "description": "«Interests» subtitle in the tip."
+ },
+ "guest": {
+  "message": "Invité",
+  "description": "«Interests» subtitle in the tip (sg.)"
+ },
+ "guestsComplement": {
+  "message": "leur donne accès au palais fédéral",
+  "description": "«Interests» suffix in the tip"
+ },
+ "guestComplement": {
+  "message": "lui donne accès au palais fédéral",
+  "description": "«Interests» suffix in the tip - singular"
+ },
+ "noParty": {
+  "message": "hors parti",
+  "description": "When someone has no party"
+ },
+ "tipInterestsHIGH": {
+  "message": "Liens d’intérêt forts",
+  "description": "«Interests» subtitle in the tip."
+ },
+ "tipInterestsMEDIUM": {
+  "message": "Liens d’intérêt moyens",
+  "description": "«Interests» subtitle in the tip."
+ },
+ "tipInterestsLOW": {
+  "message": "Liens d’intérêt faibles",
+  "description": "«Interests» subtitle in the tip."
+ },
+ "tipParty": {
+  "message": "Parti",
+  "description": "«Party» in the tip."
+ },
+ "showMore": {
+  "message": "Tout afficher",
+  "description": "Display all"
+ },
+ "lobbywatchURL": {
+  "message": "Profil sur lobbywatch.ch",
+  "description": "Link text for profile link"
+ },
+ "popupHeader": {
+  "message": "A propos",
+  "description": "Popup title."
+ },
+ "popupInfoLine1": {
+  "message": "Cette extensions utilise les données de Lobbywatch pour indiquer les liens d’intérêts des Conseillers nationaux et Conseillers aux Etats suisses.",
+  "description": "Popup informations."
+ },
+ "popupInfoLine2": {
+  "message": "Les élus sont repérés par leur prénom et nom. Les liens d’intérêts peuvent donc apparaître pour des homonymes qui ne siègent pas au parlement.",
+  "description": "Popup informations."
+ },
+ "popupInfoLine3": {
+  "message": "Plus d’informations sur",
+  "description": "Popup informations."
+ }
 }
