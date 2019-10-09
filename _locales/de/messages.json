@@ -1,0 +1,82 @@
+{
+ "extensionName": {
+  "message": "Interessenbindungen der Parlamentarier",
+  "description": "Name of the extension."
+ },
+ "extensionDescription": {
+  "message": "Diese Erweiterung zeigt Interessenbindungen von Parlamentarierinnen und Parlamentarier anhand Daten von Lobbywatch.",
+  "description": "Description of the extension."
+ },
+ "title": {
+  "message": "Interessenbindungen",
+  "description": "Title appearing when hovering the extension."
+ },
+ "loadingInterests": {
+  "message": "laden...",
+  "description": "Appears before interests gets loaded"
+ },
+ "errorMessage": {
+  "message": "Ein Fehler ist aufgetreten",
+  "description": "Generic error message"
+ },
+ "guests": {
+  "message": "Interessenbindungen",
+  "description": "«Interests» subtitle in the tip."
+ },
+ "guest": {
+  "message": "Interessenbindungen",
+  "description": "«Interests» subtitle in the tip (sg.)"
+ },
+ "guestsComplement": {
+  "message": "Erteilte Zutrittsberechtigungen zum Bundeshaus",
+  "description": "«Interests» suffix in the tip"
+ },
+ "guestComplement": {
+  "message": "ERteilte Zutrittsberechtigung zum Bundeshaus",
+  "description": "«Interests» suffix in the tip - singular"
+ },
+ "noParty": {
+  "message": "parteilos",
+  "description": "When someone has no party"
+ },
+ "tipInterestsHIGH": {
+  "message": "Starke Wirksamkeit",
+  "description": "«Interests» subtitle in the tip."
+ },
+ "tipInterestsMEDIUM": {
+  "message": "Mittlere Wirksamkeit",
+  "description": "«Interests» subtitle in the tip."
+ },
+ "tipInterestsLOW": {
+  "message": "Geringe Wirksamkeit",
+  "description": "«Interests» subtitle in the tip."
+ },
+ "tipParty": {
+  "message": "Partei",
+  "description": "«Party» in the tip."
+ },
+ "showMore": {
+  "message": "Alles anzeigen",
+  "description": "Display all"
+ },
+ "lobbywatchURL": {
+  "message": "Profil auf lobbywatch.ch",
+  "description": "Link text for profile link"
+ },
+ "popupHeader": {
+  "message": "Über",
+  "description": "Popup title."
+ },
+ "popupInfoLine1": {
+  "message": "Diese Erweiterung verwendet Datenvon Lobbywatch um Interessenbindungen von Schweizer Parlamentarierinnen und Parlamentarier anzuzeigen.",
+  "description": "Popup informations."
+ },
+ "popupInfoLine2": {
+  "message": "Gewählte Amtsträger werden anhand ihres Namens identifiziert. Personen mit gleichem Namen können fälschlicherweise als Parlamentarier erkannt werden.",
+  "description": "Popup informations."
+ },
+ "popupInfoLine3": {
+  "message": "Weitere Informationen zu",
+  "description": "Popup informations."
+ }
+}
