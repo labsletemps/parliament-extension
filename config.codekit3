@@ -86,6 +86,14 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/examples.txt": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/examples.txt",
+		"oF": 0
+		},
 	"/icon.png": {
 		"ft": 32768,
 		"iS": 3555,
@@ -171,21 +179,16 @@
 		"oAP": "/LICENSE",
 		"oF": 0
 		},
-	"/lobbywatch-eye-rgb-crop.psd": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
+	"/lobbywatch-logo-webstore.png": {
+		"ft": 32768,
+		"iS": 10058,
 		"oA": 0,
-		"oAP": "/lobbywatch-eye-rgb-crop.psd",
-		"oF": 0
-		},
-	"/lobbywatch-eye-rgb.psd": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/lobbywatch-eye-rgb.psd",
-		"oF": 0
+		"oAP": "/lobbywatch-logo-webstore.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"/manifest.json": {
 		"ft": 524288,
@@ -204,14 +207,6 @@
 		"oAP": "/material.min-min.css",
 		"oF": 0,
 		"oS": 3
-		},
-	"/my-archive.zip": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/my-archive.zip",
-		"oF": 0
 		},
 	"/package-lock.json": {
 		"ft": 524288,
@@ -293,6 +288,294 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-0.1.zip": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-0.1.zip",
+		"oF": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0.zip": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0.zip",
+		"oF": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/_locales/fr/messages.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/_locales/fr/messages-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/contentScript-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/contentScript-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/contentScript.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/contentScript-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/contentStyle.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/contentStyle-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/contentStyle.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/contentStyle.css.map",
+		"oF": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/contentStyle.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/contentStyle.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/examples.txt": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/examples.txt",
+		"oF": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/icon.png": {
+		"ft": 32768,
+		"iS": 3555,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/icon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/icon128.png": {
+		"ft": 32768,
+		"iS": 11360,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/icon128.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/icon16.png": {
+		"ft": 32768,
+		"iS": 3380,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/icon16.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/icon32.png": {
+		"ft": 32768,
+		"iS": 1574,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/icon32.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/icon48.png": {
+		"ft": 32768,
+		"iS": 1483,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/icon48.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/icon64.png": {
+		"ft": 32768,
+		"iS": 5484,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/icon64.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/jquery-3.3.1.min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/jquery-3.3.1.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/LICENSE": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/LICENSE",
+		"oF": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/lobbywatch-logo-webstore.png": {
+		"ft": 32768,
+		"iS": 10058,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/lobbywatch-logo-webstore.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/manifest.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/manifest-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/material.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/material.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/package-lock.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/package-lock-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/popup-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/popup-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/popup.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/popup.html",
+		"oF": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/popup.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/popup-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/README.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/reset.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/reset.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/tippy.all.min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.0/tippy.all.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/web-ext-artifacts/les_liens_d_int_r_t_des_parlementaires-0.1.zip": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/les_liens_d_int_r_t_des_parlementaires-0.1.zip",
+		"oF": 0
 		}
 	},
 "hooks": [
