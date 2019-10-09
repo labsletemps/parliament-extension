@@ -5,7 +5,7 @@
   },
 
   "extensionDescription": {
-    "message": "Cette extension affiche les liens d’intérêt des parlementaires suisses mentionnés dans certains médias, grâce aux données de Lobbywatch.",
+    "message": "Cette extension affiche les liens d’intérêt des parlementaires suisses grâce aux données de Lobbywatch.",
     "description": "Description of the extension."
   },
 
@@ -22,6 +22,21 @@
   "guests": {
     "message": "Invités",
     "description": "«Interests» subtitle in the tip."
+  },
+
+  "guest": {
+    "message": "Invité",
+    "description": "«Interests» subtitle in the tip - singular."
+  },
+
+  "guestsComplement": {
+    "message": "leur donne accès au palais fédéral",
+    "description": "«Interests» suffix in the tip."
+  },
+
+  "guestComplement": {
+    "message": "lui donne accès au palais fédéral",
+    "description": "«Interests» suffix in the tip - singular."
   },
 
   "errorMessage": {
