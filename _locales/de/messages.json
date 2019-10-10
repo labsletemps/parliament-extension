@@ -24,19 +24,19 @@
   "description": "Used to send the right ajax requests"
  },
  "guests": {
-  "message": "Interessenbindungen",
+  "message": "Gäste",
   "description": "«Interests» subtitle in the tip."
  },
  "guest": {
-  "message": "Interessenbindungen",
+  "message": "Gast",
   "description": "«Interests» subtitle in the tip (sg.)"
  },
  "guestsComplement": {
-  "message": "Erteilte Zutrittsberechtigungen zum Bundeshaus",
+  "message": "gab ihnen Zugang zum Bundeshaus",
   "description": "«Interests» suffix in the tip"
  },
  "guestComplement": {
-  "message": "ERteilte Zutrittsberechtigung zum Bundeshaus",
+  "message": "gab ihr/ihm Zugang zum Bundeshaus",
   "description": "«Interests» suffix in the tip - singular"
  },
  "noParty": {
@@ -44,15 +44,15 @@
   "description": "When someone has no party"
  },
  "tipInterestsHIGH": {
-  "message": "Starke Wirksamkeit",
+  "message": "Starke Interessenbindungen",
   "description": "«Interests» subtitle in the tip."
  },
  "tipInterestsMEDIUM": {
-  "message": "Mittlere Wirksamkeit",
+  "message": "Mittlere Interessenbindungen",
   "description": "«Interests» subtitle in the tip."
  },
  "tipInterestsLOW": {
-  "message": "Geringe Wirksamkeit",
+  "message": "Geringe Interessenbindungen",
   "description": "«Interests» subtitle in the tip."
  },
  "tipParty": {
@@ -68,7 +68,7 @@
   "description": "Link text for profile link"
  },
  "popupHeader": {
-  "message": "Über",
+  "message": "Über das Addon",
   "description": "Popup title."
  },
  "popupInfoLine1": {
