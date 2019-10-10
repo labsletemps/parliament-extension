@@ -132,15 +132,18 @@ voir https://atomiks.github.io/tippyjs/themes/
           .tippy-tooltip .person .person-txt .person-text-body p b {
             font-weight: bold; }
         .tippy-tooltip .person .person-txt .person-text-body ul.person-links-list {
-          padding-left: 18px; }
+          padding-left: 18px;
+          list-style-type: disc !important; }
           .tippy-tooltip .person .person-txt .person-text-body ul.person-links-list li {
             font-family: 'Rooney-Light', 'Montserrat', sans-serif;
             font-weight: 300;
             font-size: 13px;
             color: #000000;
             text-align: left;
-            display: block;
-            /* overwrite tamedia webspecial */ }
+            display: list-item;
+            /* overwrite tamedia webspecial */
+            list-style-position: outside;
+            margin-bottom: 3px; }
             .tippy-tooltip .person .person-txt .person-text-body ul.person-links-list li:before {
               /* handelszeitung */
               content: none; }

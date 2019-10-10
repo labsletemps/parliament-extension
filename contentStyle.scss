@@ -170,6 +170,7 @@ voir https://atomiks.github.io/tippyjs/themes/
         }
         ul.person-links-list{
           padding-left: 18px;
+          list-style-type: disc !important;
 
           li{
             font-family: 'Rooney-Light', 'Montserrat', sans-serif;
@@ -177,7 +178,9 @@ voir https://atomiks.github.io/tippyjs/themes/
             font-size: 13px;
             color: #000000;
             text-align: left;
-            display: block; /* overwrite tamedia webspecial */
+            display:list-item;/* overwrite tamedia webspecial */
+            list-style-position:outside;
+            margin-bottom: 3px;
 
             &:before{ /* handelszeitung */
               content: none;
