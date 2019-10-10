@@ -266,11 +266,11 @@ function eventHandler(who){
           }
           var guestInfo = '';
           if(guestNames.length > 1){
-            guestInfo = `<p><b>${chrome.i18n.getMessage('guests')}:</b> ${guestNames.join(", ")}
-            (${individualData['name'] + ' ' + chrome.i18n.getMessage('guestsComplement')})</p>`;
+            guestInfo = `<p><b>${chrome.i18n.getMessage('guests')}</b></p>
+            <p class="guests">${guestNames.join(", ")} (${individualData['name'] + ' ' + chrome.i18n.getMessage('guestsComplement')})</p>`;
           }else if (guestNames.length == 1){
-            guestInfo = `<p><b>${chrome.i18n.getMessage('guest')}:</b> ${guestNames.join(", ")}
-            (${individualData['name'] + ' ' + chrome.i18n.getMessage('guestComplement')})</p>`;
+            guestInfo = `<p><b>${chrome.i18n.getMessage('guest')}</b></p>
+            <p class="guests"> ${guestNames.join(", ")} (${individualData['name'] + ' ' + chrome.i18n.getMessage('guestComplement')})</p>`;
           }
 
           /*
