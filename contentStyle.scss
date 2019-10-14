@@ -104,7 +104,7 @@ voir https://atomiks.github.io/tippyjs/themes/
       .person-txt-header
       {
         width: 100%;
-        height: 45px;
+        min-height: 45px;
         background: #f2f2f2;
         padding:12px 10px;
 
@@ -122,12 +122,12 @@ voir https://atomiks.github.io/tippyjs/themes/
         {
           font-family: 'Ratio-Medium', 'Montserrat', sans-serif !important;
           font-size: 17px !important;
+          line-height: 17px;
           font-weight: 600;
           color: $dark-blue;
           text-align: left;
           display: block;
           width: 100%;
-          line-height: 17px; /* @TODO 5px */
         }
 
         .person-infos
@@ -179,6 +179,7 @@ voir https://atomiks.github.io/tippyjs/themes/
             color: #000000;
             text-align: left;
             display:list-item;/* overwrite tamedia webspecial */
+            list-style-type: disc;
             list-style-position:outside;
             margin-bottom: 3px;
 
