@@ -2,8 +2,6 @@
 Globals
 */
 
-// TODO i18n change this for 'de'
-// chrome.i18n.getMessage(
 var locale = chrome.i18n.getMessage('currentLocale');
 console.log('Parliament Extension: current locale is ' + locale);
 var parliamentData;
@@ -19,7 +17,7 @@ var POTENCY_WEIGHT = {
 
 var needsUpdate = function(){
   // uncomment to bypass cache
-  return true;
+  // return true;
   try {
     lastUpdate = parseInt(lastUpdate);
   }
@@ -110,7 +108,6 @@ function getIndividualData(name){
   return data;
 }
 
-// TODO hoster sur labs.letemps.ch
 function fetchParliamentIds(){
   $.ajax({
     type: "json",
@@ -200,13 +197,12 @@ function eventHandler(who){
   function addListItem(item){
     return '<li class="list-item">' + item + '</li>';
   }
-  // TODO: templating
 
   var template_base = `<div class="person">
       <div class="person-picture" style="background-image: url('${individualData['portrait']}')"></div>
       <div class="person-txt">
         <div class="person-txt-header">
-          <span class="person-name"><a target="_blank" href="https://lobbywatch.ch/fr/daten/parlamentarier/${individualData['id']}/${individualData['name']}">${individualData['name']}</a></span>
+          <span class="person-name"><a target="_blank" href="https://lobbywatch.ch/${locale}/daten/parlamentarier/${individualData['id']}/${individualData['name']}">${individualData['name']}</a></span>
           <div class="person-infos">${individualData['councilTitle']}, ${individualData['canton']}, ${party}</div>
         </div>
 
@@ -319,12 +315,12 @@ function eventHandler(who){
               <div class="person-picture" style="background-image: url('${individualData['portrait']}')"></div>
 
               <div class="person-txt">
-                <a class="lobbywatch-logo" target="_blank" href="https://lobbywatch.ch/fr/daten/parlamentarier/${individualData['id']}/${individualData['name']}">
+                <a class="lobbywatch-logo" target="_blank" href="https://lobbywatch.ch/${locale}/daten/parlamentarier/${individualData['id']}/${individualData['name']}">
                   <img src="${chrome.extension.getURL('icon32.png')}" alt="Lobbywatch" />
                 </a>
 
                 <div class="person-txt-header">
-                  <span class="person-name"><a target="_blank" href="https://lobbywatch.ch/fr/daten/parlamentarier/${individualData['id']}/${individualData['name']}">${individualData['name']}</a></span>
+                  <span class="person-name"><a target="_blank" href="https://lobbywatch.ch/${locale}/daten/parlamentarier/${individualData['id']}/${individualData['name']}">${individualData['name']}</a></span>
                   <span class="person-infos">${individualData['councilTitle']}, ${individualData['canton']}, ${party}</span>
                 </div>
 
@@ -345,7 +341,6 @@ function eventHandler(who){
         instance.loaded = true;
       }
 
-      // TODO check if local version up to date
       var localIndividualData = localStorage.getItem(who);
 
       if(localIndividualData){
