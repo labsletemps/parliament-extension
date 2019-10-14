@@ -44,15 +44,15 @@
   "description": "When someone has no party"
  },
  "tipInterestsHIGH": {
-  "message": "Starke Interessenbindungen",
+  "message": "Interessenbindungen hohe Wirksamkeit",
   "description": "«Interests» subtitle in the tip."
  },
  "tipInterestsMEDIUM": {
-  "message": "Mittlere Interessenbindungen",
+  "message": "Interessenbindungen mittlere Wirksamkeit",
   "description": "«Interests» subtitle in the tip."
  },
  "tipInterestsLOW": {
-  "message": "Geringe Interessenbindungen",
+  "message": "Interessenbindungen geringe Wirksamkeit",
   "description": "«Interests» subtitle in the tip."
  },
  "tipParty": {
