@@ -103,7 +103,7 @@ voir https://atomiks.github.io/tippyjs/themes/
           text-align: left;
           display: block;
           width: 100%;
-          line-height: 8px;
+          line-height: 17px;
           /* @TODO 5px */ }
         .tippy-tooltip .person .person-txt .person-txt-header .person-infos {
           font-family: 'Rooney-Light', 'Montserrat', sans-serif !important;
