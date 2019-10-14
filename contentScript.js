@@ -48,8 +48,9 @@ if( window.location.origin.includes('lenouvelliste.ch|lacote.ch|arcinfo.ch') ){
 
 // For react websites
 var first_href = window.location.href;
-if( window.location.origin.includes('beobachter.ch') ){
-  // console.log('Beobachter – trigger on click')
+if( window.location.origin.includes('beobachter.ch|blick.ch|handelszeitung.ch') ){
+  // console.log('React – trigger on click')
+  // TODO recursive with limit, cancel timeouts
   $('body').click(function(){
     console.log('click')
     if(window.location.href != first_href){
