@@ -35,7 +35,9 @@
         "https://www.derbund.ch/*",
         "https://www.woz.ch/*",
         "https://www.nzz.ch/*",
-        "https://www.infosperber.ch/*"
+        "https://www.infosperber.ch/*",
+        "https://www.republik.ch/*",
+        "https://www.weltwoche.ch/*"
       ],
       "exclude_matches": [
         "https://*/admin/*"
