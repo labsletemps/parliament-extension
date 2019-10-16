@@ -4,75 +4,54 @@
   <meta charset="utf-8" />
   <title></title>
   <style type="text/css">
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:300,600&display=swap');
+
   body {
-    margin: 10px;
+    font-family: 'Ratio-Medium', 'Montserrat', sans-serif;
+    /* margin: 10px; */
+    /* font-size: 16px; */
+    background: #fff;
   }
   span{
     /*white-space: normal;*/
   }
+  p, h1, h3, ul{
+    max-width: 96%;
+    margin: 10px auto;
+  }
 
   h1 {
-    font-size: 15px;
-  }
-  .highlighted{
-    border: 3px dashed #1c55a0;
-    margin: 2px;
-    padding: 1px;
-    display: inline-block;
+    font-size: 22px;
   }
   .container{
-    width: 300px;
+    min-width: 400px;
   }
-  .instructionsContainer{
-    white-space: normal;
-  }
-  /* bootstrap buttons */
-  .btn{
-    display: inline-block;
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 600;
-    border-style: solid;
-    border-radius: 3px;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-  }
-  .btn-primary {
-    color: #fff;
-    min-width: 100px;
-    background-color: #337ab7;
-    border-color: #2e6da4;
-  }
-  .btn-primary:hover {
-    color: #fff;
-    background-color: #286090;
-    border-color: #204d74;
-  }
-  .btn-secondary {
-    color: #292b2c;
-    background-color: #fff;
-    border-color: #ccc;
-  }
-  .btn-secondary:hover {
-    color: #292b2c;
-    background-color: #e6e6e6;
-    border-color: #adadad;
-  }
-  #shortcutsTick{
-    display: none;
-  }
+
   </style>
   <script src="popup.js"></script>
 </head>
 
 <body>
 
-  <h1 id="popupHeader">A propos</h1>
+  <h1 id="popupHeader">Méthode</h1>
   <div class="container">
-    <p><span id="popupInfoLine1">Cette extensions utilise les données de Lobbywatch pour indiquer les liens d’intérêts des Conseillers nationaux et Conseillers aux Etats suisses.</span></p>
-    <p><span id="popupInfoLine2">Les élus sont repérés par leur prénom et nom. Les liens d’intérêts peuvent donc apparaître pour des homonymes qui ne siègent pas au parlement.</span></p>
-    <p><span id="popupInfoLine3">Plus d’informations sur</span>: <a target="_blank" href="https://lobbywatch.ch/">lobbywatch.ch</a></p>
+    <p id="popupInfoLine1">A partir de la liste nominative des parlementaires suisses, cette extension, <a target="_blank" href="https://labs.letemps.ch/parliament-extension/">«Intérêts des parlementaires»</a>, repère leurs mentions sur les sites de médias. Leurs noms sont mis en gras et deviennent cliquables.</p>
+    <p id="popupInfoLine2">Lorsqu’on clique sur le nom d’un élu ou d’une élue, une requête est envoyée à lobbywatch.ch pour obtenir ses liens d’intérêts et les noms de ses invités au Parlement. L’association Lobbywatch, fondée par deux journalistes du «Beobachter» et un informaticien, publie ses données en licence libre.</p>
+    <p class="popupInfoMore">Comme les élus sont repérés par leur prénom et nom, cet outil peut les confondre avec des homonymes et afficher des liens d’intérêt pour des personnes ne siégeant pas au Parlement.</p>
+    <p class="popupInfoMore">L’extension «Intérêts des parlementaires» a été développée par le journal «Le Temps» qui a exploité les données ouvertes de Lobbywatch. Le code de l’extension est disponible sur GitHub en licence libre et open-source. Lobbywatch effectue son travail indépendamment de la rédaction du Temps. </p>
+    <p class="popupInfoMore">L’extension ne collecte aucune donnée sur les personnes l’ayant installée, ou sur son usage.</p>
+    <p class="popupInfoMore">Elle fonctionne sur une liste volontairement restreinte de sites médias. Pour demander l’ajout d’un nouveau site: <a href="mailto:data@letemps.ch">data@letemps.ch</a></p>
+    <p class="popupInfoMore">Pourquoi «Le Temps» a développé cette extension: <a target="blank" href="https://www.letemps.ch/suisse/liens-dinteret-parlementaires-portee-clic">notre article</a></p>
+    <p><span id="popupInfoLine3">Plus d’informations sur l’association Lobbywatch:</span> <a target="blank" href="https://lobbywatch.ch/fr">lobbywatch.ch</a></p>
+
+
+    <h3 class="popupInfoMore">Détails techniques</h3>
+    <ul class="popupInfoMore">
+      <li>la recherche est limitée aux balises &lt;p&gt; (paragraphe)</li>
+      <li>la liste des parlementaires est stockée sur labs au format JSON et mise en cache dans les données locales du navigateur (localStorage), d’où une demande de permission «localStorage»</li>
+      <li>la base de données de Lobbywatch est interrogée avec une requête GraphQL, et renvoie le résultat au format JSON</li>
+      <li>lors de mises à jour, si de nouveaux sites de médias sont ajoutés, l’extension demande à nouveau la permission d’accéder aux données de tous les sites concernés</li>
+    </ul>
   </div>
 
 </body>
