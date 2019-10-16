@@ -25,6 +25,22 @@
 		"oAP": "/.gitignore",
 		"oF": 0
 		},
+	"/_locales/de/messages.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/_locales/de/messages-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/_locales/fr/messages.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/_locales/fr/messages-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"/contentScript-min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -276,6 +292,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.3.zip",
+		"oF": 0
+		},
+	"/web-ext-artifacts/int_r_ts_des_parlementaires-1.4.zip": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/web-ext-artifacts/int_r_ts_des_parlementaires-1.4.zip",
 		"oF": 0
 		}
 	},
