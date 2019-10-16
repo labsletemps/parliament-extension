@@ -17,7 +17,7 @@ var POTENCY_WEIGHT = {
 
 var needsUpdate = function(){
   // uncomment to bypass cache
-  // return true;
+  return true;
   try {
     lastUpdate = parseInt(lastUpdate);
   }
@@ -113,10 +113,9 @@ function fetchParliamentIds(){
   $.ajax({
     type: "json",
     method: "POST",
-    url: "https://labs.letemps.ch/interactive/2019/parliament-extension/data/" + locale,
-    // url: "https://web.tcch.ch/parliament/v3/",
+    url: "https://labs.letemps.ch/parliament-extension/data/" + locale,
+
     success : function(data, statut){
-      console.log('Data retrieved');
       localStorage.setItem('parliamentarians', data); // as string
       localStorage.setItem('parliamentarians-update', String(new Date().getTime()));
 
@@ -248,10 +247,30 @@ function eventHandler(who){
         if(!instance.loaded){
           content += addInfo('<b>' + chrome.i18n.getMessage('tipInterests') + '</b>')
           li_str = '';
-
           /* guests */
           if(!data){
-            li_str = '<p class="error">' + chrome.i18n.getMessage('errorMessage') + '</p>';
+            var error_str = '<p class="error">' + chrome.i18n.getMessage('errorMessage') + '</p>';
+            var template_error = `<div class="person">
+                <div class="person-picture" style="background-image: url('${individualData['portrait']}')"></div>
+
+                <div class="person-txt">
+                  <a class="lobbywatch-logo" target="_blank" href="https://lobbywatch.ch/${locale}/daten/parlamentarier/${individualData['id']}/${individualData['name']}">
+                    <img src="${chrome.extension.getURL('icon32.png')}" alt="Lobbywatch" />
+                  </a>
+                  <div class="person-txt-header">
+                    <span class="person-name"><a target="_blank" href="https://lobbywatch.ch/${locale}/daten/parlamentarier/${individualData['id']}/${individualData['name']}">${individualData['name']}</a></span>
+                    <div class="person-infos">${individualData['councilTitle']}, ${individualData['canton']}, ${party}</div>
+                  </div>
+                  <div class="person-text-body">
+                    <p>${error_str}</p>
+                  </div>
+              </div>
+            </div>`;
+
+
+            instance.setContent(template_error);
+
+            console.log(chrome.i18n.getMessage('errorMessage'))
           }
           var guests = data['data']['getParliamentarian']['guests'];
           var guestNames = [];
@@ -310,8 +329,6 @@ function eventHandler(who){
             li_str += interestsLow;
           }
 
-
-
           var template_loaded = `<div class="person">
               <div class="person-picture" style="background-image: url('${individualData['portrait']}')"></div>
 
@@ -365,6 +382,7 @@ function eventHandler(who){
           },
           error : function() {
             console.log('error when querying lobbywatch')
+            displayData(false);
           }
         });
 
