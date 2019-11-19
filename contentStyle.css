@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,600&display=swap");
 .tippy-tooltip.light-border-theme {
   /* HTML5 display-role reset for older browsers */
 }
@@ -28,24 +29,6 @@
 .tippy-tooltip.light-border-theme article, .tippy-tooltip.light-border-theme aside, .tippy-tooltip.light-border-theme details, .tippy-tooltip.light-border-theme figcaption, .tippy-tooltip.light-border-theme figure,
 .tippy-tooltip.light-border-theme footer, .tippy-tooltip.light-border-theme header, .tippy-tooltip.light-border-theme hgroup, .tippy-tooltip.light-border-theme menu, .tippy-tooltip.light-border-theme nav, .tippy-tooltip.light-border-theme section {
   display: block;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/montserrat-bold-webfont.woff2") format("woff2"), url("../fonts/montserrat-bold-webfont.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/montserrat-light-webfont.woff2") format("woff2"), url("../fonts/montserrat-light-webfont.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/montserrat-regular-webfont.woff2") format("woff2"), url("../fonts/montserrat-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
 }
 /*
 style de https://unpkg.com/tippy.js@3/dist/themes/light-border.css
@@ -125,7 +108,7 @@ voir https://atomiks.github.io/tippyjs/themes/
   padding: 12px 10px;
 }
 .tippy-tooltip .person .person-txt .person-txt-header .person-name, .tippy-tooltip .person .person-txt .person-txt-header .person-name a, .tippy-tooltip .person .person-txt .person-txt-header .person-name:visited {
-  font-family: "Ratio-Medium", "Montserrat", sans-serif !important;
+  font-family: "Montserrat", "Times" !important;
   font-size: 17px !important;
   line-height: 17px;
   font-weight: 600;
