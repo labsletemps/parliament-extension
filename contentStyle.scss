@@ -13,7 +13,25 @@ $red-lt: #b80021;
 $red-lt-darker: #930025;
 
 @import 'reset.scss';
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,600&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Montserrat:300,600&display=swap');
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/montserrat-bold-webfont.woff2") format("woff2"), url("../fonts/montserrat-bold-webfont.woff") format("woff");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/montserrat-light-webfont.woff2") format("woff2"), url("../fonts/montserrat-light-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/montserrat-regular-webfont.woff2") format("woff2"), url("../fonts/montserrat-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 
 /*
 style de https://unpkg.com/tippy.js@3/dist/themes/light-border.css
