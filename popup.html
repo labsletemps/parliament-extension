@@ -15,16 +15,23 @@
   span{
     /*white-space: normal;*/
   }
-  p, h1, h3, ul{
+  p, h2, h3, ul, div.prefContainer{
     max-width: 96%;
     margin: 10px auto;
   }
-
-  h1 {
-    font-size: 22px;
+  h2{
+    margin-top: 1em;
   }
+
   .container{
     min-width: 400px;
+  }
+
+  #prefTitle, .prefContainer{
+    display: none;
+  }
+  #langTick{
+    display: none;
   }
 
   </style>
@@ -32,8 +39,19 @@
 </head>
 
 <body>
+  <h2 id="prefTitle">Préférences</h2>
+  <div class="prefContainer">
+    <label id="langLabel" for="langSelect">Langue:</label>
 
-  <h1 id="popupHeader">Méthode</h1>
+    <select id="langSelect">
+        <option id="option-de" value="de">allemand</option>
+        <option id="option-fr" value="fr">français</option>
+    </select>
+
+   <span id="langTick">✓</span>
+  </div>
+
+  <h2 id="popupHeader">Méthode</h1>
   <div class="container">
     <p id="popupInfoLine1">A partir de la liste nominative des parlementaires suisses, cette extension, <a target="_blank" href="https://labs.letemps.ch/parliament-extension/">«Intérêts des parlementaires»</a>, repère leurs mentions sur les sites de médias. Leurs noms sont mis en gras et deviennent cliquables.</p>
     <p id="popupInfoLine2">Lorsqu’on clique sur le nom d’un élu ou d’une élue, une requête est envoyée à lobbywatch.ch pour obtenir ses liens d’intérêts et les noms de ses invités au Parlement. L’association Lobbywatch, fondée par deux journalistes du «Beobachter» et un informaticien, publie ses données en licence libre.</p>

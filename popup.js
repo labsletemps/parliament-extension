@@ -7,7 +7,24 @@ function translateText(elementId, messageName){
  document.getElementById(elementId).innerText = chrome.i18n.getMessage(messageName);
 }
 
+function getLang(){
+  var storedLang = localStorage.getItem('parliamentarian-lang');
+  if( storedLang ){
+    return storedLang;
+  } else {
+    return chrome.i18n.getMessage('currentLocale');
+  }
+}
+
+function setLang(lang){
+  localStorage.setItem('parliamentarians-lang', lang);
+  setTimeout(function(){
+    document.getElementById('langTick').style.display = 'inline-block';
+  }, 300);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
   // i18n
   if(chrome.i18n.getMessage('currentLocale') == 'de' && !popupLoaded){
     translateText('popupHeader', 'popupHeader');
@@ -19,8 +36,19 @@ document.addEventListener('DOMContentLoaded', () => {
     for (i = 0; i < divs.length; ++i) {
       divs[i].style.display = "none";
     }
-    document.getElementById('header').innerText = 'fuck';
   }
+
+
+  // not in use yet
+  /*
+  document.getElementById( 'option-' + getLang() ).selected = true;
+
+  document.querySelector('#langSelect').addEventListener('input', function(){
+    document.getElementById('langTick').style.display = 'none';
+    console.log('Change language to: ' + this.value);
+    setLang(this.value);
+  });
+  */
 
   popupLoaded = true;
 
