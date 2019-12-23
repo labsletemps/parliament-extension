@@ -2,6 +2,12 @@
 
 This extension shows informations about members of the National and State Councils in Switzerland.
 
+## Update parliamentarians list
+
+* Switch to branch remote
+* Run update_parliamentarians_list.py
+* Move php to FTP (https://labs.letemps.ch/parliament-extension/data/)
+
 ## Testing the development version
 
 ### Chrome
