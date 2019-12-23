@@ -357,3 +357,9 @@ MDL
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent
 }
+
+@media only screen and (max-width: 500px) {
+  .tippy-tooltip {
+    max-width: 98% !important;
+  }
+}

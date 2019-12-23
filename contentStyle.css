@@ -317,4 +317,10 @@ MDL
   border-bottom: 7px solid transparent;
 }
 
+@media only screen and (max-width: 500px) {
+  .tippy-tooltip {
+    max-width: 98% !important;
+  }
+}
+
 /*# sourceMappingURL=contentStyle.css.map */
