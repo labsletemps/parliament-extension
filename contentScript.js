@@ -19,7 +19,7 @@ var POTENCY_WEIGHT = {
 
 var needsUpdate = function(){
   // uncomment to bypass cache
-  return true;
+  // return true;
   try {
     lastUpdate = parseInt(lastUpdate);
   }
