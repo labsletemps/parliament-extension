@@ -2,6 +2,8 @@
 Globals
 */
 
+// console.log = function () {};
+
 var locale = chrome.i18n.getMessage('currentLocale');
 console.log('Parliament Extension: current locale is ' + locale);
 var parliamentData;
@@ -26,7 +28,7 @@ var needsUpdate = function(){
     return true;
   }
 
-  // expire après 1 heure:                       milli  sec  min  heures
+  // expire après 1 heure:                   milli  sec  min  heures
   if( (new Date().getTime() - lastUpdate) < (1000 * 60 * 60 * 1) ){
     console.log('Parliament Extension: use cache')
     return false;
@@ -50,6 +52,7 @@ if( window.location.origin.includes('lenouvelliste.ch|lacote.ch|arcinfo.ch') ){
 var first_href = window.location.href;
 if( window.location.origin.includes('beobachter.ch|blick.ch|handelszeitung.ch') ){
   // console.log('React – trigger on click')
+
   // TODO recursive with limit, cancel timeouts
   $('body').click(function(){
     console.log('click')
@@ -139,7 +142,7 @@ if(localData && !needsUpdate()){
   });
   console.log('Parliament: Interests loaded from localStorage');
 }else{
-  console.log('Parliament: fetching Interests data');
+  console.log('Parliament: fetching parliament list');
   fetchParliamentIds();
 }
 
@@ -219,7 +222,6 @@ function eventHandler(who){
 
   var targets = document.querySelector('.modal-available');
 
-  // tippy('.modal-available.' + who, {
   tippy('.modal-available.' + who, {
     content: template_base,
     aria: null,
@@ -243,10 +245,10 @@ function eventHandler(who){
     onShow(instance) {
       // inner func
       function displayData(data){
-
         if(!instance.loaded){
           content += addInfo('<b>' + chrome.i18n.getMessage('tipInterests') + '</b>')
           li_str = '';
+
           /* guests */
           if(!data){
             var error_str = '<p class="error">' + chrome.i18n.getMessage('errorMessage') + '</p>';
@@ -388,8 +390,7 @@ function eventHandler(who){
 
       }
 
-
-    }
+    } // end show instance
   });
 }
 

@@ -7,7 +7,7 @@
 		"uuidString": "5DAA31F3-7A40-4175-AAB5-E6A51BF9039E"
 		}
 	],
-"creatorBuild": "31491",
+"creatorBuild": "31934",
 "files": {
 	"/.editorconfig": {
 		"cB": 0,
@@ -93,6 +93,134 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
+		},
+	"/fonts/montserrat-black-webfont.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-black-webfont.woff",
+		"oF": 0
+		},
+	"/fonts/montserrat-black-webfont.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-black-webfont.woff2",
+		"oF": 0
+		},
+	"/fonts/montserrat-bold-webfont.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-bold-webfont.woff",
+		"oF": 0
+		},
+	"/fonts/montserrat-bold-webfont.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-bold-webfont.woff2",
+		"oF": 0
+		},
+	"/fonts/montserrat-extrabold-webfont.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-extrabold-webfont.woff",
+		"oF": 0
+		},
+	"/fonts/montserrat-extrabold-webfont.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-extrabold-webfont.woff2",
+		"oF": 0
+		},
+	"/fonts/montserrat-hairline-webfont.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-hairline-webfont.woff",
+		"oF": 0
+		},
+	"/fonts/montserrat-hairline-webfont.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-hairline-webfont.woff2",
+		"oF": 0
+		},
+	"/fonts/montserrat-light-webfont.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-light-webfont.woff",
+		"oF": 0
+		},
+	"/fonts/montserrat-light-webfont.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-light-webfont.woff2",
+		"oF": 0
+		},
+	"/fonts/montserrat-regular-webfont.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-regular-webfont.woff",
+		"oF": 0
+		},
+	"/fonts/montserrat-regular-webfont.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-regular-webfont.woff2",
+		"oF": 0
+		},
+	"/fonts/montserrat-semibold-webfont.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-semibold-webfont.woff",
+		"oF": 0
+		},
+	"/fonts/montserrat-semibold-webfont.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-semibold-webfont.woff2",
+		"oF": 0
+		},
+	"/fonts/montserrat-ultralight-webfont.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-ultralight-webfont.woff",
+		"oF": 0
+		},
+	"/fonts/montserrat-ultralight-webfont.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/montserrat-ultralight-webfont.woff2",
+		"oF": 0
 		},
 	"/icon.png": {
 		"ft": 32768,
@@ -215,6 +343,17 @@
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
+		},
+	"/popup-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/popup-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
 	"/popup.html": {
 		"cB": 0,
@@ -747,6 +886,7 @@
 			"flagValue": -1
 			}
 		},
+	"environmentVariablesString": "NODE_ENV:::production",
 	"esLintConfigFileHandlingType": 0,
 	"esLintECMAVersion": 7,
 	"esLintEnvironmentsMask": 1,
@@ -848,6 +988,10 @@
 			"optionString": "'all'"
 			},
 		"default-case": {
+			"active": 0,
+			"optionString": ""
+			},
+		"default-param-last": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -1197,6 +1341,10 @@
 			},
 		"no-implied-eval": {
 			"active": 0,
+			"optionString": ""
+			},
+		"no-import-assign": {
+			"active": 1,
 			"optionString": ""
 			},
 		"no-inline-comments": {
@@ -1622,6 +1770,10 @@
 		"prefer-promise-reject-errors": {
 			"active": 0,
 			"optionString": "{'allowEmptyReject': false}"
+			},
+		"prefer-regex-literals": {
+			"active": 0,
+			"optionString": ""
 			},
 		"prefer-rest-params": {
 			"active": 0,
@@ -2231,7 +2383,6 @@
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 1,
 		"enableJavascript": 0,
-		"ieCompatibility": 0,
 		"mathStyle": 0,
 		"outputStyle": 0,
 		"rewriteURLStyle": 0,
@@ -2371,6 +2522,9 @@
 	"npmTargetDependencyListType": 1,
 	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
+	"rollupExternals": "",
+	"rollupReplacements": "process.env.NODE_ENV:::$NODE_ENV,,,ENVIRONMENT:::$NODE_ENV",
+	"rollupTreeshakingEnabled": 1,
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, .idea, /storage/framework/sessions, node_modules",
 	"sourceFolderName": "source",
 	"susyVersion": 3,
