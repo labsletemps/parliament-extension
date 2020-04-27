@@ -122,11 +122,19 @@ function fetchParliamentIds(){
       localStorage.setItem('parliamentarians', data); // as string
       localStorage.setItem('parliamentarians-update', String(new Date().getTime()));
 
-      parliamentData = JSON.parse(data);
-      parliamentData['data']['parliamentarians'].forEach(function(item){
-        nameList.push(item['name']);
-      });
-      lookupNames();
+      // Catch malformed JSON and such
+      try {
+        parliamentData = JSON.parse(data);
+      } catch (e) {
+        console.error('Parliament Extension: Error when parsing JSON:', e);
+      }
+
+      if(parliamentData){
+        parliamentData['data']['parliamentarians'].forEach(function(item){
+          nameList.push(item['name']);
+        });
+        lookupNames();
+      }
     },
     error : function(xhr, status, error) {
       console.log('Parliament Extension: error when fetching data: ' + error);
@@ -140,9 +148,9 @@ if(localData && !needsUpdate()){
   parliamentData['data']['parliamentarians'].forEach(function(item){
     nameList.push(item['name']);
   });
-  console.log('Parliament: Interests loaded from localStorage');
+  console.log('Parliament Extension: Interests loaded from localStorage');
 }else{
-  console.log('Parliament: fetching parliament list');
+  console.log('Parliament Extension: fetching parliament list');
   fetchParliamentIds();
 }
 
